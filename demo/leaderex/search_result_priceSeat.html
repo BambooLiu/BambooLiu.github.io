@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LEADEREX</title>
+    <meta name="KeyWords" content="">
+    <meta name="Description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body><!--[if lt IE 10]>
+    <div class="old_browser">
+      <div class="old_browser_inner">
+        <div class="oops">OOPS!</div>
+        <div class="oops_title">您的瀏覽器版本太舊了！</div>
+        <p>請更新至 Internet Explorer 10 以上版本或選用更現代化的瀏覽器，<br><br>使用老舊版本的瀏覽器瀏覽本網站將可能有無法預測的錯誤，請儘快更新。<br><br>建議您使用 <a href="http://www.google.com/chrome/" target="_blank">Google Chrome 瀏覽器</a><br><br></p>
+        <p>© 2017-2018  LEADEREX All rights reserved. </p>
+      </div>
+    </div><![endif]-->
+    <div id="wrapper">
+      <header id="header">
+        <div class="header_inner"><a class="header_logo" href="index.html" title="首頁"><img class="retina" src="images/logo.png" alt="LeaderEX-Logo"></a>
+          <div class="header_nav">
+            <!--↓ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↓-->
+            <nav>
+              <ul>
+                <li><a href="member_order_willLeave.html" title="訂單管理">訂單管理
+                    <!--↓ 有資料才會出現 ↓-->
+                    <span class="count">1</span>
+                    <!--↑ 有資料才會出現 ↑--></a></li>
+                <li><a href="member_tracking_list.html" title="追蹤清單">追蹤清單
+                    <!--↓ 有資料才會出現 ↓-->
+                    <span class="count">1</span>
+                    <!--↑ 有資料才會出現 ↑--></a></li>
+              </ul>
+            </nav>
+            <!--↑ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↑-->
+            <div class="dropdown"><a class="dropdown_btn sub_open" href="javascript:;" title="會員相關"><i class="fas fa-th"></i></a>
+              <div class="dropdown_block">
+                <div class="dropdown_content">
+                  <div class="header_sub_items">
+                    <div class="item">
+                      <h4><a href="member_index.html" title="會員中心">
+                          <div class="icon"><i class="fas fa-user"></i></div><span>會員中心</span></a></h4>
+                      <ul>
+                        <li><a href="javascript:;" title="機票訂位">機票訂位</a></li>
+                        <li><a href="javascript:;" title="行程更改">行程更改</a></li>
+                        <li><a href="javascript:;" title="作廢申請">作廢申請</a></li>
+                      </ul>
+                    </div>
+                    <div class="item">
+                      <h4><a href="member_order_willLeave.html" title="訂單管理">
+                          <div class="icon"><i class="fas fa-file-alt"></i></div><span>訂單管理</span></a></h4>
+                      <ul>
+                        <li><a href="javascript:;" title="開票下單">開票下單</a></li>
+                        <li><a href="javascript:;" title="搭機證明">搭機證明</a></li>
+                        <li><a href="javascript:;" title="退票申請">退票申請</a></li>
+                      </ul>
+                    </div>
+                    <div class="item">
+                      <h4><a href="member_tracking_list.html" title="追蹤管理">
+                          <div class="icon"><i class="icon_ticket_plus"></i></div><span>追蹤管理</span></a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--↓ 登入後顯示 ↓-->
+            <a class="user_mark" href="member_index.html" title="會員中心">TC</a>
+            <a class="logout" href="javascript:;">登出</a>
+            <!--↑ 登入後顯示 ↑-->
+            <div class="language_chose select_wrapper">
+              <select>
+                <option>繁體中文</option>
+                <option>English</option>
+              </select>
+            </div><a id="btnMenu" href="javascript:;" title="Menu"><span></span></a>
+          </div>
+        </div>
+      </header>
+      <main id="main">
+        <div class="travel_information_mobile">
+          <div class="info"><i class="fas fa-plane"></i><span class="dates">2017/07/19 - 2017/08/08</span><span class="location">TPE - BKK</span></div><a class="edit popup_ajax" href="javascript:;" data-width="815px" data-path="popup_change_search.html"><i class="fas fa-pencil-alt"></i></a>
+        </div>
+        <div class="travel_information">
+          <div class="travel_information_inner">
+            <div class="info_blocks">
+              <div class="info_block">
+                <div class="title">行程資訊</div>
+                <p class="text">2017/07/19 (三) 台北(TPE) <i class="fas fa-plane"></i> 泰國(BKK)<br>2017/07/20 (四) 泰國(BKK) <i class="fas fa-plane"></i> 台北(TPE)</p>
+              </div>
+              <div class="info_block">
+                <div class="title">乘客資訊</div>
+                <p class="text">外勞票, 成人 x 1</p>
+              </div>
+            </div>
+            <div class="call_action"><a class="btn btn_step popup_ajax" href="javascript:;" data-width="815px" data-path="popup_change_search.html">變更搜尋</a></div><img class="img_plane" src="images/img_plane.png">
+          </div>
+        </div>
+        <!--↓ 資料 Loading 的時候 class 加 'active' ↓-->
+        <div class="loading">
+          <div class="loading_mark"><img src="images/img_loading.png"><span>Loading</span></div>
+        </div>
+        <!--↑ 資料 Loading 的時候 class 加 'active' ↑-->
+        <!--↓ 連線錯誤的時候 class 加 'active' ↓-->
+        <div class="error_bolck connection_error">
+          <div class="error_bolck_inner"><img src="images/img_connection_error.png">
+            <h2>很抱歉，連線錯誤...</h2>
+            <p>請重新調整日期或其他搜尋條件</p><a class="btn btn_primary" href="index.html">重新搜尋</a>
+          </div>
+        </div>
+        <!--↑ 連線錯誤的時候 class 加 'active' ↑-->
+        <!--↓ 資料 Loading、連線無錯誤時加 'active' ↓-->
+        <div class="steps_block active">
+          <div class="steps_block_inner">
+            <div class="item current">1.選擇航班</div>
+            <div class="item">2.旅客資料</div>
+            <div class="item">3.付款</div>
+          </div>
+        </div>
+        <div class="dates_choose_bar active">
+          <div class="arrows">
+            <!--↓沒有資料可以讀時 a標籤 class 加 'close'↓-->
+            <a class="prev close" href="javascript:;"><i class="fas fa-angle-left"></i></a>
+            <a class="next" href="javascript:;"><i class="fas fa-angle-right"></i></a>
+            <!--↑沒有資料可以讀時 a標籤 class 加 'close'↑-->
+          </div>
+          <div class="items">
+            <div class="item"><a href="javascript:;"><span class="date">7月16日 週一</span><span class="date">8月16日 週一</span><span class="price">TWD 8,000起</span><small>查看</small></a></div>
+            <div class="item"><a href="javascript:;"><span class="date">7月17日 週二</span><span class="date">8月17日 週二</span><span class="price">TWD 8,000起</span><small>查看</small></a></div>
+            <div class="item"><a href="javascript:;"><span class="date">7月18日 週三</span><span class="date">8月18日 週三</span><span class="price">TWD 8,000起</span><small>查看</small></a></div>
+            <div class="item"><a href="javascript:;"><span class="date">7月19日 週四</span><span class="date">8月19日 週四</span><span class="price">TWD 8,000起</span><small>查看</small></a></div>
+            <!--↓被選的日期放中間 item 的 class 加 'current'↓-->
+            <div class="item current"><a href="javascript:;"><span class="date">7月20日 週五</span><span class="date">8月20日 週五</span><span class="price">TWD 8,000起</span><small>查看</small></a></div>
+            <!--↑被選的日期放中間 item 的 class 加 'current'↑-->
+            <!--↓不可以選的日期 item 的 class 加 'close'↓-->
+            <div class="item close"><a href="javascript:;"><span class="date">7月21日 週六</span><span class="date">8月21日 週六</span><span class="price">TWD 8,000起</span><small>查看</small></a></div>
+            <!--↑不可以選的日期 item 的 class 加 'close'↑-->
+            <div class="item"><a href="javascript:;"><span class="date">7月22日 週日</span><span class="date">8月22日 週日</span><span class="price">TWD 8,000起</span><small>查看</small></a></div>
+            <div class="item"><a href="javascript:;"><span class="date">7月23日 週一</span><span class="date">8月23日 週一</span><span class="price">TWD 8,000起</span><small>查看</small></a></div>
+            <div class="item"><a href="javascript:;"><span class="date">7月24日 週二</span><span class="date">8月24日 週二</span><span class="price">TWD 8,000起</span><small>查看</small></a></div>
+          </div>
+        </div>
+        <div class="search_result active">
+          <div class="search_result_inner">
+            <div class="search_result_head">
+              <div class="head_block">
+                <h1 class="page_title">選擇航班</h1>
+                <div class="data_count">共5筆符合資料</div>
+              </div>
+              <div class="head_block">
+                <div class="sort_controls_group">
+                  <label>排序功能</label>
+                  <div class="select_wrapper">
+                    <select>
+                      <option>依票價排序</option>
+                      <option>依時間排序</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="bonus_use">
+                  <div class="switch_checkBox">
+                    <input type="checkBox" id="bonusCheck">
+                    <label for="bonusCheck"><span class="unused">使用紅利點數</span><span class="use">已使用紅利點數</span></label>
+                  </div>
+                  <div class="bonus_points">您有<span class="font_green">1,108</span>點</div>
+                </div>
+              </div>
+            </div>
+            <div class="container search_result_container">
+              <aside class="aside"><a class="btn btn_filter_open" id="filterBtn" href="javascript:;">進階篩選</a>
+                <div class="filter">
+                  <!-- checkbox_wrapper class 加 'control_close' 表示不能操作-->
+                  <div class="filter_title">
+                    <h2>進階篩選</h2>
+                    <button class="btn btn_filter_clear removeall" type="button">清除條件</button>
+                  </div>
+                  <div class="filter_items">
+                    <div class="item active"><a class="item_title" href="javascript:;">艙等</a>
+                      <div class="item_content">
+                        <ul>
+                          <li>
+                            <div class="checkbox_wrapper">
+                              <input id="checkbox01" type="checkBox">
+                              <label for="checkbox01">經濟艙</label>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="checkbox_wrapper">
+                              <input id="checkbox02" type="checkBox">
+                              <label for="checkbox02">豪華經濟艙</label>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="checkbox_wrapper">
+                              <input id="checkbox03" type="checkBox">
+                              <label for="checkbox03">商務艙</label>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="item active"><a class="item_title" href="javascript:;">轉機/直飛</a>
+                      <div class="item_content">
+                        <ul>
+                          <li>
+                            <div class="checkbox_wrapper">
+                              <input id="checkbox04" type="checkBox">
+                              <label for="checkbox04">直飛</label>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="checkbox_wrapper">
+                              <input id="checkbox05" type="checkBox">
+                              <label for="checkbox05">中停</label>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="checkbox_wrapper">
+                              <input id="checkbox06" type="checkBox">
+                              <label for="checkbox06">轉機</label>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="item active"><a class="item_title" href="javascript:;">航空公司</a>
+                      <div class="item_content">
+                        <ul>
+                          <li>
+                            <div class="checkbox_wrapper">
+                              <input id="checkbox07" type="checkBox">
+                              <label for="checkbox07">中華航空</label>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="checkbox_wrapper">
+                              <input id="checkbox08" type="checkBox">
+                              <label for="checkbox08">長榮航空</label>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="checkbox_wrapper">
+                              <input id="checkbox09" type="checkBox">
+                              <label for="checkbox09">國泰航空</label>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="item active"><a class="item_title" href="javascript:;">價格</a>
+                      <div class="item_content">
+                        <div class="range_bar range_price_bar">
+                          <div class="range_text"><span class="min">5000</span>元&nbsp;-&nbsp;<span class="max">28000</span>元</div>
+                          <input class="range_input" type="text" min="5000" max="28000" value="5000, 28000">
+                          <div class="boundary"><span class="min">5000</span><span class="max">28000</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter_tabber tabber_wrapper">
+                    <div class="tabber-selectors">
+                      <ul>
+                        <li><a class="tabber-anchor active" href="javascript:;">TPE-BKK</a></li>
+                        <li><a class="tabber-anchor" href="javascript:;">BKK-TPE</a></li>
+                      </ul>
+                    </div>
+                    <div class="tabber-contents">
+                      <div class="tabber-content active">
+                        <div class="filter_items">
+                          <div class="item active"><a class="item_title" href="javascript:;">出發時間</a>
+                            <div class="item_content">
+                              <ul>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox10" type="checkBox">
+                                    <label for="checkbox10">凌晨 (00:00 - 06:00)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox11" type="checkBox">
+                                    <label for="checkbox11">上午 (06:00 - 12:00)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox12" type="checkBox">
+                                    <label for="checkbox12">下午 (12:00 - 18:00)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox13" type="checkBox">
+                                    <label for="checkbox13">晚上 (18:00 - 24:00)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="time_controls_group">
+                                    <label>自訂時間篩選</label>
+                                    <div class="controls">
+                                      <input class="timepickr" type="text"><span class="divide">-</span>
+                                      <input class="timepickr" type="text">
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="item active"><a class="item_title" href="javascript:;"> 到達時間</a>
+                            <div class="item_content">
+                              <ul>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox14" type="checkBox">
+                                    <label for="checkbox14">凌晨 (00:00 - 06:00)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox15" type="checkBox">
+                                    <label for="checkbox15">上午 (06:00 - 12:00)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox16" type="checkBox">
+                                    <label for="checkbox16">下午 (12:00 - 18:00)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox17" type="checkBox">
+                                    <label for="checkbox17">晚上 (18:00 - 24:00)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="time_controls_group">
+                                    <label>自訂時間篩選</label>
+                                    <div class="controls">
+                                      <input class="timepickr" type="text"><span class="divide">-</span>
+                                      <input class="timepickr" type="text">
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="item active"><a class="item_title" href="javascript:;">出發機場</a>
+                            <div class="item_content">
+                              <ul>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox18" type="checkBox">
+                                    <label for="checkbox18">桃園機場(TPE)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox19" type="checkBox">
+                                    <label for="checkbox19">松山機場(TSA)</label>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="item active"><a class="item_title" href="javascript:;">到達機場</a>
+                            <div class="item_content">
+                              <ul>
+                                <li>
+                                  <div class="checkbox_wrapper control_close">
+                                    <input id="checkbox20" type="checkBox">
+                                    <label for="checkbox20">曼谷機場(BKK)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="checkbox_wrapper control_close">
+                                    <input id="checkbox21" type="checkBox">
+                                    <label for="checkbox21">清邁機場(CNX)</label>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="item active"><a class="item_title" href="javascript:;">行程時數</a>
+                            <div class="item_content">
+                              <div class="range_bar range_time_bar">
+                                <div class="range_text"><span class="min">2</span>小時&nbsp;-&nbsp;<span class="max">12</span>小時</div>
+                                <input class="range_input" type="text" min="2" max="12" value="12" step="0.5">
+                                <div class="boundary"><span class="min">2</span><span class="max">12</span></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tabber-content">
+                        <div class="filter_items">
+                          <div class="item active"><a class="item_title" href="javascript:;">出發時間</a>
+                            <div class="item_content">
+                              <ul>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox22" type="checkBox">
+                                    <label for="checkbox22">凌晨 (00:00 - 06:00)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox23" type="checkBox">
+                                    <label for="checkbox23">上午 (06:00 - 12:00)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox24" type="checkBox">
+                                    <label for="checkbox24">下午 (12:00 - 18:00)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox25" type="checkBox">
+                                    <label for="checkbox25">晚上 (18:00 - 24:00)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="time_controls_group">
+                                    <label>自訂時間篩選</label>
+                                    <div class="controls">
+                                      <input class="timepickr" type="text"><span class="divide">-</span>
+                                      <input class="timepickr" type="text">
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="item active"><a class="item_title" href="javascript:;"> 到達時間</a>
+                            <div class="item_content">
+                              <ul>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox26" type="checkBox">
+                                    <label for="checkbox26">凌晨 (00:00 - 06:00)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox27" type="checkBox">
+                                    <label for="checkbox27">上午 (06:00 - 12:00)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox28" type="checkBox">
+                                    <label for="checkbox28">下午 (12:00 - 18:00)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox29" type="checkBox">
+                                    <label for="checkbox29">晚上 (18:00 - 24:00)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="time_controls_group">
+                                    <label>自訂時間篩選</label>
+                                    <div class="controls">
+                                      <input class="timepickr" type="text"><span class="divide">-</span>
+                                      <input class="timepickr" type="text">
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="item active"><a class="item_title" href="javascript:;">出發機場</a>
+                            <div class="item_content">
+                              <ul>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox30" type="checkBox">
+                                    <label for="checkbox30">曼谷機場(BKK)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox31" type="checkBox">
+                                    <label for="checkbox31">清邁機場(CNX)</label>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="item active"><a class="item_title" href="javascript:;">到達機場</a>
+                            <div class="item_content">
+                              <ul>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox32" type="checkBox">
+                                    <label for="checkbox32">桃園機場(TPE)</label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="checkbox_wrapper">
+                                    <input id="checkbox33" type="checkBox">
+                                    <label for="checkbox33">松山機場(TSA)</label>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="item active"><a class="item_title" href="javascript:;">行程時數</a>
+                            <div class="item_content">
+                              <div class="range_bar range_time_bar">
+                                <div class="range_text"><span class="min">2</span>小時&nbsp;-&nbsp;<span class="max">12</span>小時</div>
+                                <input class="range_input" type="text" min="2" max="12" value="12" step="0.5">
+                                <div class="boundary"><span class="min">2</span><span class="max">12</span></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </aside>
+              <div class="containt">
+                <!--↓ 查無航班時 class 加 'active' ↓-->
+                <section class="error_bolck no_flights">
+                  <div class="error_bolck_inner"><img src="images/img_oops.png">
+                    <h2>很抱歉，查無航班...</h2>
+                    <p>請重新調整日期或其他搜尋條件</p>
+                    <p class="font_red"> <strong>放寬篩選條件</strong></p>
+                  </div>
+                </section>
+                <!--↑ 查無航班時 class 加 'active' ↑-->
+                <!--↓ 有航班與資料讀取完畢 class 加 'active' ↓-->
+                <section class="search_result_tickets price_seat_tickets active">
+                  <div class="ticket">
+                    <div class="ticket_column airline_column">
+                      <div class="airline_mark"><img src="images/airline_logo01.png">
+                        <div class="airline_title">長榮航空</div>
+                        <div class="airline_code">BR</div>
+                      </div>
+                    </div>
+                    <div class="ticket_column price_column">
+                      <div class="price_tags">
+                        <div class="tag">直航最低價</div>
+                        <div class="tag">最短飛行時間</div>
+                        <div class="tag">最短飛行時間</div>
+                      </div>
+                      <div class="price_main">
+                        <div class="original_cost">TWD 12,000</div>
+                        <div class="discount">TWD 10,999</div>
+                        <abbr class="bonus_get tooltip" data-tooltip="
+                      <span class='font_green'>你知道嗎？</span>
+                      <br />
+                      <small>累計紅利3000元可以一次兌換現金</small>
+                    ">可得紅利20元？</abbr>
+                      </div>
+                      <div class="price_detail toggle_block"><a class="toggle_control" href="javascript:;">票價細節&nbsp;<i class="fas fa-chevron-circle-down"></i></a>
+                        <div class="toggle_content">
+                          <table>
+                            <tr>
+                              <th>成人</th>
+                              <th>TWD 8,000 x 2</th>
+                            </tr>
+                            <tr>
+                              <td>票價</td>
+                              <td>TWD 7,500</td>
+                            </tr>
+                            <tr>
+                              <td>稅金</td>
+                              <td>TWD 500</td>
+                            </tr>
+                            <tr>
+                              <th>小孩</th>
+                              <th>TWD 7,000 x 2</th>
+                            </tr>
+                            <tr>
+                              <td>票價</td>
+                              <td>TWD 6,500</td>
+                            </tr>
+                            <tr>
+                              <td>稅金</td>
+                              <td>TWD 500</td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="call_action"><a class="btn btn_primary" href="javascript:;" onClick="openDetail();">SELECT</a>
+                        <!--↓ 當有折扣的時候出現 class 加 'active' ↓-->
+                        <div class="discount_tag active">選我選我!有折扣</div>
+                        <!--↑ 當有折扣的時候出現 class 加 'active' ↑-->
+                        <a class="open_ticket_rule" href="javascript:;" onClick="openRule();">票規說明</a>
+                      </div>
+                    </div>
+                    <div class="ticket_column flight_column">
+                      <div class="flight_results">
+                        <div class="flight_result">
+                          <h3 class="result_title"><span>選擇去程</span><span>台北(TPE)</span><span>-</span><span>曼谷(BKK)</span></h3>
+                          <div class="result_items">
+                            <div class="result_item">
+                              <div class="result_radio">
+                                <div class="radio_wrapper">
+                                  <input id="radio01" type="radio" name="tickets01">
+                                  <label for="radio01">剩餘五位</label>
+                                </div>
+                              </div>
+                              <div class="flight_information">
+                                <div class="flight_time departure"><span class="time">03:00</span><span class="location">TPE</span></div>
+                                <div class="flight_time arrival"><span class="time">18:25<sup>+1</sup></span><span class="location">BKK</span></div>
+                                <div class="flight_process tooltip" data-tooltip="
+                              <div class='flight_process_tips'>
+                                <div class='tips_block'>
+                                  <h4 class='tips_title'>
+                                    航班 C19123
+                                    <span class='airline'>
+                                      <img src='images/airline_logo_s.png'/>
+                                      由華航營運
+                                    </span>
+                                  </h4>
+                                  <div class='class'>經濟艙(T)</div>
+                                  <table class='process_table'>
+                                    <tr>
+                                      <td>03:00</td>
+                                      <td>台北TPE</td>
+                                    </tr>
+                                    <tr>
+                                      <td>07:00</td>
+                                      <td>香港HKG</td>
+                                    </tr>
+                                    <tr class='stay'>
+                                      <td class='font_green'>停留時間</td>
+                                      <td class='font_green'>1小時35分鐘</td>
+                                    </tr>
+                                    <tr>
+                                      <td>07:30</td>
+                                      <td>香港HKG</td>
+                                    </tr>
+                                    <tr>
+                                      <td>08:30</td>
+                                      <td>新加坡SIN</td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <div class='tips_block transfer'>
+                                  <h5>過境簽證</h5>
+                                  <p>上海此航線中轉時需前往不同機場，需要您出示過境簽或者相關簽證資料，請確認無誤後再購票</p>
+                                </div>
+                                <div class='tips_block transfer'>
+                                  <h5>轉機 新加坡</h5>
+                                  <table>
+                                    <tr>
+                                      <td>中轉機場</td>
+                                      <td class='font_green'>從浦東機場T1到虹橋機場T1</td>
+                                    </tr>
+                                    <tr>
+                                      <td class='font_green'>停留時間</td>
+                                      <td class='font_green'>7小時25分鍾</td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <div class='tips_block'>
+                                  <h4 class='tips_title'>
+                                    航班 C19123
+                                    <span class='airline'>
+                                      <img src='images/airline_logo_s.png'/>
+                                      由華航營運
+                                    </span>
+                                  </h4>
+                                  <div class='class'>經濟艙(T)</div>
+                                  <table class='process_table'>
+                                    <tr>
+                                      <td>12:30<sup>+1</sup></td>
+                                      <td>新加坡SIN</td>
+                                    </tr>
+                                    <tr>
+                                      <td>18:25</td>
+                                      <td>曼谷BKK</td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                            ">
+                                  
+                                  <img class="process_arrow" src="images/img_course_arrow.png">
+                                  <div class="process_items">
+                                    <div class="item">
+                                      <div class="status_dot pause"></div>
+                                      <div class="item_top"><img src="images/airline_logo_s.png"><span>中停</span></div>
+                                      <div class="item_bottom"><span>新加坡SIN</span></div>
+                                    </div>
+                                    <div class="item">
+                                      <div class="status_dot transfer"></div>
+                                      <div class="item_top"><img src="images/airline_logo_s2.png"><span>轉機</span></div>
+                                      <div class="item_bottom"><span>新加坡SIN</span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="flight_hours">8小時40分鐘</div>
+                              </div>
+                            </div>
+                            <div class="result_item">
+                              <div class="result_radio">
+                                <div class="radio_wrapper">
+                                  <input id="radio02" type="radio" name="tickets01">
+                                  <label for="radio02"></label>
+                                </div>
+                              </div>
+                              <div class="flight_information">
+                                <div class="flight_time departure"><span class="time">03:00</span><span class="location">TPE</span></div>
+                                <div class="flight_time arrival"><span class="time">18:25</span><span class="location">BKK</span></div>
+                                <div class="flight_process tooltip" data-tooltip="
+                              <div class='flight_process_tips'>
+                                <div class='tips_block'>
+                                  <h4 class='tips_title'>
+                                    航班 C19123
+                                    <span class='airline'>
+                                      <img src='images/airline_logo_s.png'/>
+                                      由華航營運
+                                    </span>
+                                  </h4>
+                                </div>
+                              </div>
+                            ">
+                                  
+                                  <img class="process_arrow" src="images/img_course_arrow.png">
+                                  <div class="process_items">
+                                    <div class="item">
+                                      <div class="status_dot pause"></div>
+                                      <div class="item_top"><img src="images/airline_logo_s.png"><span>中停</span></div>
+                                      <div class="item_bottom"><span>新加坡SIN</span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="flight_hours">8小時40分鐘</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flight_result">
+                          <h3 class="result_title"><span>選擇回程</span><span>曼谷(BKK)</span><span>-</span><span>台北(TPE)</span></h3>
+                          <div class="result_items">
+                            <div class="result_item">
+                              <div class="result_radio">
+                                <div class="radio_wrapper">
+                                  <input id="radio03" type="radio" name="tickets02">
+                                  <label for="radio03">剩餘五位</label>
+                                </div>
+                              </div>
+                              <div class="flight_information">
+                                <div class="flight_time departure"><span class="time">03:00</span><span class="location">TPE</span></div>
+                                <div class="flight_time arrival"><span class="time">18:25<sup>+1</sup></span><span class="location">BKK</span></div>
+                                <div class="flight_process tooltip" data-tooltip="
+                              <div class='flight_process_tips'>
+                                <div class='tips_block'>
+                                  <h4 class='tips_title'>
+                                    航班 C19123
+                                    <span class='airline'>
+                                      <img src='images/airline_logo_s.png'/>
+                                      由華航營運
+                                    </span>
+                                  </h4>
+                                  <div class='class'>經濟艙(T)</div>
+                                  <table class='process_table'>
+                                    <tr>
+                                      <td>03:00</td>
+                                      <td>台北TPE</td>
+                                    </tr>
+                                    <tr>
+                                      <td>07:00</td>
+                                      <td>香港HKG</td>
+                                    </tr>
+                                    <tr class='stay'>
+                                      <td class='font_green'>停留時間</td>
+                                      <td class='font_green'>1小時35分鐘</td>
+                                    </tr>
+                                    <tr>
+                                      <td>07:30</td>
+                                      <td>香港HKG</td>
+                                    </tr>
+                                    <tr>
+                                      <td>08:30</td>
+                                      <td>新加坡SIN</td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <div class='tips_block transfer'>
+                                  <h5>過境簽證</h5>
+                                  <p>上海此航線中轉時需前往不同機場，需要您出示過境簽或者相關簽證資料，請確認無誤後再購票</p>
+                                </div>
+                                <div class='tips_block transfer'>
+                                  <h5>轉機 新加坡</h5>
+                                  <table>
+                                    <tr>
+                                      <td>中轉機場</td>
+                                      <td class='font_green'>從浦東機場T1到虹橋機場T1</td>
+                                    </tr>
+                                    <tr>
+                                      <td class='font_green'>停留時間</td>
+                                      <td class='font_green'>7小時25分鍾</td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <div class='tips_block'>
+                                  <h4 class='tips_title'>
+                                    航班 C19123
+                                    <span class='airline'>
+                                      <img src='images/airline_logo_s.png'/>
+                                      由華航營運
+                                    </span>
+                                  </h4>
+                                  <div class='class'>經濟艙(T)</div>
+                                  <table class='process_table'>
+                                    <tr>
+                                      <td>12:30<sup>+1</sup></td>
+                                      <td>新加坡SIN</td>
+                                    </tr>
+                                    <tr>
+                                      <td>18:25</td>
+                                      <td>曼谷BKK</td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                            ">
+                                  
+                                  <img class="process_arrow" src="images/img_course_arrow.png">
+                                  <div class="process_items">
+                                    <div class="item">
+                                      <div class="status_dot pause"></div>
+                                      <div class="item_top"><img src="images/airline_logo_s.png"><span>中停</span></div>
+                                      <div class="item_bottom"><span>新加坡SIN</span></div>
+                                    </div>
+                                    <div class="item">
+                                      <div class="status_dot transfer"></div>
+                                      <div class="item_top"><img src="images/airline_logo_s2.png"><span>轉機</span></div>
+                                      <div class="item_bottom"><span>新加坡SIN</span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="flight_hours">8小時40分鐘</div>
+                              </div>
+                            </div>
+                            <div class="result_item">
+                              <div class="result_radio">
+                                <div class="radio_wrapper">
+                                  <input id="radio04" type="radio" name="tickets02">
+                                  <label for="radio04"></label>
+                                </div>
+                              </div>
+                              <div class="flight_information">
+                                <div class="flight_time departure"><span class="time">03:00</span><span class="location">TPE</span></div>
+                                <div class="flight_time arrival"><span class="time">18:25</span><span class="location">BKK</span></div>
+                                <div class="flight_process tooltip" data-tooltip="
+                              <div class='flight_process_tips'>
+                                <div class='tips_block'>
+                                  <h4 class='tips_title'>
+                                    航班 C19123
+                                    <span class='airline'>
+                                      <img src='images/airline_logo_s.png'/>
+                                      由華航營運
+                                    </span>
+                                  </h4>
+                                </div>
+                              </div>
+                            ">
+                                  
+                                  <img class="process_arrow" src="images/img_course_arrow.png">
+                                  <div class="process_items">
+                                    <div class="item">
+                                      <div class="item_top"><img src="images/airline_logo_s.png"><span>直飛</span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="flight_hours">8小時40分鐘</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="call_action"><a class="btn btn_primary" href="javascript:;" onClick="openDetail();">SELECT</a>
+                        <!--↓ 當有折扣的時候出現 class 加 'active' ↓-->
+                        <div class="discount_tag active">選我選我!有折扣</div>
+                        <!--↑ 當有折扣的時候出現 class 加 'active' ↑-->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ticket">
+                    <div class="ticket_column airline_column">
+                      <div class="airline_mark"><img src="images/airline_logo01.png">
+                        <div class="airline_title">長榮航空</div>
+                        <div class="airline_code">BR</div>
+                      </div>
+                    </div>
+                    <div class="ticket_column price_column">
+                      <div class="price_tags">
+                        <div class="tag">直航最低價</div>
+                        <div class="tag">最短飛行時間</div>
+                        <div class="tag">最短飛行時間</div>
+                      </div>
+                      <div class="price_main">
+                        <div class="original_cost">TWD 12,000</div>
+                        <div class="discount">TWD 10,999</div>
+                        <abbr class="bonus_get tooltip" data-tooltip="
+                      <span class='font_green'>你知道嗎？</span>
+                      <br />
+                      <small>累計紅利3000元可以一次兌換現金</small>
+                    ">可得紅利20元？</abbr>
+                      </div>
+                      <div class="price_detail toggle_block"><a class="toggle_control" href="javascript:;">票價細節&nbsp;<i class="fas fa-chevron-circle-down"></i></a>
+                        <div class="toggle_content">
+                          <table>
+                            <tr>
+                              <th>成人</th>
+                              <th>TWD 8,000 x 2</th>
+                            </tr>
+                            <tr>
+                              <td>票價</td>
+                              <td>TWD 7,500</td>
+                            </tr>
+                            <tr>
+                              <td>稅金</td>
+                              <td>TWD 500</td>
+                            </tr>
+                            <tr>
+                              <th>小孩</th>
+                              <th>TWD 7,000 x 2</th>
+                            </tr>
+                            <tr>
+                              <td>票價</td>
+                              <td>TWD 6,500</td>
+                            </tr>
+                            <tr>
+                              <td>稅金</td>
+                              <td>TWD 500</td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="call_action"><a class="btn btn_primary" href="javascript:;" onClick="openDetail();">SELECT</a>
+                        <!--↓ 當有折扣的時候出現 class 加 'active' ↓-->
+                        <div class="discount_tag active">選我選我!有折扣</div>
+                        <!--↑ 當有折扣的時候出現 class 加 'active' ↑-->
+                        <a class="open_ticket_rule" href="javascript:;" onClick="openRule();">票規說明</a>
+                      </div>
+                    </div>
+                    <div class="ticket_column flight_column">
+                      <div class="flight_results">
+                        <div class="flight_result">
+                          <h3 class="result_title"><span>選擇去程</span><span>台北(TPE)</span><span>-</span><span>曼谷(BKK)</span></h3>
+                          <div class="result_items">
+                            <div class="result_item">
+                              <div class="result_radio">
+                                <div class="radio_wrapper">
+                                  <input id="radio01" type="radio" name="tickets01">
+                                  <label for="radio01">剩餘五位</label>
+                                </div>
+                              </div>
+                              <div class="flight_information">
+                                <div class="flight_time departure"><span class="time">03:00</span><span class="location">TPE</span></div>
+                                <div class="flight_time arrival"><span class="time">18:25<sup>+1</sup></span><span class="location">BKK</span></div>
+                                <div class="flight_process tooltip" data-tooltip="
+                              <div class='flight_process_tips'>
+                                <div class='tips_block'>
+                                  <h4 class='tips_title'>
+                                    航班 C19123
+                                    <span class='airline'>
+                                      <img src='images/airline_logo_s.png'/>
+                                      由華航營運
+                                    </span>
+                                  </h4>
+                                  <div class='class'>經濟艙(T)</div>
+                                  <table class='process_table'>
+                                    <tr>
+                                      <td>03:00</td>
+                                      <td>台北TPE</td>
+                                    </tr>
+                                    <tr>
+                                      <td>07:00</td>
+                                      <td>香港HKG</td>
+                                    </tr>
+                                    <tr class='stay'>
+                                      <td class='font_green'>停留時間</td>
+                                      <td class='font_green'>1小時35分鐘</td>
+                                    </tr>
+                                    <tr>
+                                      <td>07:30</td>
+                                      <td>香港HKG</td>
+                                    </tr>
+                                    <tr>
+                                      <td>08:30</td>
+                                      <td>新加坡SIN</td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <div class='tips_block transfer'>
+                                  <h5>過境簽證</h5>
+                                  <p>上海此航線中轉時需前往不同機場，需要您出示過境簽或者相關簽證資料，請確認無誤後再購票</p>
+                                </div>
+                                <div class='tips_block transfer'>
+                                  <h5>轉機 新加坡</h5>
+                                  <table>
+                                    <tr>
+                                      <td>中轉機場</td>
+                                      <td class='font_green'>從浦東機場T1到虹橋機場T1</td>
+                                    </tr>
+                                    <tr>
+                                      <td class='font_green'>停留時間</td>
+                                      <td class='font_green'>7小時25分鍾</td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <div class='tips_block'>
+                                  <h4 class='tips_title'>
+                                    航班 C19123
+                                    <span class='airline'>
+                                      <img src='images/airline_logo_s.png'/>
+                                      由華航營運
+                                    </span>
+                                  </h4>
+                                  <div class='class'>經濟艙(T)</div>
+                                  <table class='process_table'>
+                                    <tr>
+                                      <td>12:30<sup>+1</sup></td>
+                                      <td>新加坡SIN</td>
+                                    </tr>
+                                    <tr>
+                                      <td>18:25</td>
+                                      <td>曼谷BKK</td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                            ">
+                                  
+                                  <img class="process_arrow" src="images/img_course_arrow.png">
+                                  <div class="process_items">
+                                    <div class="item">
+                                      <div class="status_dot pause"></div>
+                                      <div class="item_top"><img src="images/airline_logo_s.png"><span>中停</span></div>
+                                      <div class="item_bottom"><span>新加坡SIN</span></div>
+                                    </div>
+                                    <div class="item">
+                                      <div class="status_dot transfer"></div>
+                                      <div class="item_top"><img src="images/airline_logo_s2.png"><span>轉機</span></div>
+                                      <div class="item_bottom"><span>新加坡SIN</span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="flight_hours">8小時40分鐘</div>
+                              </div>
+                            </div>
+                            <div class="result_item">
+                              <div class="result_radio">
+                                <div class="radio_wrapper">
+                                  <input id="radio02" type="radio" name="tickets01">
+                                  <label for="radio02"></label>
+                                </div>
+                              </div>
+                              <div class="flight_information">
+                                <div class="flight_time departure"><span class="time">03:00</span><span class="location">TPE</span></div>
+                                <div class="flight_time arrival"><span class="time">18:25</span><span class="location">BKK</span></div>
+                                <div class="flight_process tooltip" data-tooltip="
+                              <div class='flight_process_tips'>
+                                <div class='tips_block'>
+                                  <h4 class='tips_title'>
+                                    航班 C19123
+                                    <span class='airline'>
+                                      <img src='images/airline_logo_s.png'/>
+                                      由華航營運
+                                    </span>
+                                  </h4>
+                                </div>
+                              </div>
+                            ">
+                                  
+                                  <img class="process_arrow" src="images/img_course_arrow.png">
+                                  <div class="process_items">
+                                    <div class="item">
+                                      <div class="status_dot pause"></div>
+                                      <div class="item_top"><img src="images/airline_logo_s.png"><span>中停</span></div>
+                                      <div class="item_bottom"><span>新加坡SIN</span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="flight_hours">8小時40分鐘</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flight_result">
+                          <h3 class="result_title"><span>選擇回程</span><span>曼谷(BKK)</span><span>-</span><span>台北(TPE)</span></h3>
+                          <div class="result_items">
+                            <div class="result_item">
+                              <div class="result_radio">
+                                <div class="radio_wrapper">
+                                  <input id="radio03" type="radio" name="tickets02">
+                                  <label for="radio03">剩餘五位</label>
+                                </div>
+                              </div>
+                              <div class="flight_information">
+                                <div class="flight_time departure"><span class="time">03:00</span><span class="location">TPE</span></div>
+                                <div class="flight_time arrival"><span class="time">18:25<sup>+1</sup></span><span class="location">BKK</span></div>
+                                <div class="flight_process tooltip" data-tooltip="
+                              <div class='flight_process_tips'>
+                                <div class='tips_block'>
+                                  <h4 class='tips_title'>
+                                    航班 C19123
+                                    <span class='airline'>
+                                      <img src='images/airline_logo_s.png'/>
+                                      由華航營運
+                                    </span>
+                                  </h4>
+                                  <div class='class'>經濟艙(T)</div>
+                                  <table class='process_table'>
+                                    <tr>
+                                      <td>03:00</td>
+                                      <td>台北TPE</td>
+                                    </tr>
+                                    <tr>
+                                      <td>07:00</td>
+                                      <td>香港HKG</td>
+                                    </tr>
+                                    <tr class='stay'>
+                                      <td class='font_green'>停留時間</td>
+                                      <td class='font_green'>1小時35分鐘</td>
+                                    </tr>
+                                    <tr>
+                                      <td>07:30</td>
+                                      <td>香港HKG</td>
+                                    </tr>
+                                    <tr>
+                                      <td>08:30</td>
+                                      <td>新加坡SIN</td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <div class='tips_block transfer'>
+                                  <h5>過境簽證</h5>
+                                  <p>上海此航線中轉時需前往不同機場，需要您出示過境簽或者相關簽證資料，請確認無誤後再購票</p>
+                                </div>
+                                <div class='tips_block transfer'>
+                                  <h5>轉機 新加坡</h5>
+                                  <table>
+                                    <tr>
+                                      <td>中轉機場</td>
+                                      <td class='font_green'>從浦東機場T1到虹橋機場T1</td>
+                                    </tr>
+                                    <tr>
+                                      <td class='font_green'>停留時間</td>
+                                      <td class='font_green'>7小時25分鍾</td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <div class='tips_block'>
+                                  <h4 class='tips_title'>
+                                    航班 C19123
+                                    <span class='airline'>
+                                      <img src='images/airline_logo_s.png'/>
+                                      由華航營運
+                                    </span>
+                                  </h4>
+                                  <div class='class'>經濟艙(T)</div>
+                                  <table class='process_table'>
+                                    <tr>
+                                      <td>12:30<sup>+1</sup></td>
+                                      <td>新加坡SIN</td>
+                                    </tr>
+                                    <tr>
+                                      <td>18:25</td>
+                                      <td>曼谷BKK</td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                            ">
+                                  
+                                  <img class="process_arrow" src="images/img_course_arrow.png">
+                                  <div class="process_items">
+                                    <div class="item">
+                                      <div class="status_dot pause"></div>
+                                      <div class="item_top"><img src="images/airline_logo_s.png"><span>中停</span></div>
+                                      <div class="item_bottom"><span>新加坡SIN</span></div>
+                                    </div>
+                                    <div class="item">
+                                      <div class="status_dot transfer"></div>
+                                      <div class="item_top"><img src="images/airline_logo_s2.png"><span>轉機</span></div>
+                                      <div class="item_bottom"><span>新加坡SIN</span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="flight_hours">8小時40分鐘</div>
+                              </div>
+                            </div>
+                            <div class="result_item">
+                              <div class="result_radio">
+                                <div class="radio_wrapper">
+                                  <input id="radio04" type="radio" name="tickets02">
+                                  <label for="radio04"></label>
+                                </div>
+                              </div>
+                              <div class="flight_information">
+                                <div class="flight_time departure"><span class="time">03:00</span><span class="location">TPE</span></div>
+                                <div class="flight_time arrival"><span class="time">18:25</span><span class="location">BKK</span></div>
+                                <div class="flight_process tooltip" data-tooltip="
+                              <div class='flight_process_tips'>
+                                <div class='tips_block'>
+                                  <h4 class='tips_title'>
+                                    航班 C19123
+                                    <span class='airline'>
+                                      <img src='images/airline_logo_s.png'/>
+                                      由華航營運
+                                    </span>
+                                  </h4>
+                                </div>
+                              </div>
+                            ">
+                                  
+                                  <img class="process_arrow" src="images/img_course_arrow.png">
+                                  <div class="process_items">
+                                    <div class="item">
+                                      <div class="item_top"><img src="images/airline_logo_s.png"><span>直飛</span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="flight_hours">8小時40分鐘</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="call_action"><a class="btn btn_primary" href="javascript:;" onClick="openDetail();">SELECT</a>
+                        <!--↓ 當有折扣的時候出現 class 加 'active' ↓-->
+                        <div class="discount_tag active">選我選我!有折扣</div>
+                        <!--↑ 當有折扣的時候出現 class 加 'active' ↑-->
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <!--↑ 有航班與資料讀取完畢 class 加 'active' ↑-->
+                <!--↓ 讀取資料或是載入資料時 class 加 'active' ↓-->
+                <section class="loading">
+                  <div class="loading_mark"><img src="images/img_loading.png"><span>Loading</span></div>
+                </section>
+                <!--↑ 讀取資料或是載入資料時 class 加 'active' ↑-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--↑ 資料 Loading、連線無錯誤時加 'active' ↑-->
+      </main>
+      <footer id="footer">
+        <div class="footer_content">
+          <div class="footer_content_inner">
+            <nav class="footer_nav">
+              <h2>聯達旅行社股份有限公司 Leader Express</h2>
+              <ul>
+                <li><a href="about.html" title="關於我們">關於我們</a></li>
+                <li><a href="privacy_policy.html" title="隱私權政策">隱私權政策</a></li>
+                <li><a href="faq.html" title="FAQ">FAQ</a></li>
+              </ul>
+            </nav>
+            <div class="footer_information">
+              <div class="line_qrcode"><img src="images/qrcode_line.png" alt="line QRcode"><a href="https://line.me/R/ti/p/MFgn6evqgo" target="_blank">Line @line12345</a></div>
+              <div class="contact_info">
+                <div class="item">
+                  <h3>台北服務中心</h3>
+                  <p>地址：<a href="https://goo.gl/maps/DN4MeWzB1uJ2" target="_blank">(104)台北市中山區長安東路2段81號7樓</a><br>
+                    電話：<a href="tel:0225070707">(02)25070707</a>　傳真：(02)25070101
+                  </p>
+                </div>
+                <div class="item">
+                  <h3>台中客服中心</h3>
+                  <p>地址：<a href="https://goo.gl/maps/A23J7TZrGcL2" target="_blank">(403)台中市西區梅川西路1段75號1樓</a><br>
+                    電話：<a href="tel:0423051087">(04)23051087</a>　傳真：(04)23050346
+                  </p>
+                </div>
+              </div>
+              <div class="service_info">
+                <p>每週一至週五　09：00 ~18：00<br>
+                  假日服務：合約企業/廠商　請撥打指定專線<br>
+                  代表人：劉芳蘭　網站服務：劉芳蘭
+                </p>
+                <ul>
+                  <li>交觀甲字0306號</li>
+                  <li>旅行品質保障協會北字第0222號</li>
+                  <li>國際航空運送協會(IATA)公認代理店</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">© 2017-2018  LEADEREX All rights reserved.<br>
+          Use of this website indicates your compliance with our Terms of Use and Privacy Policy.
+          
+        </div>
+      </footer>
+    </div><a id="backTop" href="javascript:;"><img class="desktop" src="images/btn_backTop_desktop.png" alt="Back Top"><img class="mobile" src="images/btn_backTop_mobile.png" alt="Back Top"></a>
+    <div class="sidebar" id="sidebar">
+      <div class="sb_mask"></div><a class="btn_close" href="javascript:;"><i class="fas fa-times"></i></a>
+      <div class="language_chose select_wrapper">
+        <select>
+          <option>繁體中文</option>
+          <option>English</option>
+        </select>
+      </div>
+      <!--↓ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↓-->
+      <nav>
+        <ul>
+          <li><a href="member_order_willLeave.html" title="訂單管理">訂單管理
+              <!--↓ 有資料才會出現 ↓-->
+              <span class="count">1</span>
+              <!--↑ 有資料才會出現 ↑--></a></li>
+          <li><a href="member_tracking_list.html" title="追蹤清單">追蹤清單
+              <!--↓ 有資料才會出現 ↓-->
+              <span class="count">1</span>
+              <!--↑ 有資料才會出現 ↑--></a></li>
+        </ul>
+      </nav>
+      <!--↑ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↑-->
+    </div>
+    <!--↓ 手機使用的篩選 ↓-->
+    <div class="sidebar" id="filterSidebar">
+      <div class="sb_mask"></div><a class="btn_close" href="javascript:;"><i class="fas fa-times"></i></a>
+      <div class="filter">
+        <div class="filter_title">
+          <h2>進階篩選</h2>
+          <button class="btn btn_filter_clear removeall" type="button">清除條件</button>
+        </div>
+        <div class="filter_items">
+          <div class="item active"><a class="item_title" href="javascript:;">艙等</a>
+            <div class="item_content">
+              <ul>
+                <li>
+                  <div class="checkbox_wrapper">
+                    <input id="checkbox01_sb" type="checkBox">
+                    <label for="checkbox01_sb">經濟艙</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="checkbox_wrapper">
+                    <input id="checkbox02_sb" type="checkBox">
+                    <label for="checkbox02_sb">豪華經濟艙</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="checkbox_wrapper">
+                    <input id="checkbox03_sb" type="checkBox">
+                    <label for="checkbox03_sb">商務艙</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="item active"><a class="item_title" href="javascript:;">轉機/直飛</a>
+            <div class="item_content">
+              <ul>
+                <li>
+                  <div class="checkbox_wrapper">
+                    <input id="checkbox04_sb" type="checkBox">
+                    <label for="checkbox04_sb">直飛</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="checkbox_wrapper">
+                    <input id="checkbox05_sb" type="checkBox">
+                    <label for="checkbox05_sb">中停</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="checkbox_wrapper">
+                    <input id="checkbox06_sb" type="checkBox">
+                    <label for="checkbox06_sb">轉機</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="item active"><a class="item_title" href="javascript:;">航空公司</a>
+            <div class="item_content">
+              <ul>
+                <li>
+                  <div class="checkbox_wrapper">
+                    <input id="checkbox07_sb" type="checkBox">
+                    <label for="checkbox07_sb">中華航空</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="checkbox_wrapper">
+                    <input id="checkbox08_sb" type="checkBox">
+                    <label for="checkbox08_sb">長榮航空</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="checkbox_wrapper">
+                    <input id="checkbox09_sb" type="checkBox">
+                    <label for="checkbox09_sb">國泰航空</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="item active"><a class="item_title" href="javascript:;">價格</a>
+            <div class="item_content">
+              <div class="range_bar range_price_bar">
+                <div class="range_text"><span class="min">5000</span>元&nbsp;-&nbsp;<span class="max">28000</span>元</div>
+                <input class="range_input" type="text" min="5000" max="28000" value="5000, 28000">
+                <div class="boundary"><span class="min">5000</span><span class="max">28000</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="filter_tabber tabber_wrapper">
+          <div class="tabber-selectors">
+            <ul>
+              <li><a class="tabber-anchor active" href="javascript:;">TPE-BKK</a></li>
+              <li><a class="tabber-anchor" href="javascript:;">BKK-TPE</a></li>
+            </ul>
+          </div>
+          <div class="tabber-contents">
+            <div class="tabber-content active">
+              <div class="filter_items">
+                <div class="item active"><a class="item_title" href="javascript:;">出發時間</a>
+                  <div class="item_content">
+                    <ul>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox10_sb" type="checkBox">
+                          <label for="checkbox10_sb">凌晨 (00:00 - 06:00)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox11_sb" type="checkBox">
+                          <label for="checkbox11_sb">上午 (06:00 - 12:00)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox12_sb" type="checkBox">
+                          <label for="checkbox12_sb">下午 (12:00 - 18:00)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox13_sb" type="checkBox">
+                          <label for="checkbox13_sb">晚上 (18:00 - 24:00)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="time_controls_group">
+                          <label>自訂時間篩選</label>
+                          <div class="controls">
+                            <input class="timepickr" type="text"><span class="divide">-</span>
+                            <input class="timepickr" type="text">
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="item active"><a class="item_title" href="javascript:;"> 到達時間</a>
+                  <div class="item_content">
+                    <ul>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox14_sb" type="checkBox">
+                          <label for="checkbox14_sb">凌晨 (00:00 - 06:00)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox15_sb" type="checkBox">
+                          <label for="checkbox15_sb">上午 (06:00 - 12:00)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox16_sb" type="checkBox">
+                          <label for="checkbox16_sb">下午 (12:00 - 18:00)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox17_sb" type="checkBox">
+                          <label for="checkbox17_sb">晚上 (18:00 - 24:00)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="time_controls_group">
+                          <label>自訂時間篩選</label>
+                          <div class="controls">
+                            <input class="timepickr" type="text"><span class="divide">-</span>
+                            <input class="timepickr" type="text">
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="item active"><a class="item_title" href="javascript:;">出發機場</a>
+                  <div class="item_content">
+                    <ul>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox18_sb" type="checkBox">
+                          <label for="checkbox18_sb">桃園機場(TPE)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox19_sb" type="checkBox">
+                          <label for="checkbox19_sb">松山機場(TSA)</label>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="item active"><a class="item_title" href="javascript:;">到達機場</a>
+                  <div class="item_content">
+                    <ul>
+                      <li>
+                        <div class="checkbox_wrapper control_close">
+                          <input id="checkbox20_sb" type="checkBox">
+                          <label for="checkbox20_sb">曼谷機場(BKK)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="checkbox_wrapper control_close">
+                          <input id="checkbox21_sb" type="checkBox">
+                          <label for="checkbox21_sb">清邁機場(CNX)</label>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="item active"><a class="item_title" href="javascript:;">行程時數</a>
+                  <div class="item_content">
+                    <div class="range_bar range_time_bar">
+                      <div class="range_text"><span class="min">2</span>小時&nbsp;-&nbsp;<span class="max">12</span>小時</div>
+                      <input class="range_input" type="text" min="2" max="12" value="12" step="0.5">
+                      <div class="boundary"><span class="min">2</span><span class="max">12</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tabber-content">
+              <div class="filter_items">
+                <div class="item active"><a class="item_title" href="javascript:;">出發時間</a>
+                  <div class="item_content">
+                    <ul>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox22_sb" type="checkBox">
+                          <label for="checkbox22_sb">凌晨 (00:00 - 06:00)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox23_sb" type="checkBox">
+                          <label for="checkbox23_sb">上午 (06:00 - 12:00)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox24_sb" type="checkBox">
+                          <label for="checkbox24_sb">下午 (12:00 - 18:00)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox25_sb" type="checkBox">
+                          <label for="checkbox25_sb">晚上 (18:00 - 24:00)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="time_controls_group">
+                          <label>自訂時間篩選</label>
+                          <div class="controls">
+                            <input class="timepickr" type="text"><span class="divide">-</span>
+                            <input class="timepickr" type="text">
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="item active"><a class="item_title" href="javascript:;"> 到達時間</a>
+                  <div class="item_content">
+                    <ul>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox26_sb" type="checkBox">
+                          <label for="checkbox26_sb">凌晨 (00:00 - 06:00)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox27_sb" type="checkBox">
+                          <label for="checkbox27_sb">上午 (06:00 - 12:00)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox28_sb" type="checkBox">
+                          <label for="checkbox28_sb">下午 (12:00 - 18:00)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox29_sb" type="checkBox">
+                          <label for="checkbox29_sb">晚上 (18:00 - 24:00)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="time_controls_group">
+                          <label>自訂時間篩選</label>
+                          <div class="controls">
+                            <input class="timepickr" type="text"><span class="divide">-</span>
+                            <input class="timepickr" type="text">
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="item active"><a class="item_title" href="javascript:;">出發機場</a>
+                  <div class="item_content">
+                    <ul>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox30_sb" type="checkBox">
+                          <label for="checkbox30_sb">曼谷機場(BKK)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox31_sb" type="checkBox">
+                          <label for="checkbox31_sb">清邁機場(CNX)</label>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="item active"><a class="item_title" href="javascript:;">到達機場</a>
+                  <div class="item_content">
+                    <ul>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox32_sb" type="checkBox">
+                          <label for="checkbox32_sb">桃園機場(TPE)</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="checkbox_wrapper">
+                          <input id="checkbox33_sb" type="checkBox">
+                          <label for="checkbox33_sb">松山機場(TSA)</label>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="item active"><a class="item_title" href="javascript:;">行程時數</a>
+                  <div class="item_content">
+                    <div class="range_bar range_time_bar">
+                      <div class="range_text"><span class="min">2</span>小時&nbsp;-&nbsp;<span class="max">12</span>小時</div>
+                      <input class="range_input" type="text" min="2" max="12" value="12" step="0.5">
+                      <div class="boundary"><span class="min">2</span><span class="max">12</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--↑ 手機使用的篩選 ↑-->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="scripts/vendor.js"></script>
+    <script src="scripts/plugins.js"></script>
+    <script src="scripts/main.js"></script>
+    <script>
+      // https://alertifyjs.com/
+      // 提醒登入
+      function pleassLogin() {
+        event.preventDefault();
+        alertify.alert("請先登入");
+      }
+      
+    </script>
+    <script src="scripts/dateInput_plugin.js"></script>
+    <script src="scripts/rangeBar.js"></script>
+    <script>
+      $(function() {
+        $('.dates_choose_bar .items').slick({
+          arrows: false,
+          initialSlide: 1,
+          slidesToShow: 7,
+          swipeToSlide: true,
+          infinite: false,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                arrows: false,
+                initialSlide: 2,
+                slidesToShow: 5
+              }
+            },
+            {
+              breakpoint: 560,
+              settings: {
+                arrows: false,
+                initialSlide: 3,
+                slidesToShow: 3
+              }
+            },
+            {
+              breakpoint: 400,
+              settings: {
+                arrows: false,
+                initialSlide: 4,
+                slidesToShow: 2
+              }
+            }
+          ]
+        });
+      
+        $('.timepickr').flatpickr({
+          disableMobile: true,
+          enableTime: true,
+          noCalendar: true,
+          dateFormat: "H:i",
+          time_24hr: true
+        });
+      
+        $('.range_price_bar').each(function() {
+          var rangeText = $(this).children('.range_text');
+          var rangeInput = $(this).children('.range_input');
+          
+          rangeInput.asRange({
+            range: true,
+            limit: true,
+            tip: false,
+            onChange: function(value) {
+              rangeText.find('.min').text(value[0]);
+              rangeText.find('.max').text(value[1]);
+            }
+          });
+        });
+      
+        $('.range_time_bar').each(function() {
+          var rangeText = $(this).children('.range_text');
+          var rangeInput = $(this).children('.range_input');
+      
+          rangeInput.asRange({
+            range: false,
+            limit: true,
+            tip: false,
+            onChange: function(value) {
+              rangeText.find('.max').text(value);
+            }
+          });
+        });
+      
+        $('.removeall').click(function(){
+          $('.filter input[type="checkbox"]').prop('checked', false);
+        });
+      });
+      
+      function openDetail() {
+        var popup_path = 'popup_tickets_detail.html';
+      
+        // 開啟詳細行程跳窗
+        // ajaxPopupOpen('路徑', '跳窗寬度', '要不要返回按鈕');
+        ajaxPopupOpen(popup_path, '1200px', true);
+      }
+      
+      function openRule() {
+        var popup_path = 'popup_tickets_rule.html';
+      
+        // 開啟詳細行程跳窗
+        // ajaxPopupOpen('路徑', '跳窗寬度', '要不要返回按鈕');
+        ajaxPopupOpen(popup_path, '950px', true);
+      }
+    </script>
+  </body>
+</html>

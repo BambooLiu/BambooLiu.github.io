@@ -1,0 +1,262 @@
+
+<div class="popup_block">
+  <div class="container aside_right_container tickets_detail">
+    <aside class="aside">
+      <div class="order_detail">
+        <!--↓ 抓資料時 class 加 'active' ↓-->
+        <div class="loading">
+          <div class="loading_mark"><img src="images/img_loading.png"/><span>Loading</span></div>
+        </div>
+        <!--↑ 抓資料時 class 加 'active' ↑-->
+        <!--↓ 抓完資料時 class 加 'active' ↓-->
+        <div class="order_detail_main active">
+          <h3 class="detail_title">訂單明細</h3>
+          <!--↓warn 為提示, 需要顯示時在 class 加入 'active'↓-->
+          <div class="warn">候補中<br/>
+            價格已開票為準
+          </div>
+          <!--↑warn 為提示, 需要顯示時在 class 加入 'active'↑-->
+          <div class="flight_info">
+            <div class="item">
+              <div class="journey">去</div>
+              <div class="text">
+                <div class="date">2017/07/20(四)</div>
+                <div class="location"><span class="cn">台北</span><span class="en">TPE</span> - <span class="cn">曼谷</span><span class="en">BKK</span></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="journey">回</div>
+              <div class="text">
+                <div class="date">2017/08/20(四)</div>
+                <div class="location"><span class="cn">曼谷</span><span class="en">BKK</span>-<span class="cn">台北</span><span class="en">TPE</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="price_detail">
+            <table class="price_table">
+              <tbody>
+                <tr>
+                  <th>成人</th>
+                  <th>TWD</th>
+                  <th>8,000 x 2</th>
+                </tr>
+                <tr>
+                  <td>票價</td>
+                  <td>TWD</td>
+                  <td>7,500</td>
+                </tr>
+                <tr>
+                  <td>稅金</td>
+                  <td>TWD</td>
+                  <td>500</td>
+                </tr>
+                <tr>
+                  <th>小孩</th>
+                  <th>TWD</th>
+                  <th>7,000 x 2</th>
+                </tr>
+                <tr>
+                  <td>票價</td>
+                  <td>TWD</td>
+                  <td>6,500</td>
+                </tr>
+                <tr>
+                  <td>稅金</td>
+                  <td>TWD</td>
+                  <td>500</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>小計</th>
+                  <th>TWD</th>
+                  <th>2,599,000</th>
+                </tr>
+                <tr>
+                  <td class="font_red">優惠代碼</td>
+                  <td class="font_red">TWD</td>
+                  <td class="font_red">-200</td>
+                </tr>
+                <tr>
+                  <td class="font_red">已使用20點紅利</td>
+                  <td class="font_red">TWD</td>
+                  <td class="font_red">-20</td>
+                </tr>
+              </tfoot>
+            </table>
+            <div class="total_amount">
+              <div class="total_title">訂單金額</div>
+              <div class="price">TWD 
+                <big>2,999,090</big>
+              </div>
+            </div>
+          </div>
+          <div class="call_action"><a class="btn btn_primary" href="fill_information.html">SELECT</a></div>
+        </div>
+        <!--↑ 抓完資料時 class 加 'active' ↑-->
+      </div>
+    </aside>
+    <div class="containt">
+      <h1 class="page_title">詳細行程</h1>
+      <section class="content_section flight_section">
+        <div class="content_title">
+          <h2>去程：2017/07/20 (四) 台北(TPE) - 曼谷(BKK)</h2>
+        </div>
+        <div class="content_block">
+          <div class="flight_brief">
+            <div class="airline_mark"><img src="images/airline_logo01.png"/>
+              <div class="airline_title">長榮航空＋印度尼西亞英航空公司</div>
+            </div>
+            <div class="flight_information">
+              <div class="flight_time departure"><span class="time">03:00</span><span class="location">TPE</span></div>
+              <div class="flight_time arrival"><span class="time">18:25<sup>+1</sup></span><span class="location">BKK</span></div>
+              <div class="flight_process"><img class="process_arrow" src="images/img_course_arrow.png"/>
+                <div class="process_items">
+                  <div class="item">
+                    <div class="status_dot transfer"></div>
+                    <div class="item_top"><span>轉機</span></div>
+                    <div class="item_bottom"><span>新加坡SIN</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="flight_hours">8小時40分鐘</div>
+            </div>
+          </div>
+          <div class="flight_info_detail toggle_block"><a class="toggle_control" href="javascript:;">隱藏航班詳細資訊&nbsp;<i class="fas fa-chevron-circle-down"></i></a>
+            <div class="toggle_content">
+              <div class="airline_mark"><img src="images/airline_logo01.png"/>
+                <div class="airline_title">BR 長榮航空</div>
+                <div class="airline_code">SH805</div>
+              </div>
+              <ul class="take_info">
+                <li>經濟艙: <span class="font_green">S</span> &nbsp; 機型: <span class="font_green">Airbus Industrie A330-300</span></li>
+                <li>行李: 每成人 <span class="font_green">25</span> 公斤, 每小孩 <span class="font_green">8</span> 公斤</li>
+              </ul>
+              <div class="time_info">
+                <div class="time_interval">
+                  <div class="total">3小時</div>
+                  <ul>
+                    <li>
+                      <div class="time">17:00</div>
+                      <div class="location">TPE 台北桃園 第一航站</div>
+                    </li>
+                    <li>
+                      <div class="time">18:00</div>
+                      <div class="location">HGK 香港 第一航站</div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="residence_time">中停30分鐘</div>
+                <div class="time_interval">
+                  <div class="total">2小時25分鐘</div>
+                  <ul>
+                    <li>
+                      <div class="time">21:00</div>
+                      <div class="location">HGK 香港 第一航站</div>
+                    </li>
+                    <li>
+                      <div class="time">23:25</div>
+                      <div class="location">BKK 泰國曼谷 第一航站</div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="residence_time">機場轉機4小時</div>
+              </div>
+              <div class="airline_mark"><img src="images/airline_logo01.png"/>
+                <div class="airline_title">BR 長榮航空</div>
+                <div class="airline_code">SH805</div>
+              </div>
+              <div class="airline_note">CI中華航空 SH805 由<img class="airline_logo" src="images/airline_logo_s.png"/>中國東方營運</div>
+              <div class="time_info">
+                <div class="time_interval">
+                  <div class="total">2小時25分鐘</div>
+                  <ul>
+                    <li>
+                      <div class="time">01:00<sup>+1</sup></div>
+                      <div class="location">HGK 香港 第一航站</div>
+                    </li>
+                    <li>
+                      <div class="time">03:25</div>
+                      <div class="location">BKK 泰國曼谷 第一航站</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content_foot">
+          <p class="attention"><i class="fas fa-info-circle"></i>請注意您抵達時間為 2017/07/21 (五)</p>
+          <p><i class="fas fa-clock"></i>旅行總時間: 5小時00分</p>
+        </div>
+      </section>
+      <section class="content_section flight_section">
+        <div class="content_title">
+          <h2>回程：2017/07/20 (四) 台北(TPE) - 曼谷(BKK)</h2>
+        </div>
+        <div class="content_block">
+          <div class="flight_brief">
+            <div class="airline_mark"><img src="images/airline_logo01.png"/>
+              <div class="airline_title">長榮航空</div>
+            </div>
+            <div class="flight_information">
+              <div class="flight_time departure"><span class="time">03:00</span><span class="location">TPE</span></div>
+              <div class="flight_time arrival"><span class="time">18:25</span><span class="location">BKK</span></div>
+              <div class="flight_process"><img class="process_arrow" src="images/img_course_arrow.png"/>
+                <div class="process_items">
+                  <div class="item">
+                    <div class="item_top"><span>直飛</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="flight_hours">8小時40分鐘</div>
+            </div>
+          </div>
+          <div class="flight_info_detail toggle_block"><a class="toggle_control" href="javascript:;">隱藏航班詳細資訊&nbsp;<i class="fas fa-chevron-circle-down"></i></a>
+            <div class="toggle_content">
+              <div class="airline_mark"><img src="images/airline_logo01.png"/>
+                <div class="airline_title">BR 長榮航空</div>
+                <div class="airline_code">SH805</div>
+              </div>
+              <ul class="take_info">
+                <li>經濟艙: <span class="font_green">S</span> &nbsp; 機型: <span class="font_green">Airbus Industrie A330-300</span></li>
+                <li>行李: 每成人 <span class="font_green">25</span> 公斤, 每小孩 <span class="font_green">8</span> 公斤</li>
+              </ul>
+              <div class="time_info">
+                <div class="time_interval">
+                  <div class="total">3小時</div>
+                  <ul>
+                    <li>
+                      <div class="time">17:00</div>
+                      <div class="location">BKK 泰國曼谷 第一航站</div>
+                    </li>
+                    <li>
+                      <div class="time">20:00</div>
+                      <div class="location">TPE 台北桃園 第一航站</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content_foot">
+          <p class="attention"><i class="fas fa-info-circle"></i>您將從TPE出發，但回程目的地為TSA。<small>抵達時間為 2017/08/20 (日)</small></p>
+          <p><i class="fas fa-clock"></i>旅行總時間: 5小時00分</p>
+        </div>
+      </section>
+      <section class="content_section">
+        <div class="content_title">
+          <h2>票規</h2>
+        </div>
+        <div class="content_block">機票可以退款。若要<span class="font_green">取消行程</span>，需支付每張機票 NT$1,000 元的費用。<br/>
+          若要變更行程，每張機票需支付 NT$500 元的費用。<br/>
+          航空公司可能隨時變更班機時程與航廈。<br/>
+          您必須攜帶有效的旅行文件。<br/>
+          旅行前，您必須自行檢查是否已帶齊必備的旅行文件。
+        </div>
+      </section>
+      <div class="call_action"><a class="btn btn_primary" href="fill_information.html">SELECT</a></div>
+    </div>
+  </div>
+</div>

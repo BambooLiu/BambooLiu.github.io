@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LEADEREX</title>
+    <meta name="KeyWords" content="">
+    <meta name="Description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body id="BtoB"><!--[if lt IE 10]>
+    <div class="old_browser">
+      <div class="old_browser_inner">
+        <div class="oops">OOPS!</div>
+        <div class="oops_title">您的瀏覽器版本太舊了！</div>
+        <p>請更新至 Internet Explorer 10 以上版本或選用更現代化的瀏覽器，<br><br>使用老舊版本的瀏覽器瀏覽本網站將可能有無法預測的錯誤，請儘快更新。<br><br>建議您使用 <a href="http://www.google.com/chrome/" target="_blank">Google Chrome 瀏覽器</a><br><br></p>
+        <p>© 2017-2018  LEADEREX All rights reserved. </p>
+      </div>
+    </div><![endif]-->
+    <div id="wrapper">
+      <header id="header">
+        <div class="header_inner">
+          <div class="header_logo"><img class="retina" src="images/logo.png" alt="LeaderEX-Logo"></div>
+          <div class="header_nav">
+            <!--↓ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↓-->
+            <nav>
+              <ul>
+                <li><a href="member_order_willLeave.html" title="訂單管理">訂單管理
+                    <!--↓ 有資料才會出現 ↓-->
+                    <span class="count">1</span>
+                    <!--↑ 有資料才會出現 ↑--></a></li>
+                <li><a href="member_tracking_list.html" title="追蹤清單">追蹤清單
+                    <!--↓ 有資料才會出現 ↓-->
+                    <span class="count">1</span>
+                    <!--↑ 有資料才會出現 ↑--></a></li>
+              </ul>
+            </nav>
+            <!--↑ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↑-->
+            <!--↓ 登入後顯示 ↓-->
+            <div class="dropdown"><a class="dropdown_btn sub_open" href="javascript:;" title="會員相關"><i class="fas fa-th"></i></a>
+              <div class="dropdown_block">
+                <div class="dropdown_content">
+                  <div class="header_sub_items">
+                    <div class="item">
+                      <h4><a href="BtoB_boardingCertification_apply.html" title="搭機證明">
+                          <div class="icon"><i class="icon_paper"></i></div><span>搭機證明</span></a></h4>
+                    </div>
+                    <div class="item">
+                      <h4><a href="BtoB_member_company.html" title="會員中心">
+                          <div class="icon"><i class="fas fa-user"></i></div><span>會員中心</span></a></h4>
+                    </div>
+                    <div class="item">
+                      <h4><a href="BtoB_billing_order.html" title="開票下單">
+                          <div class="icon"><i class="icon_billing"></i></div><span>開票下單</span></a></h4>
+                    </div>
+                    <div class="item">
+                      <h4><a href="BtoB_obsolete_apply.html" title="作廢申請">
+                          <div class="icon"><i class="fas fa-file-alt"></i></div><span>作廢申請</span></a></h4>
+                    </div>
+                    <div class="item">
+                      <h4><a href="BtoB_refund_apply.html" title="退票申請">
+                          <div class="icon"><i class="icon_ticket_BtoB"></i></div><span>退票申請</span></a></h4>
+                    </div>
+                    <div class="item">
+                      <h4><a href="BtoB_change_apply.html" title="改票申請">
+                          <div class="icon"><i class="icon_ticket_single"></i></div><span>改票申請</span></a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><a class="user_mark" href="BtoB_member_company.html", title="會員中心">TC</a>
+<a class="logout" href="javascript:;" title="登出">登出</a>
+            <!--↑ 登入後顯示 ↑-->
+            <div class="language_chose select_wrapper">
+              <select>
+                <option>繁體中文</option>
+                <option>English</option>
+              </select>
+            </div><a id="btnMenu" href="javascript:;" title="Menu"><span></span></a>
+          </div>
+        </div>
+      </header>
+      <main id="main">
+        <div class="member_page">
+          <div class="member_container no_aside">
+            <div class="member_order_management">
+              <div class="management_title">
+                <div class="order_number">
+                  <h2>訂單編號</h2>
+                  <p class="title_text">ORD002212</p>
+                </div>
+                <div class="order_time">
+                  <h2>訂購時間</h2>
+                  <p class="title_text">2017/11/11 (二) 18:45</p>
+                </div>
+              </div>
+              <hr class="divide">
+              <div class="link_both_sides">
+                <div class="links"><a class="btn btn_primary" href="javascript:;" target="_blank">列印</a><a class="btn btn_primary" href="javascript:;">Email</a></div>
+                <div class="links"><a class="btn btn_step" href="BtoB_member_orderRefund.html">退票</a><a class="btn btn_choose popup_ajax" href="javascript:;" data-path="popup_customer_service.html" data-width="815px" data-backBtn="true">問問客服</a></div>
+              </div>
+              <div class="management_block">
+                <section class="management_flight_info">
+                  <div class="info_block">
+                    <ul class="trip_info">
+                      <li>台北(TPE) — 雅加達(CGK)</li>
+                      <li>2017/03/04 (四) — 2017/03/11 (四)</li>
+                      <li>來回 共7日 2成人1小孩</li>
+                    </ul>
+                  </div>
+                  <div class="info_block">
+                    <h4>訂位代號</h4>
+                    <p>AAAAAAAA</p><br>
+                    <h4>機票號碼</h4>
+                    <table class="ticket_number_table">
+                      <tr>
+                        <td>1234893782  AAA BBB CCC</td>
+                        <td width="98"><a class="btn btn_primary" href="BtoB_member_orderRefund.html">我要退票</a></td>
+                      </tr>
+                      <tr>
+                        <td>463839483  AAA BBB CCC</td>
+                        <td width="98"><a class="btn btn_primary" href="BtoB_member_orderRefund.html">我要退票</a></td>
+                      </tr>
+                    </table>
+                  </div>
+                </section>
+                <hr class="divide">
+                <section class="content_section flight_section">
+                  <div class="content_title">
+                    <h2>去程：2017/07/20 (四) 台北(TPE) - 曼谷(BKK)</h2>
+                  </div>
+                  <div class="content_block">
+                    <div class="flight_brief">
+                      <div class="airline_mark"><img src="images/airline_logo01.png">
+                        <div class="airline_title">長榮航空＋印度尼西亞英航空公司</div>
+                      </div>
+                      <div class="flight_information">
+                        <div class="flight_time departure"><span class="time">03:00</span><span class="location">TPE</span></div>
+                        <div class="flight_time arrival"><span class="time">18:25</span><span class="location">BKK</span></div>
+                        <div class="flight_process"><img class="process_arrow" src="images/img_course_arrow.png">
+                          <div class="process_items">
+                            <div class="item">
+                              <div class="status_dot transfer"></div>
+                              <div class="item_top"><span>轉機</span></div>
+                              <div class="item_bottom"><span>新加坡SIN</span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flight_hours">8小時40分鐘</div>
+                      </div>
+                    </div>
+                    <div class="flight_info_detail toggle_block"><a class="toggle_control" href="javascript:;">隱藏航班詳細資訊&nbsp;<i class="fas fa-chevron-circle-down"></i></a>
+                      <div class="toggle_content">
+                        <div class="airline_mark"><img src="images/airline_logo01.png">
+                          <div class="airline_title">BR 長榮航空</div>
+                          <div class="airline_code">SH805</div>
+                        </div>
+                        <ul class="take_info">
+                          <li>經濟艙: <span class="font_blue">S</span> &nbsp; 機型: <span class="font_blue">Airbus Industrie A330-300</span></li>
+                          <li>行李: 每成人 <span class="font_blue">25</span> 公斤, 每小孩 <span class="font_blue">8</span> 公斤</li>
+                        </ul>
+                        <div class="time_info">
+                          <div class="time_interval">
+                            <div class="total">3小時</div>
+                            <ul>
+                              <li>
+                                <div class="time">17:00</div>
+                                <div class="location">TPE 台北桃園 第一航站</div>
+                              </li>
+                              <li>
+                                <div class="time">18:00</div>
+                                <div class="location">HGK 香港 第一航站</div>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="residence_time">中停30分鐘</div>
+                          <div class="time_interval">
+                            <div class="total">2小時25分鐘</div>
+                            <ul>
+                              <li>
+                                <div class="time">21:00</div>
+                                <div class="location">HGK 香港 第一航站</div>
+                              </li>
+                              <li>
+                                <div class="time">23:25</div>
+                                <div class="location">BKK 泰國曼谷 第一航站</div>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="residence_time">機場轉機4小時</div>
+                        </div>
+                        <div class="airline_mark"><img src="images/airline_logo01.png">
+                          <div class="airline_title">BR 長榮航空</div>
+                          <div class="airline_code">SH805</div>
+                        </div>
+                        <div class="airline_note">CI中華航空 SH805 由<img class="airline_logo" src="images/airline_logo_s.png">中國東方營運</div>
+                        <div class="time_info">
+                          <div class="time_interval">
+                            <div class="total">2小時25分鐘</div>
+                            <ul>
+                              <li>
+                                <div class="time">01:00<sup>+1</sup></div>
+                                <div class="location">HGK 香港 第一航站</div>
+                              </li>
+                              <li>
+                                <div class="time">03:25</div>
+                                <div class="location">BKK 泰國曼谷 第一航站</div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content_foot">
+                    <p class="attention"><i class="fas fa-info-circle"></i>請注意您抵達時間為 2017/07/21 (五)</p>
+                    <p><i class="fas fa-clock"></i>旅行總時間: 5小時00分</p>
+                  </div>
+                </section>
+                <section class="content_section flight_section">
+                  <div class="content_title">
+                    <h2>回程：2017/07/20 (四) 台北(TPE) - 曼谷(BKK)</h2>
+                  </div>
+                  <div class="content_block">
+                    <div class="flight_brief">
+                      <div class="airline_mark"><img src="images/airline_logo01.png">
+                        <div class="airline_title">長榮航空</div>
+                      </div>
+                      <div class="flight_information">
+                        <div class="flight_time departure"><span class="time">03:00</span><span class="location">TPE</span></div>
+                        <div class="flight_time arrival"><span class="time">18:25</span><span class="location">BKK</span></div>
+                        <div class="flight_process"><img class="process_arrow" src="images/img_course_arrow.png">
+                          <div class="process_items">
+                            <div class="item">
+                              <div class="item_top"><span>直飛</span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flight_hours">8小時40分鐘</div>
+                      </div>
+                    </div>
+                    <div class="flight_info_detail toggle_block"><a class="toggle_control" href="javascript:;">隱藏航班詳細資訊&nbsp;<i class="fas fa-chevron-circle-down"></i></a>
+                      <div class="toggle_content">
+                        <div class="airline_mark"><img src="images/airline_logo01.png">
+                          <div class="airline_title">BR 長榮航空</div>
+                          <div class="airline_code">SH805</div>
+                        </div>
+                        <ul class="take_info">
+                          <li>經濟艙: <span class="font_blue">S</span> &nbsp; 機型: <span class="font_blue">Airbus Industrie A330-300</span></li>
+                          <li>行李: 每成人 <span class="font_blue">25</span> 公斤, 每小孩 <span class="font_blue">8</span> 公斤</li>
+                        </ul>
+                        <div class="time_info">
+                          <div class="time_interval">
+                            <div class="total">3小時</div>
+                            <ul>
+                              <li>
+                                <div class="time">17:00</div>
+                                <div class="location">BKK 泰國曼谷 第一航站</div>
+                              </li>
+                              <li>
+                                <div class="time">20:00</div>
+                                <div class="location">TPE 台北桃園 第一航站</div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content_foot">
+                    <p class="attention"><i class="fas fa-info-circle"></i>您將從TPE出發，但回程目的地為TSA。<small>抵達時間為 2017/08/20 (日)</small></p>
+                    <p><i class="fas fa-clock"></i>旅行總時間: 5小時00分</p>
+                  </div>
+                </section>
+                <section class="management_section">
+                  <div class="section_title">
+                    <h2>旅客</h2>
+                  </div>
+                  <div class="section_block">
+                    <table class="member_table">
+                      <thead>
+                        <tr>
+                          <td align="center">&nbsp;</td>
+                          <td>旅客</td>
+                          <td>票號</td>
+                          <td>特殊需求</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td data-title="排序" align="center">1</td>
+                          <td data-title="旅客">AA BB CCC 小姐</td>
+                          <td data-title="票號">1829383575</td>
+                          <td data-title="特殊要求">無</td>
+                        </tr>
+                        <tr>
+                          <td data-title="排序" align="center">2</td>
+                          <td data-title="旅客">EE GG FFF  先生</td>
+                          <td data-title="票號">0948038580</td>
+                          <td data-title="特殊要求">素食</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+                <hr class="divide">
+                <section class="management_section">
+                  <div class="section_title">
+                    <h2>付款詳情</h2>
+                  </div>
+                  <div class="section_block">
+                    <table class="price_table">
+                      <thead>
+                        <tr>
+                          <td colspan="3">價格摘要</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>成人</th>
+                          <th>TWD</th>
+                          <th>8,000 x 2</th>
+                        </tr>
+                        <tr>
+                          <td>票價</td>
+                          <td>TWD</td>
+                          <td>7,500</td>
+                        </tr>
+                        <tr>
+                          <td>稅金</td>
+                          <td>TWD</td>
+                          <td>500</td>
+                        </tr>
+                        <tr>
+                          <th>小孩</th>
+                          <th>TWD</th>
+                          <th>7,000 x 2</th>
+                        </tr>
+                        <tr>
+                          <td>票價</td>
+                          <td>TWD</td>
+                          <td>6,500</td>
+                        </tr>
+                        <tr>
+                          <td>稅金</td>
+                          <td>TWD</td>
+                          <td>500</td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>小計</th>
+                          <th>TWD</th>
+                          <th>2,599,000</th>
+                        </tr>
+                        <tr>
+                          <td class="font_red">優惠代碼</td>
+                          <td class="font_red">TWD</td>
+                          <td class="font_red">-200</td>
+                        </tr>
+                        <tr>
+                          <td class="font_red">已使用20點紅利</td>
+                          <td class="font_red">TWD</td>
+                          <td class="font_red">-20</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                    <div class="total_amount">
+                      <div class="total_title">訂單金額</div>
+                      <div class="price">TWD
+                        <big>2,999,090</big>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <hr class="divide">
+                <div class="payment_info">
+                  <div class="row">
+                    <div class="grid g_6_12">
+                      <section class="management_section">
+                        <div class="section_title">
+                          <h2>付款方式</h2>
+                        </div>
+                        <table class="common_table">
+                          <tr>
+                            <td>信用卡<br>一次付清</td>
+                            <td>VISA *** *** **** 1234</td>
+                          </tr>
+                          <tr>
+                            <td>信用卡分期</td>
+                            <td>6期0利率 TWD 9,999/期<br>(第1期 TWD 10,002)</td>
+                          </tr>
+                          <tr>
+                            <td>消費時間</td>
+                            <td>2017/08/16 下午06:16</td>
+                          </tr>
+                        </table>
+                      </section>
+                    </div>
+                    <div class="grid g_6_12">
+                      <section class="management_section">
+                        <div class="section_title">
+                          <h2>代收轉付收據</h2>
+                        </div>
+                        <table class="common_table">
+                          <tr>
+                            <td>處理方式</td>
+                            <td>郵寄</td>
+                          </tr>
+                          <tr>
+                            <td>統一編號</td>
+                            <td>1234906</td>
+                          </tr>
+                          <tr>
+                            <td>抬頭</td>
+                            <td>顆顆顆有限公司</td>
+                          </tr>
+                          <tr>
+                            <td>收件人</td>
+                            <td>陳小美</td>
+                          </tr>
+                          <tr>
+                            <td>寄送地址</td>
+                            <td>台北市大同區xx路xxx號x樓之2</td>
+                          </tr>
+                        </table>
+                      </section>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="grid g_6_12">
+                      <section class="management_section">
+                        <div class="section_title">
+                          <h2>訂單聯絡人</h2>
+                        </div>
+                        <table class="common_table">
+                          <tr>
+                            <td>姓名</td>
+                            <td>陳小美</td>
+                          </tr>
+                          <tr>
+                            <td>行動電話</td>
+                            <td>0912-938-068</td>
+                          </tr>
+                          <tr>
+                            <td>Email</td>
+                            <td>123@123.com</td>
+                          </tr>
+                        </table>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+                <section class="management_section">
+                  <div class="section_title">
+                    <h2>退票流程</h2>
+                  </div>
+                  <div class="section_block">
+                    <table class="member_table refund_process">
+                      <thead>
+                        <tr>
+                          <td>旅客</td>
+                          <td>票號</td>
+                          <td>狀態</td>
+                          <td>&nbsp;</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="refund_item">
+                          <td data-title="旅客">TAO YEN YU</td>
+                          <td data-title="票號">1829383575</td>
+                          <td data-title="狀態">已取消</td>
+                          <td data-title="退票詳細"><a class="font_blue toggle_control" href="javascript:;">退票詳細資料&nbsp;<i class="fas fa-chevron-circle-down"></i></a></td>
+                        </tr>
+                        <tr class="refund_detail">
+                          <td colspan="4">
+                            <div class="refund_detail_items">
+                              <div class="item">10/12 週六 已退款至 VISA39540494305 退款金額 18,000</div>
+                              <!--↓完成進度的在 item 的 class 加 'finished'↓-->
+                              <div class="item finished">10/10 週四 受理中</div>
+                              <div class="item finished">10/08 週二 申請中</div>
+                              <!--↑完成進度的在 item 的 class 加 'finished'↑-->
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer id="footer">
+        <div class="footer_content">
+          <div class="footer_content_inner">
+            <nav class="footer_nav">
+              <h2>聯達旅行社股份有限公司 Leader Express</h2>
+              <ul>
+                <li><a href="about.html" title="關於我們">關於我們</a></li>
+                <li><a href="privacy_policy.html" title="隱私權政策">隱私權政策</a></li>
+                <li><a href="faq.html" title="FAQ">FAQ</a></li>
+              </ul>
+            </nav>
+            <div class="footer_information">
+              <div class="line_qrcode"><img src="images/qrcode_line.png" alt="line QRcode"><a href="https://line.me/R/ti/p/MFgn6evqgo" target="_blank">Line @line12345</a></div>
+              <div class="contact_info">
+                <div class="item">
+                  <h3>台北服務中心</h3>
+                  <p>地址：<a href="https://goo.gl/maps/DN4MeWzB1uJ2" target="_blank">(104)台北市中山區長安東路2段81號7樓</a><br>
+                    電話：<a href="tel:0225070707">(02)25070707</a>　傳真：(02)25070101
+                  </p>
+                </div>
+                <div class="item">
+                  <h3>台中客服中心</h3>
+                  <p>地址：<a href="https://goo.gl/maps/A23J7TZrGcL2" target="_blank">(403)台中市西區梅川西路1段75號1樓</a><br>
+                    電話：<a href="tel:0423051087">(04)23051087</a>　傳真：(04)23050346
+                  </p>
+                </div>
+              </div>
+              <div class="service_info">
+                <p>每週一至週五　09：00 ~18：00<br>
+                  假日服務：合約企業/廠商　請撥打指定專線<br>
+                  代表人：劉芳蘭　網站服務：劉芳蘭
+                </p>
+                <ul>
+                  <li>交觀甲字0306號</li>
+                  <li>旅行品質保障協會北字第0222號</li>
+                  <li>國際航空運送協會(IATA)公認代理店</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">© 2017-2018  LEADEREX All rights reserved.<br>
+          Use of this website indicates your compliance with our Terms of Use and Privacy Policy.
+          
+        </div>
+      </footer>
+    </div><a id="backTop" href="javascript:;"><img class="desktop" src="images/btn_backTop_desktop.png" alt="Back Top"><img class="mobile" src="images/btn_backTop_mobile.png" alt="Back Top"></a>
+    <div class="sidebar" id="sidebar">
+      <div class="sb_mask"></div><a class="btn_close" href="javascript:;"><i class="fas fa-times"></i></a>
+      <div class="language_chose select_wrapper">
+        <select>
+          <option>繁體中文</option>
+          <option>English</option>
+        </select>
+      </div>
+      <!--↓ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↓-->
+      <nav>
+        <ul>
+          <li><a href="member_order_willLeave.html" title="訂單管理">訂單管理
+              <!--↓ 有資料才會出現 ↓-->
+              <span class="count">1</span>
+              <!--↑ 有資料才會出現 ↑--></a></li>
+          <li><a href="member_tracking_list.html" title="追蹤清單">追蹤清單
+              <!--↓ 有資料才會出現 ↓-->
+              <span class="count">1</span>
+              <!--↑ 有資料才會出現 ↑--></a></li>
+        </ul>
+      </nav>
+      <!--↑ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↑-->
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="scripts/vendor.js"></script>
+    <script src="scripts/plugins.js"></script>
+    <script src="scripts/main.js"></script>
+    <script>
+      // https://alertifyjs.com/
+      // 提醒登入
+      function pleassLogin() {
+        event.preventDefault();
+        alertify.alert("請先登入");
+      }
+      
+    </script>
+  </body>
+</html>

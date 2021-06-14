@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LEADEREX</title>
+    <meta name="KeyWords" content="">
+    <meta name="Description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body><!--[if lt IE 10]>
+    <div class="old_browser">
+      <div class="old_browser_inner">
+        <div class="oops">OOPS!</div>
+        <div class="oops_title">您的瀏覽器版本太舊了！</div>
+        <p>請更新至 Internet Explorer 10 以上版本或選用更現代化的瀏覽器，<br><br>使用老舊版本的瀏覽器瀏覽本網站將可能有無法預測的錯誤，請儘快更新。<br><br>建議您使用 <a href="http://www.google.com/chrome/" target="_blank">Google Chrome 瀏覽器</a><br><br></p>
+        <p>© 2017-2018  LEADEREX All rights reserved. </p>
+      </div>
+    </div><![endif]-->
+    <div id="wrapper">
+      <header id="header">
+        <div class="header_inner"><a class="header_logo" href="index.html" title="首頁"><img class="retina" src="images/logo.png" alt="LeaderEX-Logo"></a>
+          <div class="header_nav">
+            <!--↓ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↓-->
+            <nav>
+              <ul>
+                <li><a href="member_order_willLeave.html" title="訂單管理">訂單管理
+                    <!--↓ 有資料才會出現 ↓-->
+                    <span class="count">1</span>
+                    <!--↑ 有資料才會出現 ↑--></a></li>
+                <li><a href="member_tracking_list.html" title="追蹤清單">追蹤清單
+                    <!--↓ 有資料才會出現 ↓-->
+                    <span class="count">1</span>
+                    <!--↑ 有資料才會出現 ↑--></a></li>
+              </ul>
+            </nav>
+            <!--↑ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↑-->
+            <div class="dropdown"><a class="dropdown_btn sub_open" href="javascript:;" title="會員相關"><i class="fas fa-th"></i></a>
+              <div class="dropdown_block">
+                <div class="dropdown_content">
+                  <div class="header_sub_items">
+                    <div class="item">
+                      <h4><a href="member_index.html" title="會員中心">
+                          <div class="icon"><i class="fas fa-user"></i></div><span>會員中心</span></a></h4>
+                      <ul>
+                        <li><a href="javascript:;" title="機票訂位">機票訂位</a></li>
+                        <li><a href="javascript:;" title="行程更改">行程更改</a></li>
+                        <li><a href="javascript:;" title="作廢申請">作廢申請</a></li>
+                      </ul>
+                    </div>
+                    <div class="item">
+                      <h4><a href="member_order_willLeave.html" title="訂單管理">
+                          <div class="icon"><i class="fas fa-file-alt"></i></div><span>訂單管理</span></a></h4>
+                      <ul>
+                        <li><a href="javascript:;" title="開票下單">開票下單</a></li>
+                        <li><a href="javascript:;" title="搭機證明">搭機證明</a></li>
+                        <li><a href="javascript:;" title="退票申請">退票申請</a></li>
+                      </ul>
+                    </div>
+                    <div class="item">
+                      <h4><a href="member_tracking_list.html" title="追蹤管理">
+                          <div class="icon"><i class="icon_ticket_plus"></i></div><span>追蹤管理</span></a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--↓ 登入後顯示 ↓-->
+            <a class="user_mark" href="member_index.html" title="會員中心">TC</a>
+            <a class="logout" href="javascript:;">登出</a>
+            <!--↑ 登入後顯示 ↑-->
+            <div class="language_chose select_wrapper">
+              <select>
+                <option>繁體中文</option>
+                <option>English</option>
+              </select>
+            </div><a id="btnMenu" href="javascript:;" title="Menu"><span></span></a>
+          </div>
+        </div>
+      </header>
+      <main id="main">
+        <div class="page_wrapper privacy_policy">
+          <div class="page_wrapper_inner">
+            <h1 class="page_title">隱私權政策</h1>
+            <section class="policy_content">
+              <p>當您選擇使用 www.leaderex.com.tw 的網站 (以下簡稱 LeaderEX) 瀏覽、搜尋、訂位、上傳航空公司 所需證件或付款時，不論您在 LeaderEX 所進行的動作是否完成，您都等同於使用了 LeaderEX，亦即 表示您同意 LeaderEX 的《隱私權政策》。 同時，當您替他人或您的同行者購買我們的產品與服務 時，我們視同該旅客或您的同行者已了解並同意我們的《隱私權政策》。<br>
+                在您同意我們《隱私權政策》的前提下，我們將 LeaderEX 如何處理您個人資訊的相關重點列示如 下:
+              </p>
+              <h2>當您使用 LeaderEX 服務時，我們會收集的資料</h2>
+              <div class="text_block">
+                <ul>
+                  <li>當您建立 LeaderEX 帳號時，我們會儲存您所提供的資訊，例如您的姓名、郵寄地址、電子郵件地址和電話號碼等。</li>
+                  <li>當您使用 LeaderEX 訂購時，我們會儲存您建立的各項資訊，例如您在 LeaderEX 填寫護照上的各種資料、選 擇的航班資訊、聯絡人資訊或向客服人員詢問的問題等。</li>
+                  <li>當您利用 LeaderEX 搜尋機位或訂位時，我們會收集與該活動相關的資訊，包括您查詢過的航班、使用的瀏 覽器、IP 位址、使用時間、瀏覽和點選資料紀錄、伺服器自行產生的相關紀錄、Cookie 資料和個人資訊等。</li>
+                  <li>LeaderEX 會對個別連線者的瀏覽器予以標示，歸納使用者在 LeaderEX 內部所瀏覽的網頁，除非您願意告知 您的個人資料，否則 LeaderEX 並不會也無法將此項紀錄和您相應比對。</li>
+                </ul>
+              </div>
+              <p>依據帳戶設定的不同，上述的資料中可能有部份資料會與您登入時使用 Google 或 Facebook 帳戶相關聯，我們將這 些資料視為個人資訊。提醒您，可以前往 Google 或 Facebook 的帳戶管理中心控管 Google 或 Facebook 收集及 使用這類資料的方式。</p>
+              <p>為了對您的隱私更加的保護，LeaderEX 會將您利用 LeaderEX 的服務來處理各項事物的結果(例如預訂的機位、開 立的機票等)以電子郵件的方式傳送給您，以避免郵寄、傳真或電話方式通知時，被他人冒充來知悉您的資料。若您 不同意收取電子郵件，則請恕無法使用 LeaderEX 的相關服務。</p>
+              <p>此外，LeaderEX 會在事前、註冊登錄或購買時取得您的同意後，才傳送商業性資料或電子郵件給您。LeaderEX 除 了在該資料或電子郵件上註明是由 LeaderEX 所發送，也會在該資料或電子郵件上提供您能隨時停止接收這些資料或 電子郵件的方法與說明。</p>
+              <h2>我們為什麼要處理這些資料</h2>
+              <p>我們會將這些資料用於下列的用途，包括:</p>
+              <div class="text_block">
+                <ul>
+                  <li>提供給您所訂位的航空公司，辨識旅客的身份;</li>
+                  <li>在與商業合作夥伴(例如接送機公司)共同提供服務時，分享任何可辨識旅客身份的資料;</li>
+                  <li>協助 LeaderEX 的服務能提供更實用的個人化內容，例如關聯性更高的搜尋結果;</li>
+                  <li>改善 LeaderEX 的服務品質及開發新的服務;</li>
+                  <li>防範詐騙和濫用行為，進一步確保使用者安全;</li>
+                  <li>進行分析及評估，以瞭解各項 LeaderEX 服務的使用狀況。</li>
+                </ul>
+              </div>
+              <h2>適用範圍</h2>
+              <p>為了上述用途，《隱私權政策》所適用的內容，包括 LeaderEX 如何處理在用戶使用 LeaderEX 網站服務時收集到的 身份辨識資料，亦包括 LeaderEX 如何處理在商業合作夥伴與 LeaderEX 合作時，分享的任何可辨識身份的資料。</p>
+              <h2>不適用範圍</h2>
+              <p>本政策條款的保護範圍，不適用於 LeaderEX 以外的公司或網站群，與非 LeaderEX 所僱用的的人員。例如您透過 LeaderEX 網站所連結出去的網站或廣告廠商，這些置放連結的廠商也可能收集您個人的資料。對於您主動提供的個 人資訊，這些廣告廠商或連結出去的外部網站有其個別的隱私權保護政策，其資料處理措施不適用於 LeaderEX 的隱 私權保護政策。</p>
+              <h2>資料的使用</h2>
+              <p>LeaderEX 不會向任何人出售或出借您的個人識別資料。我們對於您資料的主要用途如下:</p>
+              <div class="text_block">
+                <ul>
+                  <li>提供服務: 例如回覆詢問、改善產品與服務、徵詢售後意見與後續協助、需要與其他人士或公司共用您的資料才能提供您要求的產品或服務等。</li>
+                  <li>在與商業合作夥伴(例如接送機公司)共同提供服務時，分享任何可辨識旅客身份的資料;</li>
+                  <li>確認您的身份: 供航空公司、飯店、供應商業者與信用卡公司識別您的真實身份。</li>
+                  <li>防止不法詐欺交易: 供政府機關與執法單位調查。</li>
+                  <li>索賠與轉讓債權</li>
+                  <li>協助向保險公司索取理賠</li>
+                  <li>商業分析與統計: 例如行銷推廣活動、市場研究與調查等。</li>
+                </ul>
+              </div>
+              <p>基於保護每一個使用者的隱私，我們無法為您查詢其他使用者的帳號資料或訂單訊息。若您有相關法律上問題需查閱 他人資料時，請透過正式的法律申請，LeaderEX 將依法提供必要的協助。</p>
+              <h2>您需要的自我保護措施</h2>
+              <p>LeaderEX 絕對不會主動向您要求提供 帳號 / 密碼 / 信用卡號碼 / 銀行帳號等相關資訊，若您遇到此類可疑詐騙的 要求，請立即撥打 165 反詐騙專線通知內政部警政署。</p>
+              <p>您有責任與義務妥善保管 LeaderEX 的登入帳號與密碼，並強烈建議您定期更新密碼。若您因個人因素，導致他人取 得您的帳號與密碼，而造成個人資料外洩與交易事實，將需由您自行負責相關法律責任。 此外，在您使用完 LeaderEX 所提供的服務後，務必記得登出帳號或關閉網頁瀏覽器，以防止他人讀取您的個人資料。</p>
+              <h2>Cookie 與 相關網站技術</h2>
+              <p>為了優化您的使用者經驗，LeaderEX 使用 cookie 與其他相關網站技術蒐集您在網站上的使用習慣與喜好。若您不希 望您的使用習慣與喜好被記錄下來，您可以修改您的瀏覽器或裝置設定，用以封鎖、刪除或停用。提醒您，若您停用 Cookie 的功能，將有可能無法使用 LeaderEX 部份主要功能。</p>
+              <h2>隱私權政策的變更</h2>
+              <p>本隱私權政策日後若有任何變更，都將會公告在 LeaderEX 的《隱私權政策》頁面上。每次交易完成之前，我們會請 您確認您已知悉相關的政策與條款。歡迎您經常造訪此頁面，查看本《隱私權政策》是否有任何更新與調整。</p>
+            </section>
+          </div>
+        </div>
+        <div class="call_action buttons_block"><a class="btn btn_primary" href="index.html">返回</a></div>
+      </main>
+      <footer id="footer">
+        <div class="footer_content">
+          <div class="footer_content_inner">
+            <nav class="footer_nav">
+              <h2>聯達旅行社股份有限公司 Leader Express</h2>
+              <ul>
+                <li><a href="about.html" title="關於我們">關於我們</a></li>
+                <li><a class="current" href="privacy_policy.html" title="隱私權政策">隱私權政策</a></li>
+                <li><a href="faq.html" title="FAQ">FAQ</a></li>
+              </ul>
+            </nav>
+            <div class="footer_information">
+              <div class="line_qrcode"><img src="images/qrcode_line.png" alt="line QRcode"><a href="https://line.me/R/ti/p/MFgn6evqgo" target="_blank">Line @line12345</a></div>
+              <div class="contact_info">
+                <div class="item">
+                  <h3>台北服務中心</h3>
+                  <p>地址：<a href="https://goo.gl/maps/DN4MeWzB1uJ2" target="_blank">(104)台北市中山區長安東路2段81號7樓</a><br>
+                    電話：<a href="tel:0225070707">(02)25070707</a>　傳真：(02)25070101
+                  </p>
+                </div>
+                <div class="item">
+                  <h3>台中客服中心</h3>
+                  <p>地址：<a href="https://goo.gl/maps/A23J7TZrGcL2" target="_blank">(403)台中市西區梅川西路1段75號1樓</a><br>
+                    電話：<a href="tel:0423051087">(04)23051087</a>　傳真：(04)23050346
+                  </p>
+                </div>
+              </div>
+              <div class="service_info">
+                <p>每週一至週五　09：00 ~18：00<br>
+                  假日服務：合約企業/廠商　請撥打指定專線<br>
+                  代表人：劉芳蘭　網站服務：劉芳蘭
+                </p>
+                <ul>
+                  <li>交觀甲字0306號</li>
+                  <li>旅行品質保障協會北字第0222號</li>
+                  <li>國際航空運送協會(IATA)公認代理店</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">© 2017-2018  LEADEREX All rights reserved.<br>
+          Use of this website indicates your compliance with our Terms of Use and Privacy Policy.
+          
+        </div>
+      </footer>
+    </div><a id="backTop" href="javascript:;"><img class="desktop" src="images/btn_backTop_desktop.png" alt="Back Top"><img class="mobile" src="images/btn_backTop_mobile.png" alt="Back Top"></a>
+    <div class="sidebar" id="sidebar">
+      <div class="sb_mask"></div><a class="btn_close" href="javascript:;"><i class="fas fa-times"></i></a>
+      <div class="language_chose select_wrapper">
+        <select>
+          <option>繁體中文</option>
+          <option>English</option>
+        </select>
+      </div>
+      <!--↓ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↓-->
+      <nav>
+        <ul>
+          <li><a href="member_order_willLeave.html" title="訂單管理">訂單管理
+              <!--↓ 有資料才會出現 ↓-->
+              <span class="count">1</span>
+              <!--↑ 有資料才會出現 ↑--></a></li>
+          <li><a href="member_tracking_list.html" title="追蹤清單">追蹤清單
+              <!--↓ 有資料才會出現 ↓-->
+              <span class="count">1</span>
+              <!--↑ 有資料才會出現 ↑--></a></li>
+        </ul>
+      </nav>
+      <!--↑ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↑-->
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="scripts/vendor.js"></script>
+    <script src="scripts/plugins.js"></script>
+    <script src="scripts/main.js"></script>
+    <script>
+      // https://alertifyjs.com/
+      // 提醒登入
+      function pleassLogin() {
+        event.preventDefault();
+        alertify.alert("請先登入");
+      }
+      
+    </script>
+  </body>
+</html>

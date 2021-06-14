@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LEADEREX</title>
+    <meta name="KeyWords" content="">
+    <meta name="Description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body><!--[if lt IE 10]>
+    <div class="old_browser">
+      <div class="old_browser_inner">
+        <div class="oops">OOPS!</div>
+        <div class="oops_title">您的瀏覽器版本太舊了！</div>
+        <p>請更新至 Internet Explorer 10 以上版本或選用更現代化的瀏覽器，<br><br>使用老舊版本的瀏覽器瀏覽本網站將可能有無法預測的錯誤，請儘快更新。<br><br>建議您使用 <a href="http://www.google.com/chrome/" target="_blank">Google Chrome 瀏覽器</a><br><br></p>
+        <p>© 2017-2018  LEADEREX All rights reserved. </p>
+      </div>
+    </div><![endif]-->
+    <div id="wrapper">
+      <header id="header">
+        <div class="header_inner"><a class="header_logo" href="index.html" title="首頁"><img class="retina" src="images/logo.png" alt="LeaderEX-Logo"></a>
+          <div class="header_nav">
+            <!--↓ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↓-->
+            <nav>
+              <ul>
+                <li><a href="member_order_willLeave.html" title="訂單管理">訂單管理
+                    <!--↓ 有資料才會出現 ↓-->
+                    <span class="count">1</span>
+                    <!--↑ 有資料才會出現 ↑--></a></li>
+                <li><a href="member_tracking_list.html" title="追蹤清單">追蹤清單
+                    <!--↓ 有資料才會出現 ↓-->
+                    <span class="count">1</span>
+                    <!--↑ 有資料才會出現 ↑--></a></li>
+              </ul>
+            </nav>
+            <!--↑ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↑-->
+            <div class="dropdown"><a class="dropdown_btn sub_open" href="javascript:;" title="會員相關"><i class="fas fa-th"></i></a>
+              <div class="dropdown_block">
+                <div class="dropdown_content">
+                  <div class="header_sub_items">
+                    <div class="item">
+                      <h4><a href="member_index.html" title="會員中心">
+                          <div class="icon"><i class="fas fa-user"></i></div><span>會員中心</span></a></h4>
+                      <ul>
+                        <li><a href="javascript:;" title="機票訂位">機票訂位</a></li>
+                        <li><a href="javascript:;" title="行程更改">行程更改</a></li>
+                        <li><a href="javascript:;" title="作廢申請">作廢申請</a></li>
+                      </ul>
+                    </div>
+                    <div class="item">
+                      <h4><a href="member_order_willLeave.html" title="訂單管理">
+                          <div class="icon"><i class="fas fa-file-alt"></i></div><span>訂單管理</span></a></h4>
+                      <ul>
+                        <li><a href="javascript:;" title="開票下單">開票下單</a></li>
+                        <li><a href="javascript:;" title="搭機證明">搭機證明</a></li>
+                        <li><a href="javascript:;" title="退票申請">退票申請</a></li>
+                      </ul>
+                    </div>
+                    <div class="item">
+                      <h4><a href="member_tracking_list.html" title="追蹤管理">
+                          <div class="icon"><i class="icon_ticket_plus"></i></div><span>追蹤管理</span></a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--↓ 登入後顯示 ↓-->
+            <a class="user_mark" href="member_index.html" title="會員中心">TC</a>
+            <a class="logout" href="javascript:;">登出</a>
+            <!--↑ 登入後顯示 ↑-->
+            <div class="language_chose select_wrapper">
+              <select>
+                <option>繁體中文</option>
+                <option>English</option>
+              </select>
+            </div><a id="btnMenu" href="javascript:;" title="Menu"><span></span></a>
+          </div>
+        </div>
+      </header>
+      <main id="main">
+        <div class="steps_block active">
+          <div class="steps_block_inner">
+            <div class="item">1.選擇航班</div>
+            <div class="item current">2.旅客資料</div>
+            <div class="item">3.付款</div>
+          </div>
+        </div>
+        <div class="common_wrapper">
+          <div class="container aside_right_container">
+            <aside class="aside">
+              <div class="order_detail" id="fixedOrder">
+                <!--↓ 抓資料時 class 加 'active' ↓-->
+                <div class="loading">
+                  <div class="loading_mark"><img src="images/img_loading.png"><span>Loading</span></div>
+                </div>
+                <!--↑ 抓資料時 class 加 'active' ↑-->
+                <!--↓ 抓完資料時 class 加 'active' ↓-->
+                <div class="order_detail_main active">
+                  <h3 class="detail_title">訂單明細</h3>
+                  <!--↓warn 為提示, 需要顯示時在 class 加入 'active'↓-->
+                  <div class="warn">候補中<br>
+                    價格已開票為準
+                  </div>
+                  <!--↑warn 為提示, 需要顯示時在 class 加入 'active'↑-->
+                  <div class="flight_info">
+                    <div class="item">
+                      <div class="journey">去</div>
+                      <div class="text">
+                        <div class="date">2017/07/20(四)</div>
+                        <div class="location"><span class="cn">台北</span><span class="en">TPE</span> - <span class="cn">曼谷</span><span class="en">BKK</span></div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="journey">回</div>
+                      <div class="text">
+                        <div class="date">2017/08/20(四)</div>
+                        <div class="location"><span class="cn">曼谷</span><span class="en">BKK</span>-<span class="cn">台北</span><span class="en">TPE</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="price_detail">
+                    <table class="price_table">
+                      <tbody>
+                        <tr>
+                          <th>成人</th>
+                          <th>TWD</th>
+                          <th>8,000 x 2</th>
+                        </tr>
+                        <tr>
+                          <td>票價</td>
+                          <td>TWD</td>
+                          <td>7,500</td>
+                        </tr>
+                        <tr>
+                          <td>稅金</td>
+                          <td>TWD</td>
+                          <td>500</td>
+                        </tr>
+                        <tr>
+                          <th>小孩</th>
+                          <th>TWD</th>
+                          <th>7,000 x 2</th>
+                        </tr>
+                        <tr>
+                          <td>票價</td>
+                          <td>TWD</td>
+                          <td>6,500</td>
+                        </tr>
+                        <tr>
+                          <td>稅金</td>
+                          <td>TWD</td>
+                          <td>500</td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>小計</th>
+                          <th>TWD</th>
+                          <th>2,599,000</th>
+                        </tr>
+                        <tr>
+                          <td class="font_red">優惠代碼</td>
+                          <td class="font_red">TWD</td>
+                          <td class="font_red">-200</td>
+                        </tr>
+                        <tr>
+                          <td class="font_red">已使用20點紅利</td>
+                          <td class="font_red">TWD</td>
+                          <td class="font_red">-20</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                    <div class="total_amount">
+                      <div class="total_title">訂單金額</div>
+                      <div class="price">TWD 
+                        <big>2,999,090</big>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="overview_control active"><a id="toggle_overview" href="javascript:;"><span class="words">行程概述</span><i class="fas fa-chevron-circle-down"></i></a></div>
+                <!--↑ 抓完資料時 class 加 'active' ↑-->
+              </div>
+            </aside>
+            <div class="containt">
+              <!--↓ 有需要顯示的時候 class 加 'active' ↓-->
+              <section class="system_remind active"><i class="fas fa-info-circle"></i>
+                <p>提醒您！若未即時付款，您的機位將有可能被取消，原售價將可能被更新！</p>
+              </section>
+              <!--↑ 有需要顯示的時候 class 加 'active' ↑-->
+              <h2 class="page_title has_explanation"><span>上傳證件</span><small class="explanation">*進行付款前，我們還需要您上傳「外勞的居留證」，才能符合航空公司的訂位規定喔！</small></h2>
+              <section class="content_section">
+                <div class="tabber_wrapper">
+                  <div class="tabber-selectors">
+                    <ul>
+                      <li><a class="tabber-anchor active" href="javascript:;">選擇檔案 直接上傳</a></li>
+                      <li><a class="tabber-anchor" href="javascript:;">手機拍照上傳</a></li>
+                    </ul>
+                  </div>
+                  <div class="tabber-contents">
+                    <div class="tabber-content active">
+                      <div class="document_upload">
+                        <div class="upload_items">
+                          <div class="item">
+                            <div class="passenger_num">旅客1</div>
+                            <div class="passenger_name">WANG SHUAN SHUAN</div>
+                            <div class="upload_controls">
+                              <input id="input_file01" type="file">
+                              <label for="input_file01"><span class="default_txt">選擇檔案上傳</span><span class="uploaded_txt">已上傳</span></label><a class="file_clear" href="javascript:;"><i class="fas fa-times-circle"></i></a>
+                            </div>
+                          </div>
+                          <div class="item">
+                            <div class="passenger_num">旅客2</div>
+                            <div class="passenger_name">TING LIU</div>
+                            <div class="upload_controls">
+                              <input id="input_file02" type="file">
+                              <label for="input_file02"><span class="default_txt">選擇檔案上傳</span><span class="uploaded_txt">已上傳</span></label><a class="file_clear" href="javascript:;"><i class="fas fa-times-circle"></i></a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="call_action">
+                          <button class="btn btn_primary" type="button" onClick="filesUpload();">確認並上傳</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tabber-content">
+                      <div class="mobile_upload_info">
+                        <div class="qrcode"><img src="images/qrcode_mobile_upload.png"></div>
+                        <div class="info_main">
+                          <div class="step_items">
+                            <div class="item">
+                              <div class="icon"><img class="retina" src="images/img_mobile_upload01.png"></div>
+                              <div class="step_num">STEP1.</div>
+                              <div class="text">請用手機掃描上面的QR code 您就可以選取手機裡的證件照片，直接透過手機上傳</div>
+                            </div>
+                            <div class="item">
+                              <div class="icon"><img class="retina" src="images/img_mobile_upload02.png"></div>
+                              <div class="step_num">STEP2.</div>
+                              <div class="text">請回到電腦按下「確認已從手機上傳」</div>
+                            </div>
+                          </div>
+                          <div class="copy_controls">
+                            <input type="text" readonly value="mobile_upload.html">
+                            <button type="button">複製</button>
+                          </div>
+                          <div class="call_action">
+                            <button class="btn btn_primary" type="button" onClick="filesUpload();">確認已從手機上傳</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <div class="payment_next_step">
+                <h2 class="page_title has_explanation"><span>優惠折扣</span><small class="explanation">*此筆訂單最高可折抵TWD 500元！</small></h2>
+                <section class="content_section">
+                  <div class="content_block">
+                    <div class="discount">
+                      <h3>使用優惠折扣</h3>
+                      <div class="discount_radio_group">
+                        <div class="row">
+                          <div class="radio_wrapper">
+                            <input id="discount01" type="radio" name="discount">
+                            <label for="discount01">抓緊時效，使用優惠代碼</label>
+                          </div>
+                          <div class="exchang_controls">
+                            <div class="controls_group">
+                              <!--↓controls 加入 class 'error' 可顯示 error_text↓-->
+                              <div class="controls">
+                                <input type="text" placeholder="請輸入">
+                              </div>
+                              <div class="error_text">請輸入優惠代碼</div>
+                              <!--↑controls 加入 class 'error' 可顯示 error_text↑-->
+                            </div>
+                            <button class="btn btn_primary" type="button">兌換</button>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="radio_wrapper">
+                            <input id="discount02" type="radio" name="discount">
+                            <label for="discount02">先用張折價卷吧</label>
+                          </div>
+                          <div class="cupon_controls">
+                            <div class="controls">
+                              <div class="select_wrapper">
+                                <select>
+                                  <option>選擇折價卷</option>
+                                  <option>折100 1/11-1/30結帳金</option>
+                                  <option>折200 1/11-1/30結帳金</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="error_text">請選擇折價卷</div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="radio_wrapper">
+                            <input id="discount03" type="radio" name="discount">
+                            <label for="discount03">暫不使用優惠折扣</label>
+                          </div>
+                        </div>
+                      </div>
+                      <h3>使用紅利</h3>
+                      <div class="discount_dividend">
+                        <div class="checkbox_wrapper">
+                          <input id="dividendCheck" type="checkbox">
+                          <label for="dividendCheck">太好了！你這次可以使用20點紅利 <span class="font_green">價值TWD 20元！</span></label>
+                        </div>
+                        <div class="dividend_controls">
+                          <!--↓controls 加入 class 'error' 可顯示 error_text↓-->
+                          <div class="controls">
+                            <input type="text" placeholder="請輸入您要使用的點數">
+                          </div>
+                          <div class="error_text">請輸入您要使用的點數</div>
+                          <!--↑controls 加入 class 'error' 可顯示 error_text↑-->
+                          <div class="remark font_green">*使用點數超過餘額！輸入之點數不得超過20點</div>
+                          <!--↓tips_tag 加入 class 'active'↓-->
+                          <div class="tips_tag active">此行程您將使用20點紅利，您的費用將被收取TWD 15,000元</div>
+                          <!--↑tips_tag 加入 class 'active'↑-->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <h2 class="page_title">付款</h2>
+                <section class="content_section">
+                  <div class="tabber_wrapper">
+                    <div class="tabber-selectors">
+                      <ul>
+                        <li><a class="tabber-anchor active" href="javascript:;">信用卡</a></li>
+                        <li><a class="tabber-anchor" href="javascript:;">ATM轉帳</a></li>
+                        <li><a class="tabber-anchor" href="javascript:;">超商繳款</a></li>
+                        <li><a class="tabber-anchor" href="javascript:;">VIP額度</a></li>
+                      </ul>
+                    </div>
+                    <div class="tabber-contents">
+                      <div class="tabber-content active">
+                        <div class="credit_card_form">
+                          <div class="row">
+                            <div class="controls_group card_number_controls">
+                              <label>信用卡號</label>
+                              <div class="controls">
+                                <input class="cc_number" type="text" maxlength="4"><span class="dash">－</span>
+                                <input class="cc_number" type="text" maxlength="4"><span class="dash">－</span>
+                                <input class="cc_number" type="text" maxlength="4"><span class="dash">－</span>
+                                <input class="cc_number" type="text" maxlength="4">
+                              </div><img class="img_card_type" src="images/img_card_type.png">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="controls_group expiration_date_controls">
+                              <label>有效月年</label>
+                              <div class="controls">
+                                <div class="control">
+                                  <div class="select_wrapper">
+                                    <select>
+                                      <option>選擇</option>
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                      <option>6</option>
+                                      <option>7</option>
+                                      <option>8</option>
+                                      <option>9</option>
+                                      <option>10</option>
+                                      <option>11</option>
+                                      <option>12</option>
+                                    </select>
+                                  </div><span>月</span>
+                                </div>
+                                <div class="control">
+                                  <div class="select_wrapper">
+                                    <select>
+                                      <option>選擇</option>
+                                      <option>2018</option>
+                                      <option>2019</option>
+                                      <option>2020</option>
+                                      <option>2021</option>
+                                      <option>2022</option>
+                                      <option>2023</option>
+                                      <option>2024</option>
+                                      <option>2025</option>
+                                      <option>2026</option>
+                                      <option>2027</option>
+                                    </select>
+                                  </div><span>年</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="controls_group CCV_controls">
+                              <label>背面末三碼</label>
+                              <div class="controls">
+                                <input class="cc_CCV" type="text" maxlength="3">
+                              </div><img class="img_card_CCV" src="images/img_card_CCV.png">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tabber-content">
+                        <div class="payment_method_items">
+                          <div class="item">
+                            <div class="item_title">銀行代碼</div>
+                            <div class="item_text">013國泰世華銀行</div>
+                          </div>
+                          <div class="item">
+                            <div class="item_title">轉帳帳號</div>
+                            <div class="item_text">1470304953344802</div>
+                          </div>
+                          <div class="item">
+                            <div class="item_title">轉帳金額</div>
+                            <div class="item_text">$15,000</div>
+                          </div>
+                          <div class="item">
+                            <div class="item_title">繳款期限</div>
+                            <div class="item_text">2018年06月01日23點59分以前</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tabber-content">
+                        <div class="payment_method_items">
+                          <div class="item">
+                            <div class="item_title">超商代碼</div>
+                            <div class="item_text">LL2034832859458<br>(超商代碼可於 OK/萊爾富/全家 做繳費)</div>
+                          </div>
+                          <div class="item">
+                            <div class="item_title">轉帳金額</div>
+                            <div class="item_text">$15,000</div>
+                          </div>
+                          <div class="item">
+                            <div class="item_title">繳款期限</div>
+                            <div class="item_text">2018年06月01日23點59分以前</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tabber-content">
+                        <div class="payment_method_items">
+                          <div class="item">
+                            <div class="item_title">VIP額度</div>
+                            <div class="item_text">TWD 100,000</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <h2 class="page_title has_explanation"><span>代收轉付收據</span><small class="explanation">代收轉付收據依財政部規範，旅遊業僅提供代收轉付收據供消費者記帳之用。沒有統一發票對獎功能，本公司將依法開立收據。</small></h2>
+                <section class="content_section">
+                  <div class="content_block">
+                    <div class="receipt_form">
+                      <div class="call_action"><a class="btn btn_choose popup_ajax" href="javascript:;" data-width="815px" data-path="popup_common_uniformNumber.html">使用常用統編</a></div>
+                      <div class="row">
+                        <div class="controls_group">
+                          <label>抬頭</label>
+                          <div class="controls">
+                            <input type="text" placeholder="非必填">
+                          </div>
+                        </div>
+                        <div class="remark font_green">*若無特別註明，將開立第一位旅客姓名</div>
+                      </div>
+                      <div class="row">
+                        <div class="controls_group">
+                          <label>統編</label>
+                          <div class="controls">
+                            <input type="text" placeholder="非必填">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="radio_wrapper">
+                          <input id="receiptEmail" type="radio" name="receiptRadio" checked>
+                          <label for="receiptEmail">請Email收據</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="radio_wrapper">
+                          <input id="receiptPaper" type="radio" name="receiptRadio">
+                          <label for="receiptPaper">請郵寄紙本收據(平信)</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <div id="recipientAddress">
+                  <h2 class="page_title has_explanation"><span>收件地址</span><small class="explanation">搭機證明將以掛號信件寄出</small></h2>
+                  <section class="content_section">
+                    <div class="content_block">
+                      <div class="address_form">
+                        <div class="call_action"><a class="btn btn_choose" href="javascript:;">使用常用地址</a></div>
+                        <div class="row">
+                          <div class="grid g_4_12">
+                            <div class="controls">
+                              <div class="select_wrapper">
+                                <select>
+                                  <option>縣市</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="error_text">請選擇縣市</div>
+                          </div>
+                          <div class="grid g_4_12">
+                            <div class="controls">
+                              <div class="select_wrapper">
+                                <select>
+                                  <option>市鎮區鄉</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="error_text">請選擇市鎮區鄉</div>
+                          </div>
+                          <div class="grid g_4_12">
+                            <div class="controls">
+                              <input type="text" placeholder="郵遞區號">
+                            </div>
+                            <div class="error_text">請填寫郵遞區號</div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="grid">
+                            <div class="controls">
+                              <input type="text" placeholder="地址">
+                            </div>
+                            <div class="error_text">請填寫地址</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <div class="checkbox_block">
+                  <div class="checkbox_wrapper">
+                    <input id="check01" type="checkbox">
+                    <label for="check01">開票之前，請您務必確認：若您所購買的是外勞機票，則需具有真正外勞身份才可使用(居留事由為外勞)否則本網站隨時有權取消您的機位，並扣除相關退票手續費後，退款給您。<br>使用不符身份的機票，航空公司也將於機場查驗時，收取高額罰金。</label>
+                  </div>
+                  <div class="checkbox_wrapper">
+                    <input id="check02" type="checkbox">
+                    <label for="check02">若您執行付款，即等於同意我們的<a class="font_green" href="javascript:;" target="_blank">隱私權政策</a>、<a class="font_green" href="javascript:;" target="_blank">訂購須知</a>、<a class="font_green" href="javascript:;" target="_blank">網站服務條款</a>、<a class="font_green" href="javascript:;" target="_blank">取消與退票規定</a>。各項費用及手續費等相關規定。</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="call_action buttons_block has_bg payment_next_step">
+          <!--成功'booking_success.html'; 失敗'booking_failed.html'--><a class="btn btn_primary" href="booking_success.html">我已確認，下一步</a>
+        </div>
+      </main>
+      <footer id="footer">
+        <div class="footer_content">
+          <div class="footer_content_inner">
+            <nav class="footer_nav">
+              <h2>聯達旅行社股份有限公司 Leader Express</h2>
+              <ul>
+                <li><a href="about.html" title="關於我們">關於我們</a></li>
+                <li><a href="privacy_policy.html" title="隱私權政策">隱私權政策</a></li>
+                <li><a href="faq.html" title="FAQ">FAQ</a></li>
+              </ul>
+            </nav>
+            <div class="footer_information">
+              <div class="line_qrcode"><img src="images/qrcode_line.png" alt="line QRcode"><a href="https://line.me/R/ti/p/MFgn6evqgo" target="_blank">Line @line12345</a></div>
+              <div class="contact_info">
+                <div class="item">
+                  <h3>台北服務中心</h3>
+                  <p>地址：<a href="https://goo.gl/maps/DN4MeWzB1uJ2" target="_blank">(104)台北市中山區長安東路2段81號7樓</a><br>
+                    電話：<a href="tel:0225070707">(02)25070707</a>　傳真：(02)25070101
+                  </p>
+                </div>
+                <div class="item">
+                  <h3>台中客服中心</h3>
+                  <p>地址：<a href="https://goo.gl/maps/A23J7TZrGcL2" target="_blank">(403)台中市西區梅川西路1段75號1樓</a><br>
+                    電話：<a href="tel:0423051087">(04)23051087</a>　傳真：(04)23050346
+                  </p>
+                </div>
+              </div>
+              <div class="service_info">
+                <p>每週一至週五　09：00 ~18：00<br>
+                  假日服務：合約企業/廠商　請撥打指定專線<br>
+                  代表人：劉芳蘭　網站服務：劉芳蘭
+                </p>
+                <ul>
+                  <li>交觀甲字0306號</li>
+                  <li>旅行品質保障協會北字第0222號</li>
+                  <li>國際航空運送協會(IATA)公認代理店</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">© 2017-2018  LEADEREX All rights reserved.<br>
+          Use of this website indicates your compliance with our Terms of Use and Privacy Policy.
+          
+        </div>
+      </footer>
+    </div><a id="backTop" href="javascript:;"><img class="desktop" src="images/btn_backTop_desktop.png" alt="Back Top"><img class="mobile" src="images/btn_backTop_mobile.png" alt="Back Top"></a>
+    <div class="sidebar" id="sidebar">
+      <div class="sb_mask"></div><a class="btn_close" href="javascript:;"><i class="fas fa-times"></i></a>
+      <div class="language_chose select_wrapper">
+        <select>
+          <option>繁體中文</option>
+          <option>English</option>
+        </select>
+      </div>
+      <!--↓ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↓-->
+      <nav>
+        <ul>
+          <li><a href="member_order_willLeave.html" title="訂單管理">訂單管理
+              <!--↓ 有資料才會出現 ↓-->
+              <span class="count">1</span>
+              <!--↑ 有資料才會出現 ↑--></a></li>
+          <li><a href="member_tracking_list.html" title="追蹤清單">追蹤清單
+              <!--↓ 有資料才會出現 ↓-->
+              <span class="count">1</span>
+              <!--↑ 有資料才會出現 ↑--></a></li>
+        </ul>
+      </nav>
+      <!--↑ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↑-->
+    </div>
+    <div class="sidebar" id="overviewSidebar">
+      <div class="sb_mask"></div><a class="btn_close" href="javascript:;"><i class="fas fa-times"></i></a>
+      <div class="order_detail">
+        <!--↓ 抓資料時 class 加 'active' ↓-->
+        <div class="loading">
+          <div class="loading_mark"><img src="images/img_loading.png"><span>Loading</span></div>
+        </div>
+        <!--↑ 抓資料時 class 加 'active' ↑-->
+        <!--↓ 抓完資料時 class 加 'active' ↓-->
+        <div class="order_detail_main active">
+          <h3 class="detail_title">訂單明細</h3>
+          <!--↓warn 為提示, 需要顯示時在 class 加入 'active'↓-->
+          <div class="warn">候補中<br>
+            價格已開票為準
+          </div>
+          <!--↑warn 為提示, 需要顯示時在 class 加入 'active'↑-->
+          <div class="flight_info">
+            <div class="item">
+              <div class="journey">去</div>
+              <div class="text">
+                <div class="date">2017/07/20(四)</div>
+                <div class="location"><span class="cn">台北</span><span class="en">TPE</span> - <span class="cn">曼谷</span><span class="en">BKK</span></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="journey">回</div>
+              <div class="text">
+                <div class="date">2017/08/20(四)</div>
+                <div class="location"><span class="cn">曼谷</span><span class="en">BKK</span>-<span class="cn">台北</span><span class="en">TPE</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="price_detail">
+            <table class="price_table">
+              <tbody>
+                <tr>
+                  <th>成人</th>
+                  <th>TWD</th>
+                  <th>8,000 x 2</th>
+                </tr>
+                <tr>
+                  <td>票價</td>
+                  <td>TWD</td>
+                  <td>7,500</td>
+                </tr>
+                <tr>
+                  <td>稅金</td>
+                  <td>TWD</td>
+                  <td>500</td>
+                </tr>
+                <tr>
+                  <th>小孩</th>
+                  <th>TWD</th>
+                  <th>7,000 x 2</th>
+                </tr>
+                <tr>
+                  <td>票價</td>
+                  <td>TWD</td>
+                  <td>6,500</td>
+                </tr>
+                <tr>
+                  <td>稅金</td>
+                  <td>TWD</td>
+                  <td>500</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>小計</th>
+                  <th>TWD</th>
+                  <th>2,599,000</th>
+                </tr>
+                <tr>
+                  <td class="font_red">優惠代碼</td>
+                  <td class="font_red">TWD</td>
+                  <td class="font_red">-200</td>
+                </tr>
+                <tr>
+                  <td class="font_red">已使用20點紅利</td>
+                  <td class="font_red">TWD</td>
+                  <td class="font_red">-20</td>
+                </tr>
+              </tfoot>
+            </table>
+            <div class="total_amount">
+              <div class="total_title">訂單金額</div>
+              <div class="price">TWD 
+                <big>2,999,090</big>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--↑ 抓完資料時 class 加 'active' ↑-->
+      </div>
+      <div class="overview_containt">
+        <div class="page_title">詳細行程</div>
+        <section class="content_section flight_section">
+          <div class="content_title">
+            <h2>去程：2017/07/20 (四) 台北(TPE) - 曼谷(BKK)</h2>
+          </div>
+          <div class="content_block">
+            <div class="flight_brief">
+              <div class="airline_mark"><img src="images/airline_logo01.png">
+                <div class="airline_title">長榮航空＋印度尼西亞英航空公司</div>
+              </div>
+              <div class="flight_information">
+                <div class="flight_time departure"><span class="time">03:00</span><span class="location">TPE</span></div>
+                <div class="flight_time arrival"><span class="time">18:25</span><span class="location">BKK</span></div>
+                <div class="flight_process"><img class="process_arrow" src="images/img_course_arrow.png">
+                  <div class="process_items">
+                    <div class="item">
+                      <div class="status_dot transfer"></div>
+                      <div class="item_top"><span>轉機</span></div>
+                      <div class="item_bottom"><span>新加坡SIN</span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flight_hours">8小時40分鐘</div>
+              </div>
+            </div>
+            <div class="flight_info_detail toggle_block"><a class="toggle_control" href="javascript:;">隱藏航班詳細資訊&nbsp;<i class="fas fa-chevron-circle-down"></i></a>
+              <div class="toggle_content">
+                <div class="airline_mark"><img src="images/airline_logo01.png">
+                  <div class="airline_title">BR 長榮航空</div>
+                  <div class="airline_code">SH805</div>
+                </div>
+                <ul class="take_info">
+                  <li>經濟艙: <span class="font_green">S</span> &nbsp; 機型: <span class="font_green">Airbus Industrie A330-300</span></li>
+                  <li>行李: 每成人 <span class="font_green">25</span> 公斤, 每小孩 <span class="font_green">8</span> 公斤</li>
+                </ul>
+                <div class="time_info">
+                  <div class="time_interval">
+                    <div class="total">3小時</div>
+                    <ul>
+                      <li>
+                        <div class="time">17:00</div>
+                        <div class="location">TPE 台北桃園 第一航站</div>
+                      </li>
+                      <li>
+                        <div class="time">18:00</div>
+                        <div class="location">HGK 香港 第一航站</div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="residence_time">中停30分鐘</div>
+                  <div class="time_interval">
+                    <div class="total">2小時25分鐘</div>
+                    <ul>
+                      <li>
+                        <div class="time">21:00</div>
+                        <div class="location">HGK 香港 第一航站</div>
+                      </li>
+                      <li>
+                        <div class="time">23:25</div>
+                        <div class="location">BKK 泰國曼谷 第一航站</div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="residence_time">機場轉機4小時</div>
+                </div>
+                <div class="airline_mark"><img src="images/airline_logo01.png">
+                  <div class="airline_title">BR 長榮航空</div>
+                  <div class="airline_code">SH805</div>
+                </div>
+                <div class="airline_note">CI中華航空 SH805 由<img class="airline_logo" src="images/airline_logo_s.png">中國東方營運</div>
+                <div class="time_info">
+                  <div class="time_interval">
+                    <div class="total">2小時25分鐘</div>
+                    <ul>
+                      <li>
+                        <div class="time">01:00<sup>+1</sup></div>
+                        <div class="location">HGK 香港 第一航站</div>
+                      </li>
+                      <li>
+                        <div class="time">03:25</div>
+                        <div class="location">BKK 泰國曼谷 第一航站</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content_foot">
+            <p class="attention"><i class="fas fa-info-circle"></i>請注意您抵達時間為 2017/07/21 (五)</p>
+            <p><i class="fas fa-clock"></i>旅行總時間: 5小時00分</p>
+          </div>
+        </section>
+        <section class="content_section flight_section">
+          <div class="content_title">
+            <h2>去程：2017/07/20 (四) 台北(TPE) - 曼谷(BKK)</h2>
+          </div>
+          <div class="content_block">
+            <div class="flight_brief">
+              <div class="airline_mark"><img src="images/airline_logo01.png">
+                <div class="airline_title">長榮航空</div>
+              </div>
+              <div class="flight_information">
+                <div class="flight_time departure"><span class="time">03:00</span><span class="location">TPE</span></div>
+                <div class="flight_time arrival"><span class="time">18:25</span><span class="location">BKK</span></div>
+                <div class="flight_process"><img class="process_arrow" src="images/img_course_arrow.png">
+                  <div class="process_items">
+                    <div class="item">
+                      <div class="item_top"><span>直飛</span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flight_hours">8小時40分鐘</div>
+              </div>
+            </div>
+            <div class="flight_info_detail toggle_block"><a class="toggle_control" href="javascript:;">隱藏航班詳細資訊&nbsp;<i class="fas fa-chevron-circle-down"></i></a>
+              <div class="toggle_content">
+                <div class="airline_mark"><img src="images/airline_logo01.png">
+                  <div class="airline_title">BR 長榮航空</div>
+                  <div class="airline_code">SH805</div>
+                </div>
+                <ul class="take_info">
+                  <li>經濟艙: <span class="font_green">S</span> &nbsp; 機型: <span class="font_green">Airbus Industrie A330-300</span></li>
+                  <li>行李: 每成人 <span class="font_green">25</span> 公斤, 每小孩 <span class="font_green">8</span> 公斤</li>
+                </ul>
+                <div class="time_info">
+                  <div class="time_interval">
+                    <div class="total">3小時</div>
+                    <ul>
+                      <li>
+                        <div class="time">17:00</div>
+                        <div class="location">BKK 泰國曼谷 第一航站</div>
+                      </li>
+                      <li>
+                        <div class="time">20:00</div>
+                        <div class="location">TPE 台北桃園 第一航站</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content_foot">
+            <p class="attention"><i class="fas fa-info-circle"></i>您將從TPE出發，但回程目的地為TSA。<small>抵達時間為 2017/08/20 (日)</small></p>
+            <p><i class="fas fa-clock"></i>旅行總時間: 5小時00分</p>
+          </div>
+        </section>
+        <section class="content_section">
+          <div class="content_title">
+            <h2>票規</h2>
+          </div>
+          <div class="content_block">機票可以退款。若要<span class="font_green">取消行程</span>，需支付每張機票 NT$1,000 元的費用。<br>
+            若要變更行程，每張機票需支付 NT$500 元的費用。<br>
+            航空公司可能隨時變更班機時程與航廈。<br>
+            您必須攜帶有效的旅行文件。<br>
+            旅行前，您必須自行檢查是否已帶齊必備的旅行文件。
+            
+          </div>
+        </section>
+      </div>
+    </div>
+    <!--↓上傳成功的 popup↓-->
+    <div class="inline_popup" id="upload_files_ok">
+      <button class="popup_close" data-izimodal-close><i class="fas fa-times"></i></button>
+      <div class="popup_block common_popup_block">
+        <h2 class="page_title">OK！</h2>
+        <div class="img_block"><img src="images/img_upload_ok.png"></div>
+        <h3>太好了！檔案已成功上傳！</h3>
+        <div class="call_action"><a class="btn btn_step" href="javascript:;">Btn1</a><a class="btn btn_primary" href="javascript:;">Btn2</a></div>
+      </div>
+    </div>
+    <!--↑上傳成功的 popup↑-->
+    <!--↓上傳失敗的 popup↓-->
+    <div class="inline_popup" id="upload_files_failed">
+      <button class="popup_close" data-izimodal-close><i class="fas fa-times"></i></button>
+      <div class="popup_block common_popup_block">
+        <h2 class="page_title">Failed !</h2>
+        <div class="img_block"><img src="images/img_upload_failed.png"></div>
+        <h3>哎呀！檔案可能有一些問題！</h3>
+        <ul>
+          <li>為了確保各瀏覽器的相容性，文件檔案請勿使用中文檔案命名。</li>
+          <li>每一個上傳之文件不能超過5MB。</li>
+          <li>相片需要充足光線曝光及最小二百萬像素。</li>
+          <li>只接受JPG、PNG、GIF、TIFF及PDF格式的文件。</li>
+        </ul>
+        <div class="call_action"><a class="btn btn_primary" href="javascript:;" data-izimodal-close>再試一次</a></div>
+      </div>
+    </div>
+    <!--↑上傳失敗的 popup↑-->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="scripts/vendor.js"></script>
+    <script src="scripts/plugins.js"></script>
+    <script src="scripts/main.js"></script>
+    <script>
+      // https://alertifyjs.com/
+      // 提醒登入
+      function pleassLogin() {
+        event.preventDefault();
+        alertify.alert("請先登入");
+      }
+      
+    </script>
+    <script>
+      function filesUpload() {
+        //↓開啟上傳成功的 popup↓
+        $('#upload_files_ok').iziModal('open');
+        $('.payment_next_step').slideDown(800);
+      
+        //↓開啟上傳失敗的 popup↓
+        //$('#upload_files_failed').iziModal('open');
+      }
+      
+      //↓停滯時間太久了，開啟還不能決定跳窗↓
+      function openCantDecide() {
+        var popup_path = 'popup_cant_decide.html';
+        cantDecidePopupOpen(popup_path);
+      }
+      //↑停滯時間太久了，開啟還不能決定跳窗↑
+      
+      $(function() {
+        $('input:radio[name="receiptRadio"]').change(function() {
+          if($('#receiptPaper').is(':checked')) {
+            $('#recipientAddress').stop().slideDown();
+          } else {
+            $('#recipientAddress').stop().slideUp();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

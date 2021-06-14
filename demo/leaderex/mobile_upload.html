@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LEADEREX</title>
+    <meta name="KeyWords" content="">
+    <meta name="Description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body><!--[if lt IE 10]>
+    <div class="old_browser">
+      <div class="old_browser_inner">
+        <div class="oops">OOPS!</div>
+        <div class="oops_title">您的瀏覽器版本太舊了！</div>
+        <p>請更新至 Internet Explorer 10 以上版本或選用更現代化的瀏覽器，<br><br>使用老舊版本的瀏覽器瀏覽本網站將可能有無法預測的錯誤，請儘快更新。<br><br>建議您使用 <a href="http://www.google.com/chrome/" target="_blank">Google Chrome 瀏覽器</a><br><br></p>
+        <p>© 2017-2018  LEADEREX All rights reserved. </p>
+      </div>
+    </div><![endif]-->
+    <div id="wrapper">
+      <div class="mobile_upload_page">
+        <div class="mobile_upload_info">
+          <div class="step_image"><img src="images/img_upload_steps.png"></div>
+          <div class="step_items">
+            <div class="item">
+              <div class="step_num">STEP1.</div>
+              <div class="text">您可以選取手機裡的證件照片，直接透過手機上傳</div>
+            </div>
+            <div class="item">
+              <div class="step_num">STEP2.</div>
+              <div class="text">請回到電腦按下「確認已從手機上傳」</div>
+            </div>
+          </div>
+        </div>
+        <div class="document_upload">
+          <div class="upload_items">
+            <div class="item">
+              <div class="passenger_num">旅客1</div>
+              <div class="passenger_name">WANG SHUAN</div>
+              <div class="upload_controls">
+                <input id="input_file01" type="file">
+                <label for="input_file01"><span class="default_txt">選擇檔案上傳</span><span class="uploaded_txt">已上傳</span></label><a class="file_clear" href="javascript:;"><i class="fas fa-times-circle"></i></a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="passenger_num">旅客2</div>
+              <div class="passenger_name">TING LIU</div>
+              <div class="upload_controls">
+                <input id="input_file02" type="file">
+                <label for="input_file02"><span class="default_txt">選擇檔案上傳</span><span class="uploaded_txt">已上傳</span></label><a class="file_clear" href="javascript:;"><i class="fas fa-times-circle"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="call_action">
+            <button class="btn btn_primary" type="button" onClick="filesUpload();">確認並上傳</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--↓上傳成功的 popup↓-->
+    <div class="inline_popup" id="upload_files_ok">
+      <button class="popup_close" data-izimodal-close><i class="fas fa-times"></i></button>
+      <div class="popup_block common_popup_block">
+        <h2 class="page_title">OK！</h2>
+        <div class="img_block"><img src="images/img_upload_mobile.png"></div>
+        <h3>第一步上傳成功！</h3>
+        <p>請回到電腦按下「確認已從手機上傳」</p>
+        <div class="call_action"><a class="btn btn_step" href="javascript:;">Btn1</a><a class="btn btn_primary" href="javascript:;">Btn2</a></div>
+      </div>
+    </div>
+    <!--↑上傳成功的 popup↑-->
+    <!--↓上傳失敗的 popup↓-->
+    <div class="inline_popup" id="upload_files_failed">
+      <button class="popup_close" data-izimodal-close><i class="fas fa-times"></i></button>
+      <div class="popup_block common_popup_block">
+        <h2 class="page_title">Failed !</h2>
+        <div class="img_block"><img src="images/img_upload_mobile.png"></div>
+        <h3>上傳失敗！</h3>
+        <p>哎呀！檔案可能有一些問題！</p>
+        <ul>
+          <li>為了確保各瀏覽器的相容性，文件檔案請勿使用中文檔案命名。</li>
+          <li>每一個上傳之文件不能超過5MB。</li>
+          <li>相片需要充足光線曝光及最小二百萬像素。</li>
+          <li>只接受JPG、PNG、GIF、TIFF及PDF格式的文件。</li>
+        </ul>
+        <div class="call_action"><a class="btn btn_primary" href="javascript:;" data-izimodal-close>再試一次</a></div>
+      </div>
+    </div>
+    <!--↑上傳失敗的 popup↑-->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="scripts/vendor.js"></script>
+    <script src="scripts/plugins.js"></script>
+    <script src="scripts/main.js"></script>
+    <script>
+      function filesUpload() {
+        //↓開啟上傳成功的 popup↓
+        $('#upload_files_ok').iziModal('open');
+      
+        //↓開啟上傳失敗的 popup↓
+        //$('#upload_files_failed').iziModal('open');
+      }
+    </script>
+  </body>
+</html>

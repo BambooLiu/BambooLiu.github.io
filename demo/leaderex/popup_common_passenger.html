@@ -1,0 +1,76 @@
+
+<button class="popup_close" data-izimodal-close="data-izimodal-close"><i class="fas fa-times"></i></button>
+<div class="popup_block">
+  <div class="member_container">
+    <div class="content_section">
+      <div class="content_title has_controls">
+        <h2>常用旅客</h2>
+        <div class="title_controls">
+          <button class="btn btn_basic" onClick="passengerCheck();">確認</button>
+        </div>
+      </div>
+      <div class="content_block no_padding">
+        <table class="common_edit_table">
+          <tr>
+            <td width="180">TRUKGO/FPFGPD</td>
+            <td>男</td>
+            <td class="control_cell">
+              <div class="radio_wrapper">
+                <input id="radio1" type="radio" name="passenger"/>
+                <label for="radio1">選擇</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td width="180">DJSODFJ/DFGJO</td>
+            <td>女</td>
+            <td class="control_cell">
+              <div class="radio_wrapper">
+                <input id="radio2" type="radio" name="passenger"/>
+                <label for="radio2">選擇</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td width="180">KKOSGKOSD/SD</td>
+            <td>男</td>
+            <td class="control_cell">
+              <div class="radio_wrapper">
+                <input id="radio3" type="radio" name="passenger"/>
+                <label for="radio3">選擇</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td width="180">SDJIFJIDS/OSDJ</td>
+            <td>男</td>
+            <td class="control_cell">
+              <div class="radio_wrapper">
+                <input id="radio4" type="radio" name="passenger"/>
+                <label for="radio4">選擇</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td width="180">CHDIMFI/OSDMFIE</td>
+            <td>男</td>
+            <td class="control_cell">
+              <div class="radio_wrapper">
+                <input id="radio5" type="radio" name="passenger"/>
+                <label for="radio5">選擇</label>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function passengerCheck() {
+    //其他事件可以寫這
+  
+    //關閉 popup
+    $('#ajaxPopup').iziModal('close');
+  }
+</script>

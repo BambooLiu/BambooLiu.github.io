@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LEADEREX</title>
+    <meta name="KeyWords" content="">
+    <meta name="Description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body><!--[if lt IE 10]>
+    <div class="old_browser">
+      <div class="old_browser_inner">
+        <div class="oops">OOPS!</div>
+        <div class="oops_title">您的瀏覽器版本太舊了！</div>
+        <p>請更新至 Internet Explorer 10 以上版本或選用更現代化的瀏覽器，<br><br>使用老舊版本的瀏覽器瀏覽本網站將可能有無法預測的錯誤，請儘快更新。<br><br>建議您使用 <a href="http://www.google.com/chrome/" target="_blank">Google Chrome 瀏覽器</a><br><br></p>
+        <p>© 2017-2018  LEADEREX All rights reserved. </p>
+      </div>
+    </div><![endif]-->
+    <div id="wrapper">
+      <header id="header">
+        <div class="header_inner"><a class="header_logo" href="index.html" title="首頁"><img class="retina" src="images/logo.png" alt="LeaderEX-Logo"></a>
+          <div class="header_nav">
+            <!--↓ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↓-->
+            <nav>
+              <ul>
+                <li><a href="member_order_willLeave.html" title="訂單管理">訂單管理
+                    <!--↓ 有資料才會出現 ↓-->
+                    <span class="count">1</span>
+                    <!--↑ 有資料才會出現 ↑--></a></li>
+                <li><a href="member_tracking_list.html" title="追蹤清單">追蹤清單
+                    <!--↓ 有資料才會出現 ↓-->
+                    <span class="count">1</span>
+                    <!--↑ 有資料才會出現 ↑--></a></li>
+              </ul>
+            </nav>
+            <!--↑ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↑-->
+            <div class="dropdown"><a class="dropdown_btn sub_open" href="javascript:;" title="會員相關"><i class="fas fa-th"></i></a>
+              <div class="dropdown_block">
+                <div class="dropdown_content">
+                  <div class="header_sub_items">
+                    <div class="item">
+                      <h4><a href="member_index.html" title="會員中心">
+                          <div class="icon"><i class="fas fa-user"></i></div><span>會員中心</span></a></h4>
+                      <ul>
+                        <li><a href="javascript:;" title="機票訂位">機票訂位</a></li>
+                        <li><a href="javascript:;" title="行程更改">行程更改</a></li>
+                        <li><a href="javascript:;" title="作廢申請">作廢申請</a></li>
+                      </ul>
+                    </div>
+                    <div class="item">
+                      <h4><a href="member_order_willLeave.html" title="訂單管理">
+                          <div class="icon"><i class="fas fa-file-alt"></i></div><span>訂單管理</span></a></h4>
+                      <ul>
+                        <li><a href="javascript:;" title="開票下單">開票下單</a></li>
+                        <li><a href="javascript:;" title="搭機證明">搭機證明</a></li>
+                        <li><a href="javascript:;" title="退票申請">退票申請</a></li>
+                      </ul>
+                    </div>
+                    <div class="item">
+                      <h4><a href="member_tracking_list.html" title="追蹤管理">
+                          <div class="icon"><i class="icon_ticket_plus"></i></div><span>追蹤管理</span></a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--↓ 登入後顯示 ↓-->
+            <a class="user_mark" href="member_index.html" title="會員中心">TC</a>
+            <a class="logout" href="javascript:;">登出</a>
+            <!--↑ 登入後顯示 ↑-->
+            <div class="language_chose select_wrapper">
+              <select>
+                <option>繁體中文</option>
+                <option>English</option>
+              </select>
+            </div><a id="btnMenu" href="javascript:;" title="Menu"><span></span></a>
+          </div>
+        </div>
+      </header>
+      <main id="main">
+        <div class="common_wrapper">
+          <div class="container aside_right_container">
+            <aside class="aside">
+              <div class="order_detail" id="fixedOrder">
+                <!--↓ 抓資料時 class 加 'active' ↓-->
+                <div class="loading">
+                  <div class="loading_mark"><img src="images/img_loading.png"><span>Loading</span></div>
+                </div>
+                <!--↑ 抓資料時 class 加 'active' ↑-->
+                <!--↓ 抓完資料時 class 加 'active' ↓-->
+                <div class="order_detail_main active">
+                  <h3 class="detail_title">訂單明細</h3>
+                  <!--↓warn 為提示, 需要顯示時在 class 加入 'active'↓-->
+                  <div class="warn">候補中<br>
+                    價格已開票為準
+                  </div>
+                  <!--↑warn 為提示, 需要顯示時在 class 加入 'active'↑-->
+                  <div class="flight_info">
+                    <div class="item">
+                      <div class="journey">去</div>
+                      <div class="text">
+                        <div class="date">2017/07/20(四)</div>
+                        <div class="location"><span class="cn">台北</span><span class="en">TPE</span> - <span class="cn">曼谷</span><span class="en">BKK</span></div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="journey">回</div>
+                      <div class="text">
+                        <div class="date">2017/08/20(四)</div>
+                        <div class="location"><span class="cn">曼谷</span><span class="en">BKK</span>-<span class="cn">台北</span><span class="en">TPE</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="price_detail">
+                    <table class="price_table">
+                      <tbody>
+                        <tr>
+                          <th>成人</th>
+                          <th>TWD</th>
+                          <th>8,000 x 2</th>
+                        </tr>
+                        <tr>
+                          <td>票價</td>
+                          <td>TWD</td>
+                          <td>7,500</td>
+                        </tr>
+                        <tr>
+                          <td>稅金</td>
+                          <td>TWD</td>
+                          <td>500</td>
+                        </tr>
+                        <tr>
+                          <th>小孩</th>
+                          <th>TWD</th>
+                          <th>7,000 x 2</th>
+                        </tr>
+                        <tr>
+                          <td>票價</td>
+                          <td>TWD</td>
+                          <td>6,500</td>
+                        </tr>
+                        <tr>
+                          <td>稅金</td>
+                          <td>TWD</td>
+                          <td>500</td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>小計</th>
+                          <th>TWD</th>
+                          <th>2,599,000</th>
+                        </tr>
+                        <tr>
+                          <td class="font_red">優惠代碼</td>
+                          <td class="font_red">TWD</td>
+                          <td class="font_red">-200</td>
+                        </tr>
+                        <tr>
+                          <td class="font_red">已使用20點紅利</td>
+                          <td class="font_red">TWD</td>
+                          <td class="font_red">-20</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                    <div class="total_amount">
+                      <div class="total_title">訂單金額</div>
+                      <div class="price">TWD 
+                        <big>2,999,090</big>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="overview_control active"><a id="toggle_overview" href="javascript:;"><span class="words">行程概述</span><i class="fas fa-chevron-circle-down"></i></a></div>
+                <!--↑ 抓完資料時 class 加 'active' ↑-->
+              </div>
+            </aside>
+            <div class="containt">
+              <!--↓ 有需要顯示的時候 class 加 'active' ↓-->
+              <section class="system_remind active"><i class="fas fa-info-circle"></i>
+                <p>開票之前，請您務必確認：若您所購買的是外勞機票，則需具有真正外勞身份才可使用(居留事由為外勞)否則本網站隨時有權取消您的機位，並扣除相關退票手續費後，退款給您。<br>
+                  使用不符身份的機票，航空公司也將於機場查驗時，收取高額罰金。
+                </p>
+              </section>
+              <!--↑ 有需要顯示的時候 class 加 'active' ↑-->
+              <h2 class="page_title has_explanation"><span>請填寫旅客資料</span><small class="explanation">*旅客姓名與護照上完全相同，否則有可能需重新購買一張新的機票</small></h2>
+              <section class="content_section fill_info_section">
+                <div class="content_block fill_info_block">
+                  <div class="fill_info_head">
+                    <h3><i class="fas fa-user"></i>成人1</h3><a class="btn btn_choose popup_ajax" href="javascript:;" data-width="815px" data-path="popup_common_passenger.html">從我已儲存的清單中選擇</a>
+                  </div>
+                  <div class="fill_info_form">
+                    <div class="row">
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>國籍</label>
+                          <div class="controls">
+                            <div class="dropdown_selector has_icon">
+                              <div class="dropdown_selector_input icon_input">
+                                <div class="icon_logo"><img src="images/flag/62.png"></div>
+                                <input type="text" data-value="India" value="印尼" readonly><i class="input_mark fas fa-sort-down"></i>
+                              </div>
+                              <ul class="dropdown_selector_menu">
+                                <li data-value="Taiwan">
+                                  <div class="icon_logo"><img src="images/flag/886.png"></div>
+                                  <div class="text">台灣</div>
+                                </li>
+                                <li data-value="India">
+                                  <div class="icon_logo"><img src="images/flag/62.png"></div>
+                                  <div class="text">印尼</div>
+                                </li>
+                                <li data-value="Thailand">
+                                  <div class="icon_logo"><img src="images/flag/66.png"></div>
+                                  <div class="text">泰國</div>
+                                </li>
+                                <li data-value="Vietnam">
+                                  <div class="icon_logo"><img src="images/flag/84.png"></div>
+                                  <div class="text">越南</div>
+                                </li>
+                                <li data-value="Philippines">
+                                  <div class="icon_logo"><img src="images/flag/63.png"></div>
+                                  <div class="text">菲律賓</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="error_text">請選擇國籍</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>護照姓(英文)</label>
+                          <div class="controls">
+                            <input type="text" placeholder="姓">
+                          </div>
+                          <div class="error_text">請輸入英文姓氏</div>
+                        </div>
+                      </div>
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>護照名(英文)</label>
+                          <div class="controls">
+                            <input type="text" placeholder="姓">
+                          </div>
+                          <div class="error_text">請輸入英文名字</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="remark">需與護照英文姓名相同，僅接受大寫英文字母及空白。</div>
+                    <div class="row">
+                      <div class="grid">
+                        <div class="controls_group">
+                          <label>中文姓名</label>
+                          <div class="controls">
+                            <input type="text" placeholder="您的中文姓名">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="grid g_4_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>出生年</label>
+                          <div class="controls">
+                            <input type="number" placeholder="西元" min="1">
+                          </div>
+                          <div class="error_text">請輸入出生年</div>
+                        </div>
+                      </div>
+                      <div class="grid g_4_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>出生月</label>
+                          <div class="controls">
+                            <input type="number" placeholder="月" min="1" max="12">
+                          </div>
+                          <div class="error_text">請輸入出生月</div>
+                        </div>
+                      </div>
+                      <div class="grid g_4_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>出生日</label>
+                          <div class="controls">
+                            <input type="number" placeholder="日" min="1" max="31">
+                          </div>
+                          <div class="error_text">請輸入出生日</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>居留證或護照號碼</label>
+                          <div class="controls">
+                            <input type="text" placeholder="居留證或護照號碼">
+                          </div>
+                          <div class="error_text">請輸入居留證或護照號碼</div>
+                        </div>
+                      </div>
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>手機</label>
+                          <div class="controls phone_controls">
+                            <div class="icon_input">
+                              <div class="icon_logo"><img src="images/flag/886.png"></div>
+                              <input type="text" value="+886" placeholder="+國碼">
+                            </div>
+                            <input type="text" placeholder="接收班機異動的手機">
+                          </div>
+                          <div class="error_text">請輸入手機號碼</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>性別</label>
+                          <div class="controls">
+                            <div class="radio_group">
+                              <input class="toggle_left" id="gender-man" type="radio" name="gender">
+                              <label for="gender-man">男</label>
+                              <input class="toggle_right" id="gender-woman" type="radio" name="gender">
+                              <label for="gender-woman">女</label>
+                            </div>
+                          </div>
+                          <div class="error_text">請選擇性別</div>
+                        </div>
+                      </div>
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label>飲食</label>
+                          <div class="controls">
+                            <div class="radio_group">
+                              <input class="toggle_left" id="eat-foraging" type="radio" name="eat">
+                              <label for="eat-foraging">無限制</label>
+                              <input class="toggle_right" id="eat-vegetarian" type="radio" name="eat">
+                              <label for="eat-vegetarian">素食</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="grid">
+                        <div class="checkbox_wrapper">
+                          <input id="check01" type="checkbox">
+                          <label class="font_green" for="check01">申請搭機證明?</label><abbr class="tooltip" data-tooltip="若您日後申請外籍勞工遞補招募時，需付外國人出國證明文件，或您希望留存聘雇的外勞確實已離境的憑證，則您可以在本次購票時一併加購。"><i class="fas fa-info-circle"></i></abbr>
+                        </div>
+                        <p class="note">購票同時申辦：優惠價100元(免申請手續費)，待旅客確實出境時，將以掛號郵寄給您。</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="content_block fill_info_block">
+                  <div class="fill_info_head">
+                    <h3><i class="fas fa-user"></i>成人2</h3><a class="btn btn_choose popup_ajax" href="javascript:;" data-width="815px" data-path="popup_common_passenger.html">從我已儲存的清單中選擇</a>
+                  </div>
+                  <div class="fill_info_form">
+                    <div class="row">
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>國籍</label>
+                          <div class="controls">
+                            <div class="dropdown_selector has_icon">
+                              <div class="dropdown_selector_input icon_input">
+                                <div class="icon_logo"><img src="images/flag/62.png"></div>
+                                <input type="text" data-value="India" value="印尼" readonly><i class="input_mark fas fa-sort-down"></i>
+                              </div>
+                              <ul class="dropdown_selector_menu">
+                                <li data-value="Taiwan">
+                                  <div class="icon_logo"><img src="images/flag/886.png"></div>
+                                  <div class="text">台灣</div>
+                                </li>
+                                <li data-value="India">
+                                  <div class="icon_logo"><img src="images/flag/62.png"></div>
+                                  <div class="text">印尼</div>
+                                </li>
+                                <li data-value="Thailand">
+                                  <div class="icon_logo"><img src="images/flag/66.png"></div>
+                                  <div class="text">泰國</div>
+                                </li>
+                                <li data-value="Vietnam">
+                                  <div class="icon_logo"><img src="images/flag/84.png"></div>
+                                  <div class="text">越南</div>
+                                </li>
+                                <li data-value="Philippines">
+                                  <div class="icon_logo"><img src="images/flag/63.png"></div>
+                                  <div class="text">菲律賓</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="error_text">請選擇國籍</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>護照姓(英文)</label>
+                          <div class="controls">
+                            <input type="text" placeholder="姓">
+                          </div>
+                          <div class="error_text">請輸入英文姓氏</div>
+                        </div>
+                      </div>
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>護照名(英文)</label>
+                          <div class="controls">
+                            <input type="text" placeholder="姓">
+                          </div>
+                          <div class="error_text">請輸入英文名字</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="remark">需與護照英文姓名相同，僅接受大寫英文字母及空白。</div>
+                    <div class="row">
+                      <div class="grid">
+                        <div class="controls_group">
+                          <label>中文姓名</label>
+                          <div class="controls">
+                            <input type="text" placeholder="您的中文姓名">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="grid g_4_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>出生年</label>
+                          <div class="controls">
+                            <input type="number" placeholder="西元" min="1">
+                          </div>
+                          <div class="error_text">請輸入出生年</div>
+                        </div>
+                      </div>
+                      <div class="grid g_4_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>出生月</label>
+                          <div class="controls">
+                            <input type="number" placeholder="月" min="1" max="12">
+                          </div>
+                          <div class="error_text">請輸入出生月</div>
+                        </div>
+                      </div>
+                      <div class="grid g_4_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>出生日</label>
+                          <div class="controls">
+                            <input type="number" placeholder="日" min="1" max="31">
+                          </div>
+                          <div class="error_text">請輸入出生日</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>居留證或護照號碼</label>
+                          <div class="controls">
+                            <input type="text" placeholder="居留證或護照號碼">
+                          </div>
+                          <div class="error_text">請輸入居留證或護照號碼</div>
+                        </div>
+                      </div>
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>手機</label>
+                          <div class="controls phone_controls">
+                            <div class="icon_input">
+                              <div class="icon_logo"><img src="images/flag/886.png"></div>
+                              <input type="text" value="+886" placeholder="+國碼">
+                            </div>
+                            <input type="text" placeholder="接收班機異動的手機">
+                          </div>
+                          <div class="error_text">請輸入手機號碼</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>性別</label>
+                          <div class="controls">
+                            <div class="radio_group">
+                              <input id="gender-man2" type="radio" name="gender2">
+                              <label for="gender-man2">男</label>
+                              <input id="gender-woman2" type="radio" name="gender2">
+                              <label for="gender-woman2">女</label>
+                            </div>
+                          </div>
+                          <div class="error_text">請選擇性別</div>
+                        </div>
+                      </div>
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label>飲食</label>
+                          <div class="controls">
+                            <div class="radio_group">
+                              <input id="eat-foraging2" type="radio" name="eat2">
+                              <label for="eat-foraging2">無限制</label>
+                              <input id="eat-vegetarian2" type="radio" name="eat2">
+                              <label for="eat-vegetarian2">素食</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="grid">
+                        <div class="checkbox_wrapper">
+                          <input id="check02" type="checkbox">
+                          <label class="font_green" for="check02">申請搭機證明?</label><abbr class="tooltip" data-tooltip="若您日後申請外籍勞工遞補招募時，需付外國人出國證明文件，或您希望留存聘雇的外勞確實已離境的憑證，則您可以在本次購票時一併加購。"><i class="fas fa-info-circle"></i></abbr>
+                        </div>
+                        <p class="note">購票同時申辦：優惠價100元(免申請手續費)，待旅客確實出境時，將以掛號郵寄給您。</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <div class="checkbox_block">
+                <div class="checkbox_wrapper">
+                  <input id="storageCheck" type="checkbox">
+                  <label for="#storageCheck">將行程旅客資料納入旅客名單中</label>
+                </div>
+              </div>
+              <h2 class="page_title has_explanation"><span>請填寫聯絡資訊</span></h2>
+              <section class="content_section fill_info_section">
+                <div class="content_block fill_info_block">
+                  <div class="fill_info_head">
+                    <h3><i class="fas fa-user"></i>訂單聯絡人</h3>
+                  </div>
+                  <div class="fill_info_form">
+                    <div class="row">
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>姓 (中文)</label>
+                          <div class="controls">
+                            <input type="text" placeholder="姓">
+                          </div>
+                          <div class="error_text">請輸入中文姓氏</div>
+                        </div>
+                      </div>
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>名 (中文)</label>
+                          <div class="controls">
+                            <input type="text" placeholder="姓">
+                          </div>
+                          <div class="error_text">請輸入中文名字</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>手機</label>
+                          <div class="controls phone_controls">
+                            <div class="icon_input">
+                              <div class="icon_logo"><img src="images/flag/886.png"></div>
+                              <input type="text" value="+886" placeholder="+國碼">
+                            </div>
+                            <input type="text" placeholder="接收班機異動的手機">
+                          </div>
+                          <div class="error_text">請輸入手機號碼</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="remark">請務必填入正確手機號碼，以便航空公司發送航更動訊息！</div>
+                    <div class="row">
+                      <div class="grid">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>E-MAIL</label>
+                          <div class="controls">
+                            <input type="email" placeholder="leaderex@flight.com">
+                          </div>
+                          <div class="error_text">請輸入 E-mail</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="remark">*為了您的資料安全，您的預訂資訊與訂單，將只限發送至訂單聯絡人的email,請您務必正確填寫</div>
+                  </div>
+                  <div class="fill_info_head">
+                    <h3><i class="fas fa-user"></i>雇主/廠商</h3>
+                  </div>
+                  <div class="fill_info_form">
+                    <div class="row">
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label>名稱</label>
+                          <div class="controls">
+                            <input type="text" placeholder="(選填)">
+                          </div>
+                          <div class="error_text">請輸入中文姓氏</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--↓未登入時才有↓-->
+                  <div class="checkbox_block" id="agreeMember">
+                    <div class="checkbox_wrapper">
+                      <input id="agreeMemberCheck" type="checkbox">
+                      <label for="agreeMemberCheck">我想得到更多方便和禮遇，同意用本次訂單聯絡人資料加入會員。<small>同時表示同意我們<a class="font_green" href="privacy_policy.html" target="_blank">隱私權政策</a>和<a class="font_green" href="javascript:;">使用條款</a></small></label>
+                    </div>
+                  </div>
+                  <div class="fill_info_form" id="agreeMemberPassword">
+                    <div class="row">
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>輸入密碼</label>
+                          <div class="controls">
+                            <div class="icon"><i class="fas fa-unlock-alt"></i></div>
+                            <div class="control">
+                              <input type="password">
+                            </div>
+                          </div>
+                          <div class="error_text">請輸入密碼</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="grid g_6_12">
+                        <div class="controls_group">
+                          <label><span class="font_red">*</span>再次輸入密碼</label>
+                          <div class="controls">
+                            <div class="icon"><i class="fas fa-unlock-alt"></i></div>
+                            <div class="control">
+                              <input type="password">
+                            </div>
+                          </div>
+                          <div class="error_text">請再次輸入密碼</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--↑未登入時才有↑-->
+                </div>
+              </section>
+              <!--↓未登入時才有↓-->
+              <div class="call_action" id="agreeMemberButton"><a class="btn btn_primary" href="javascript:;" onClick="openCheckPassenger();">下一步</a></div>
+              <section class="login_section active" id="fillLogin">
+                <div class="login_block">
+                  <div class="login_block_head has_bg">
+                    <h2>會員登入</h2>
+                  </div>
+                  <div class="login_block_content">
+                    <form class="login_form">
+                      <div class="controls_group">
+                        <label>會員帳號</label>
+                        <!--↓controls class 上加 'error' 表示錯誤↓-->
+                        <div class="controls">
+                          <div class="icon"><i class="fas fa-user"></i></div>
+                          <div class="control">
+                            <input type="text" placeholder="Email">
+                          </div>
+                        </div>
+                        <!--↓error_text 顯示錯誤資訊↓-->
+                        <div class="error_text">請輸入Email</div>
+                      </div>
+                      <div class="controls_group">
+                        <label>會員密碼</label>
+                        <!--↓controls class 上加 'error' 表示錯誤↓-->
+                        <div class="controls">
+                          <div class="icon"><i class="fas fa-key"></i></div>
+                          <div class="control">
+                            <input type="password" placeholder="Password">
+                          </div>
+                        </div>
+                        <!--↓error_text 顯示錯誤資訊↓-->
+                        <div class="error_text">請輸入密碼</div>
+                      </div>
+                      <div class="captcha">
+                        <div class="captcha_inner">
+                          <div class="g-recaptcha" data-sitekey="6LcHGhITAAAAABIgEAplK2EWsVFkaE5o0DWUpsIs"></div>
+                        </div>
+                      </div>
+                      <div class="rememberCheck txt_align_center">
+                        <div class="checkbox_wrapper">
+                          <input id="rememberMe2" type="checkBox">
+                          <label for="rememberMe2">記住帳號</label>
+                        </div>
+                      </div>
+                      <div class="call_action">
+                        <button class="btn btn_primary" type="button" onClick="openCheckPassenger();">登入</button>
+                      </div>
+                    </form>
+                    <div class="login_links"><a href="forgot_password.html" title="忘記密碼">忘記密碼？</a>｜<a class="font_green" href="register.html" title="註冊會員">成為會員</a></div>
+                  </div>
+                </div>
+                <div class="login_block">
+                  <div class="login_block_head">
+                    <h2>訪客登入</h2>
+                  </div>
+                  <div class="login_block_content">
+                    <div class="call_action"><a class="btn btn_primary" href="javascript:;" onClick="openCheckPassenger();">以訪客身份訂購</a></div>
+                    <hr>
+                    <div class="other_login">
+                      <h3>其他帳號登入</h3>
+                      <div class="other_login_links"><a class="facebook" href="javascript:;" title="Facebook 登入"><i class="fab fa-facebook-f"></i></a><a class="google" href="javascript:;" title="Google 登入"><i class="fab fa-google-plus-g"></i></a></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!--↑未登入時才有↑-->
+              <!--↓登入時才有↓-->
+              <!--
+              <div class="call_action">
+                <a class="btn btn_primary" href="javascript:;" onClick="openCheckPassenger();">下一步</a>
+              </div>
+              -->
+              <!--↑登入時才有↑-->
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer id="footer">
+        <div class="footer_content">
+          <div class="footer_content_inner">
+            <nav class="footer_nav">
+              <h2>聯達旅行社股份有限公司 Leader Express</h2>
+              <ul>
+                <li><a href="about.html" title="關於我們">關於我們</a></li>
+                <li><a href="privacy_policy.html" title="隱私權政策">隱私權政策</a></li>
+                <li><a href="faq.html" title="FAQ">FAQ</a></li>
+              </ul>
+            </nav>
+            <div class="footer_information">
+              <div class="line_qrcode"><img src="images/qrcode_line.png" alt="line QRcode"><a href="https://line.me/R/ti/p/MFgn6evqgo" target="_blank">Line @line12345</a></div>
+              <div class="contact_info">
+                <div class="item">
+                  <h3>台北服務中心</h3>
+                  <p>地址：<a href="https://goo.gl/maps/DN4MeWzB1uJ2" target="_blank">(104)台北市中山區長安東路2段81號7樓</a><br>
+                    電話：<a href="tel:0225070707">(02)25070707</a>　傳真：(02)25070101
+                  </p>
+                </div>
+                <div class="item">
+                  <h3>台中客服中心</h3>
+                  <p>地址：<a href="https://goo.gl/maps/A23J7TZrGcL2" target="_blank">(403)台中市西區梅川西路1段75號1樓</a><br>
+                    電話：<a href="tel:0423051087">(04)23051087</a>　傳真：(04)23050346
+                  </p>
+                </div>
+              </div>
+              <div class="service_info">
+                <p>每週一至週五　09：00 ~18：00<br>
+                  假日服務：合約企業/廠商　請撥打指定專線<br>
+                  代表人：劉芳蘭　網站服務：劉芳蘭
+                </p>
+                <ul>
+                  <li>交觀甲字0306號</li>
+                  <li>旅行品質保障協會北字第0222號</li>
+                  <li>國際航空運送協會(IATA)公認代理店</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">© 2017-2018  LEADEREX All rights reserved.<br>
+          Use of this website indicates your compliance with our Terms of Use and Privacy Policy.
+          
+        </div>
+      </footer>
+    </div><a id="backTop" href="javascript:;"><img class="desktop" src="images/btn_backTop_desktop.png" alt="Back Top"><img class="mobile" src="images/btn_backTop_mobile.png" alt="Back Top"></a>
+    <div class="sidebar" id="sidebar">
+      <div class="sb_mask"></div><a class="btn_close" href="javascript:;"><i class="fas fa-times"></i></a>
+      <div class="language_chose select_wrapper">
+        <select>
+          <option>繁體中文</option>
+          <option>English</option>
+        </select>
+      </div>
+      <!--↓ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↓-->
+      <nav>
+        <ul>
+          <li><a href="member_order_willLeave.html" title="訂單管理">訂單管理
+              <!--↓ 有資料才會出現 ↓-->
+              <span class="count">1</span>
+              <!--↑ 有資料才會出現 ↑--></a></li>
+          <li><a href="member_tracking_list.html" title="追蹤清單">追蹤清單
+              <!--↓ 有資料才會出現 ↓-->
+              <span class="count">1</span>
+              <!--↑ 有資料才會出現 ↑--></a></li>
+        </ul>
+      </nav>
+      <!--↑ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↑-->
+    </div>
+    <div class="sidebar" id="overviewSidebar">
+      <div class="sb_mask"></div><a class="btn_close" href="javascript:;"><i class="fas fa-times"></i></a>
+      <div class="order_detail">
+        <!--↓ 抓資料時 class 加 'active' ↓-->
+        <div class="loading">
+          <div class="loading_mark"><img src="images/img_loading.png"><span>Loading</span></div>
+        </div>
+        <!--↑ 抓資料時 class 加 'active' ↑-->
+        <!--↓ 抓完資料時 class 加 'active' ↓-->
+        <div class="order_detail_main active">
+          <h3 class="detail_title">訂單明細</h3>
+          <!--↓warn 為提示, 需要顯示時在 class 加入 'active'↓-->
+          <div class="warn">候補中<br>
+            價格已開票為準
+          </div>
+          <!--↑warn 為提示, 需要顯示時在 class 加入 'active'↑-->
+          <div class="flight_info">
+            <div class="item">
+              <div class="journey">去</div>
+              <div class="text">
+                <div class="date">2017/07/20(四)</div>
+                <div class="location"><span class="cn">台北</span><span class="en">TPE</span> - <span class="cn">曼谷</span><span class="en">BKK</span></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="journey">回</div>
+              <div class="text">
+                <div class="date">2017/08/20(四)</div>
+                <div class="location"><span class="cn">曼谷</span><span class="en">BKK</span>-<span class="cn">台北</span><span class="en">TPE</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="price_detail">
+            <table class="price_table">
+              <tbody>
+                <tr>
+                  <th>成人</th>
+                  <th>TWD</th>
+                  <th>8,000 x 2</th>
+                </tr>
+                <tr>
+                  <td>票價</td>
+                  <td>TWD</td>
+                  <td>7,500</td>
+                </tr>
+                <tr>
+                  <td>稅金</td>
+                  <td>TWD</td>
+                  <td>500</td>
+                </tr>
+                <tr>
+                  <th>小孩</th>
+                  <th>TWD</th>
+                  <th>7,000 x 2</th>
+                </tr>
+                <tr>
+                  <td>票價</td>
+                  <td>TWD</td>
+                  <td>6,500</td>
+                </tr>
+                <tr>
+                  <td>稅金</td>
+                  <td>TWD</td>
+                  <td>500</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>小計</th>
+                  <th>TWD</th>
+                  <th>2,599,000</th>
+                </tr>
+                <tr>
+                  <td class="font_red">優惠代碼</td>
+                  <td class="font_red">TWD</td>
+                  <td class="font_red">-200</td>
+                </tr>
+                <tr>
+                  <td class="font_red">已使用20點紅利</td>
+                  <td class="font_red">TWD</td>
+                  <td class="font_red">-20</td>
+                </tr>
+              </tfoot>
+            </table>
+            <div class="total_amount">
+              <div class="total_title">訂單金額</div>
+              <div class="price">TWD 
+                <big>2,999,090</big>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--↑ 抓完資料時 class 加 'active' ↑-->
+      </div>
+      <div class="overview_containt">
+        <div class="page_title">詳細行程</div>
+        <section class="content_section flight_section">
+          <div class="content_title">
+            <h2>去程：2017/07/20 (四) 台北(TPE) - 曼谷(BKK)</h2>
+          </div>
+          <div class="content_block">
+            <div class="flight_brief">
+              <div class="airline_mark"><img src="images/airline_logo01.png">
+                <div class="airline_title">長榮航空＋印度尼西亞英航空公司</div>
+              </div>
+              <div class="flight_information">
+                <div class="flight_time departure"><span class="time">03:00</span><span class="location">TPE</span></div>
+                <div class="flight_time arrival"><span class="time">18:25</span><span class="location">BKK</span></div>
+                <div class="flight_process"><img class="process_arrow" src="images/img_course_arrow.png">
+                  <div class="process_items">
+                    <div class="item">
+                      <div class="status_dot transfer"></div>
+                      <div class="item_top"><span>轉機</span></div>
+                      <div class="item_bottom"><span>新加坡SIN</span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flight_hours">8小時40分鐘</div>
+              </div>
+            </div>
+            <div class="flight_info_detail toggle_block"><a class="toggle_control" href="javascript:;">隱藏航班詳細資訊<i class="fas fa-angle-down"></i></a>
+              <div class="toggle_content">
+                <div class="airline_mark"><img src="images/airline_logo01.png">
+                  <div class="airline_title">BR 長榮航空</div>
+                  <div class="airline_code">SH805</div>
+                </div>
+                <ul class="take_info">
+                  <li>經濟艙: <span class="font_green">S</span> &nbsp; 機型: <span class="font_green">Airbus Industrie A330-300</span></li>
+                  <li>行李: 每成人 <span class="font_green">25</span> 公斤, 每小孩 <span class="font_green">8</span> 公斤</li>
+                </ul>
+                <div class="time_info">
+                  <div class="time_interval">
+                    <div class="total">3小時</div>
+                    <ul>
+                      <li>
+                        <div class="time">17:00</div>
+                        <div class="location">TPE 台北桃園 第一航站</div>
+                      </li>
+                      <li>
+                        <div class="time">18:00</div>
+                        <div class="location">HGK 香港 第一航站</div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="residence_time">中停30分鐘</div>
+                  <div class="time_interval">
+                    <div class="total">2小時25分鐘</div>
+                    <ul>
+                      <li>
+                        <div class="time">21:00</div>
+                        <div class="location">HGK 香港 第一航站</div>
+                      </li>
+                      <li>
+                        <div class="time">23:25</div>
+                        <div class="location">BKK 泰國曼谷 第一航站</div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="residence_time">機場轉機4小時</div>
+                </div>
+                <div class="airline_mark"><img src="images/airline_logo01.png">
+                  <div class="airline_title">BR 長榮航空</div>
+                  <div class="airline_code">SH805</div>
+                </div>
+                <div class="airline_note">CI中華航空 SH805 由<img class="airline_logo" src="images/airline_logo_s.png">中國東方營運</div>
+                <div class="time_info">
+                  <div class="time_interval">
+                    <div class="total">2小時25分鐘</div>
+                    <ul>
+                      <li>
+                        <div class="time">01:00<sup>+1</sup></div>
+                        <div class="location">HGK 香港 第一航站</div>
+                      </li>
+                      <li>
+                        <div class="time">03:25</div>
+                        <div class="location">BKK 泰國曼谷 第一航站</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content_foot">
+            <p class="attention"><i class="fas fa-info-circle"></i>請注意您抵達時間為 2017/07/21 (五)</p>
+            <p><i class="fas fa-clock"></i>旅行總時間: 5小時00分</p>
+          </div>
+        </section>
+        <section class="content_section flight_section">
+          <div class="content_title">
+            <h2>去程：2017/07/20 (四) 台北(TPE) - 曼谷(BKK)</h2>
+          </div>
+          <div class="content_block">
+            <div class="flight_brief">
+              <div class="airline_mark"><img src="images/airline_logo01.png">
+                <div class="airline_title">長榮航空</div>
+              </div>
+              <div class="flight_information">
+                <div class="flight_time departure"><span class="time">03:00</span><span class="location">TPE</span></div>
+                <div class="flight_time arrival"><span class="time">18:25</span><span class="location">BKK</span></div>
+                <div class="flight_process"><img class="process_arrow" src="images/img_course_arrow.png">
+                  <div class="process_items">
+                    <div class="item">
+                      <div class="item_top"><span>直飛</span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flight_hours">8小時40分鐘</div>
+              </div>
+            </div>
+            <div class="flight_info_detail toggle_block"><a class="toggle_control" href="javascript:;">隱藏航班詳細資訊<i class="fas fa-angle-down"></i></a>
+              <div class="toggle_content">
+                <div class="airline_mark"><img src="images/airline_logo01.png">
+                  <div class="airline_title">BR 長榮航空</div>
+                  <div class="airline_code">SH805</div>
+                </div>
+                <ul class="take_info">
+                  <li>經濟艙: <span class="font_green">S</span> &nbsp; 機型: <span class="font_green">Airbus Industrie A330-300</span></li>
+                  <li>行李: 每成人 <span class="font_green">25</span> 公斤, 每小孩 <span class="font_green">8</span> 公斤</li>
+                </ul>
+                <div class="time_info">
+                  <div class="time_interval">
+                    <div class="total">3小時</div>
+                    <ul>
+                      <li>
+                        <div class="time">17:00</div>
+                        <div class="location">BKK 泰國曼谷 第一航站</div>
+                      </li>
+                      <li>
+                        <div class="time">20:00</div>
+                        <div class="location">TPE 台北桃園 第一航站</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content_foot">
+            <p class="attention"><i class="fas fa-info-circle"></i>您將從TPE出發，但回程目的地為TSA。<small>抵達時間為 2017/08/20 (日)</small></p>
+            <p><i class="fas fa-clock"></i>旅行總時間: 5小時00分</p>
+          </div>
+        </section>
+        <section class="content_section">
+          <div class="content_title">
+            <h2>票規</h2>
+          </div>
+          <div class="content_block">機票可以退款。若要<span class="font_green">取消行程</span>，需支付每張機票 NT$1,000 元的費用。<br>
+            若要變更行程，每張機票需支付 NT$500 元的費用。<br>
+            航空公司可能隨時變更班機時程與航廈。<br>
+            您必須攜帶有效的旅行文件。<br>
+            旅行前，您必須自行檢查是否已帶齊必備的旅行文件。
+            
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="scripts/vendor.js"></script>
+    <script src="scripts/plugins.js"></script>
+    <script src="scripts/main.js"></script>
+    <script>
+      // https://alertifyjs.com/
+      // 提醒登入
+      function pleassLogin() {
+        event.preventDefault();
+        alertify.alert("請先登入");
+      }
+      
+    </script>
+    <script>
+      $(function() {
+        $('#agreeMemberCheck').change(function() {
+          if( $(this).is(':checked') ) {
+            $('#agreeMemberPassword, #agreeMemberButton').stop().slideDown();
+            $('#fillLogin').stop().slideUp();
+          } else {
+            $('#agreeMemberPassword, #agreeMemberButton').stop().slideUp();
+            $('#fillLogin').stop().slideDown();
+          }
+        })
+      })
+      
+      //↓開啟核對旅客跳窗↓
+      function openCheckPassenger() {
+        //跳窗路徑
+        var popup_path = 'popup_check_passenger.html';
+      
+        //ajaxPopupOpen('路徑', '跳窗寬度', '要不要返回按鈕');
+        ajaxPopupOpen(popup_path, '1100px', false);
+      }
+      //↑開啟核對旅客跳窗↑
+      
+      //↓停滯時間太久了，開啟還不能決定跳窗↓
+      function openCantDecide() {
+        //跳窗路徑
+        var popup_path = 'popup_cant_decide.html';
+        
+        cantDecidePopupOpen(popup_path);
+      }
+      //↑停滯時間太久了，開啟還不能決定跳窗↑
+    </script>
+  </body>
+</html>

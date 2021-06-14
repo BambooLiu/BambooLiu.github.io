@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LEADEREX</title>
+    <meta name="KeyWords" content="">
+    <meta name="Description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body><!--[if lt IE 10]>
+    <div class="old_browser">
+      <div class="old_browser_inner">
+        <div class="oops">OOPS!</div>
+        <div class="oops_title">您的瀏覽器版本太舊了！</div>
+        <p>請更新至 Internet Explorer 10 以上版本或選用更現代化的瀏覽器，<br><br>使用老舊版本的瀏覽器瀏覽本網站將可能有無法預測的錯誤，請儘快更新。<br><br>建議您使用 <a href="http://www.google.com/chrome/" target="_blank">Google Chrome 瀏覽器</a><br><br></p>
+        <p>© 2017-2018  LEADEREX All rights reserved. </p>
+      </div>
+    </div><![endif]-->
+    <div id="wrapper">
+      <header id="header">
+        <div class="header_inner"><a class="header_logo" href="index.html" title="首頁"><img class="retina" src="images/logo.png" alt="LeaderEX-Logo"></a>
+          <div class="header_nav">
+            <!--↓ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↓-->
+            <nav>
+              <ul>
+                <li><a href="member_order_willLeave.html" title="訂單管理">訂單管理
+                    <!--↓ 有資料才會出現 ↓-->
+                    <span class="count">1</span>
+                    <!--↑ 有資料才會出現 ↑--></a></li>
+                <li><a href="member_tracking_list.html" title="追蹤清單">追蹤清單
+                    <!--↓ 有資料才會出現 ↓-->
+                    <span class="count">1</span>
+                    <!--↑ 有資料才會出現 ↑--></a></li>
+              </ul>
+            </nav>
+            <!--↑ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↑-->
+            <!--↓ 未登入顯示 ↓-->
+            <div class="dropdown"><a class="dropdown_btn login" href="javascript:;" title="登入"><span>會員中心/</span>登入</a>
+              <div class="dropdown_block">
+                <div class="dropdown_content">
+                  <form class="login_form">
+                    <div class="controls_group">
+                      <label>會員帳號</label>
+                      <!--↓controls class 上加 'error' 表示錯誤↓-->
+                      <div class="controls">
+                        <div class="icon"><i class="fas fa-user"></i></div>
+                        <div class="control">
+                          <input type="text" placeholder="Email">
+                        </div>
+                      </div>
+                      <!--↓error_text 顯示錯誤資訊↓-->
+                      <div class="error_text">請輸入Email</div>
+                    </div>
+                    <div class="controls_group">
+                      <label>會員密碼</label>
+                      <!--↓controls class 上加 'error' 表示錯誤↓-->
+                      <div class="controls">
+                        <div class="icon"><i class="fas fa-key"></i></div>
+                        <div class="control">
+                          <input type="password" placeholder="Password">
+                        </div>
+                      </div>
+                      <!--↓error_text 顯示錯誤資訊↓-->
+                      <div class="error_text">請輸入密碼</div>
+                    </div>
+                    <div class="captcha">
+                      <div class="captcha_inner">
+                        <div class="g-recaptcha" data-sitekey="6LcHGhITAAAAABIgEAplK2EWsVFkaE5o0DWUpsIs"></div>
+                      </div>
+                    </div>
+                    <div class="rememberCheck txt_align_center">
+                      <div class="checkbox_wrapper">
+                        <input id="rememberMe" type="checkBox">
+                        <label for="rememberMe">記住帳號</label>
+                      </div>
+                    </div>
+                    <div class="call_action">
+                      <button class="btn btn_primary" type="submit">登入</button>
+                    </div>
+                  </form>
+                  <div class="login_links"><a href="forgot_password.html" title="忘記密碼">忘記密碼？</a>｜<a class="font_green" href="register.html" title="註冊會員">成為會員</a></div>
+                  <div class="other_login">
+                    <h3>其他帳號登入</h3>
+                    <div class="other_login_links"><a class="facebook" href="javascript:;" title="Facebook 登入"><i class="fab fa-facebook-f"></i></a><a class="google" href="javascript:;" title="Google 登入"><i class="fab fa-google-plus-g"></i></a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--↑ 未登入顯示 ↑-->
+            <div class="language_chose select_wrapper">
+              <select>
+                <option>繁體中文</option>
+                <option>English</option>
+              </select>
+            </div><a id="btnMenu" href="javascript:;" title="Menu"><span></span></a>
+          </div>
+        </div>
+      </header>
+      <div id="searchTickets">
+        <div class="search_logo"><a href="index.html" title="首頁"><img class="retina" src="images/logo.png" alt="LeaderEX-Logo"></a></div>
+        <div class="search_tickets_tabber tabber_wrapper">
+          <div class="tabber-selectors">
+            <ul>
+              <li><a class="tabber-anchor active" href="javascript:;">來回</a></li>
+              <li><a class="tabber-anchor" href="javascript:;">單程</a></li>
+              <li><a class="tabber-anchor" href="javascript:;"><abbr class="tooltip" data-tooltip="
+            印尼人票可不同點進出 ex. 雅加達進泗水出
+            <br />
+            越南人票可不同點進出 ex. 河內進胡志明出
+          ">不同點進出&nbsp;<i class="fas fa-info-circle"></i></abbr></a></li>
+            </ul>
+          </div>
+          <div class="tabber-contents">
+            <div class="tabber-content active">
+              <form class="search_tickets_form" action="search_result_priceSeat.html">
+                <div class="row">
+                  <h3>行程地點</h3>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="fas fa-plane-departure"></i></div>
+                      <div class="control dropdown_input_wrapper">
+                        <div class="location_input dropdown_input">
+                          <input type="text" placeholder="出發地"><i class="input_mark fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="location_select dropdown_select">
+                          <div class="location_select_main">
+                            <ul>
+                              <li><a href="javascript:;">熱門城市</a></li>
+                              <li><a href="javascript:;">泰國</a></li>
+                              <li><a href="javascript:;">越南</a></li>
+                              <li><a href="javascript:;">印尼</a></li>
+                            </ul>
+                          </div>
+                          <div class="location_select_sub"><a class="btn_back" href="javascript:;"><i class="fas fa-arrow-left"></i></a>
+                            <div class="search_record">
+                              <h4>最近搜尋紀錄：</h4>
+                              <div class="record_block"><a class="record_option" href="javascript:;">
+                                  <!-- 來回與單程只顯示一個 .itinerary-->
+                                  <!-- ↓此為不同點進出顯示的歷史紀錄↓-->
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>雅加達(CGK) </div>
+                                  </div>
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>泗水(SUB) </div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div>
+                                  </div>
+                                  <!-- ↑此為不同點進出顯示的歷史紀錄↑--></a>
+                                <p class="record_date">2月1日 週四 - 2月5日 週一 , 4日</p>
+                              </div>
+                              <div class="record_block"><a class="record_option" href="javascript:;">
+                                  <!-- 來回與單程只顯示一個 .itinerary-->
+                                  <!-- ↓此為不同點進出顯示的歷史紀錄↓-->
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>雅加達(CGK) </div>
+                                  </div>
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>泗水(SUB) </div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div>
+                                  </div>
+                                  <!-- ↑此為不同點進出顯示的歷史紀錄↑--></a>
+                                <p class="record_date">2月1日 週四 - 2月5日 週一 , 4日</p>
+                              </div>
+                            </div>
+                            <div class="city_list">
+                              <h4>熱門城市</h4>
+                              <ul>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/886.png"></span>台北(TPE)</a></li>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/66.png"></span>曼谷(BKK)</a></li>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/886.png"></span>高雄(KHH)</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="error_text">請輸入地點</div>
+                  </div>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="fas fa-plane-arrival"></i></div>
+                      <div class="control dropdown_input_wrapper">
+                        <div class="location_input dropdown_input">
+                          <input type="text" placeholder="目的地"><i class="input_mark fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="location_select dropdown_select">
+                          <div class="location_select_main">
+                            <ul>
+                              <li><a href="javascript:;">熱門城市</a></li>
+                              <li><a href="javascript:;">泰國</a></li>
+                              <li><a href="javascript:;">越南</a></li>
+                              <li><a href="javascript:;">印尼</a></li>
+                            </ul>
+                          </div>
+                          <div class="location_select_sub"><a class="btn_back" href="javascript:;"><i class="fas fa-arrow-left"></i></a>
+                            <div class="search_record">
+                              <h4>最近搜尋紀錄：</h4>
+                              <div class="record_block"><a class="record_option" href="javascript:;">
+                                  <!-- 來回與單程只顯示一個 .itinerary-->
+                                  <!-- ↓此為不同點進出顯示的歷史紀錄↓-->
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>雅加達(CGK) </div>
+                                  </div>
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>泗水(SUB) </div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div>
+                                  </div>
+                                  <!-- ↑此為不同點進出顯示的歷史紀錄↑--></a>
+                                <p class="record_date">2月1日 週四 - 2月5日 週一 , 4日</p>
+                              </div>
+                              <div class="record_block"><a class="record_option" href="javascript:;">
+                                  <!-- 來回與單程只顯示一個 .itinerary-->
+                                  <!-- ↓此為不同點進出顯示的歷史紀錄↓-->
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>雅加達(CGK) </div>
+                                  </div>
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>泗水(SUB) </div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div>
+                                  </div>
+                                  <!-- ↑此為不同點進出顯示的歷史紀錄↑--></a>
+                                <p class="record_date">2月1日 週四 - 2月5日 週一 , 4日</p>
+                              </div>
+                            </div>
+                            <div class="city_list">
+                              <h4>熱門城市</h4>
+                              <ul>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/886.png"></span>台北(TPE)</a></li>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/66.png"></span>曼谷(BKK)</a></li>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/886.png"></span>高雄(KHH)</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="error_text">請輸入地點</div>
+                  </div>
+                </div>
+                <div class="row dates_range">
+                  <h3>行程日期</h3>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="far fa-calendar-alt"></i></div>
+                      <div class="control">
+                        <div class="calendar_input">
+                          <input class="from_date" id="date4" data-input="fromDate" type="text" placeholder="出發日"><i class="input_mark fas fa-sort-down"></i><span class="day_tip"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="error_text">請選擇日期</div>
+                  </div>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="far fa-calendar-alt"></i></div>
+                      <div class="control">
+                        <div class="calendar_input">
+                          <input class="to_date" id="date5" data-input="toDate" type="text" placeholder="回程日"><i class="input_mark fas fa-sort-down"></i><span class="day_tip"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="error_text">請選擇日期</div>
+                    <div class="remark">共<span class="days">0</span>日</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <h3>票種資訊</h3>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="icon_ticket"></i></div>
+                      <div class="control">
+                        <div class="select_wrapper">
+                          <select class="ticketselect">
+                            <option value="1">外勞票</option>
+                            <option value="2">越南人票</option>
+                            <option value="3">印尼人票</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <!--↓ 外勞票 ↓-->
+                    <div class="remark rm remark1">*限持有外勞居留證</div>
+                    <!--↓ 越南人票 ↓-->
+                    <div class="remark rm remark2" style="display:none;"><abbr class="tooltip" data-tooltip="
+                越南人票:
+                <br />
+                適用印越南籍人士及其配偶、子女。
+              ">*出生地為越南 <i class="fas fa-info-circle"></i></abbr></div>
+                    <!--↓ 印尼人票 ↓-->
+                    <div class="remark rm remark3" style="display:none;"><abbr class="tooltip" data-tooltip="
+                印尼人票:
+                <br />
+                適用印尼籍人士及其配偶、子女。
+              ">*出生地為印尼 <i class="fas fa-info-circle"></i></abbr></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <h3>旅客資訊</h3>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="fas fa-user-tie"></i></div>
+                      <div class="control">
+                        <div class="count_input">
+                          <input type="text" value="1 成人" readonly>
+                          <div class="count_btns"><a class="minus" href="javascript:;"><i class="fas fa-minus"></i></a><a class="plus" href="javascript:;"><i class="fas fa-plus"></i></a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="controls_group childamount" style="display: none;">
+                    <div class="controls">
+                      <div class="icon"><i class="fas fa-baby"></i></div>
+                      <div class="control">
+                        <div class="count_input">
+                          <input type="text" value="0 小孩" readonly>
+                          <div class="count_btns"><a class="minus" href="javascript:;"><i class="fas fa-minus"></i></a><a class="plus" href="javascript:;"><i class="fas fa-plus"></i></a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="remark">*2歲-11歲</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <h3>促銷代碼</h3>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="fas fa-dollar-sign"></i></div>
+                      <div class="control">
+                        <input type="text" placeholder="促銷代碼">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="call_action">
+                  <button class="btn btn_primary" type="submit">搜尋</button>
+                </div>
+              </form>
+            </div>
+            <div class="tabber-content">
+              <form class="search_tickets_form" action="search_result_traditional.html">
+                <div class="row">
+                  <h3>行程地點</h3>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="fas fa-plane-departure"></i></div>
+                      <div class="control dropdown_input_wrapper">
+                        <div class="location_input dropdown_input">
+                          <input type="text" placeholder="出發地"><i class="input_mark fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="location_select dropdown_select">
+                          <div class="location_select_main">
+                            <ul>
+                              <li><a href="javascript:;">熱門城市</a></li>
+                              <li><a href="javascript:;">泰國</a></li>
+                              <li><a href="javascript:;">越南</a></li>
+                              <li><a href="javascript:;">印尼</a></li>
+                            </ul>
+                          </div>
+                          <div class="location_select_sub"><a class="btn_back" href="javascript:;"><i class="fas fa-arrow-left"></i></a>
+                            <div class="search_record">
+                              <h4>最近搜尋紀錄：</h4>
+                              <div class="record_block"><a class="record_option" href="javascript:;">
+                                  <!-- 來回與單程只顯示一個 .itinerary-->
+                                  <!-- ↓此為不同點進出顯示的歷史紀錄↓-->
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>雅加達(CGK) </div>
+                                  </div>
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>泗水(SUB) </div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div>
+                                  </div>
+                                  <!-- ↑此為不同點進出顯示的歷史紀錄↑--></a>
+                                <p class="record_date">2月1日 週四 - 2月5日 週一 , 4日</p>
+                              </div>
+                              <div class="record_block"><a class="record_option" href="javascript:;">
+                                  <!-- 來回與單程只顯示一個 .itinerary-->
+                                  <!-- ↓此為不同點進出顯示的歷史紀錄↓-->
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>雅加達(CGK) </div>
+                                  </div>
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>泗水(SUB) </div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div>
+                                  </div>
+                                  <!-- ↑此為不同點進出顯示的歷史紀錄↑--></a>
+                                <p class="record_date">2月1日 週四 - 2月5日 週一 , 4日</p>
+                              </div>
+                            </div>
+                            <div class="city_list">
+                              <h4>熱門城市</h4>
+                              <ul>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/886.png"></span>台北(TPE)</a></li>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/66.png"></span>曼谷(BKK)</a></li>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/886.png"></span>高雄(KHH)</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="error_text">請輸入地點</div>
+                  </div>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="fas fa-plane-arrival"></i></div>
+                      <div class="control dropdown_input_wrapper">
+                        <div class="location_input dropdown_input">
+                          <input type="text" placeholder="目的地"><i class="input_mark fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="location_select dropdown_select">
+                          <div class="location_select_main">
+                            <ul>
+                              <li><a href="javascript:;">熱門城市</a></li>
+                              <li><a href="javascript:;">泰國</a></li>
+                              <li><a href="javascript:;">越南</a></li>
+                              <li><a href="javascript:;">印尼</a></li>
+                            </ul>
+                          </div>
+                          <div class="location_select_sub"><a class="btn_back" href="javascript:;"><i class="fas fa-arrow-left"></i></a>
+                            <div class="search_record">
+                              <h4>最近搜尋紀錄：</h4>
+                              <div class="record_block"><a class="record_option" href="javascript:;">
+                                  <!-- 來回與單程只顯示一個 .itinerary-->
+                                  <!-- ↓此為不同點進出顯示的歷史紀錄↓-->
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>雅加達(CGK) </div>
+                                  </div>
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>泗水(SUB) </div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div>
+                                  </div>
+                                  <!-- ↑此為不同點進出顯示的歷史紀錄↑--></a>
+                                <p class="record_date">2月1日 週四 - 2月5日 週一 , 4日</p>
+                              </div>
+                              <div class="record_block"><a class="record_option" href="javascript:;">
+                                  <!-- 來回與單程只顯示一個 .itinerary-->
+                                  <!-- ↓此為不同點進出顯示的歷史紀錄↓-->
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>雅加達(CGK) </div>
+                                  </div>
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>泗水(SUB) </div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div>
+                                  </div>
+                                  <!-- ↑此為不同點進出顯示的歷史紀錄↑--></a>
+                                <p class="record_date">2月1日 週四 - 2月5日 週一 , 4日</p>
+                              </div>
+                            </div>
+                            <div class="city_list">
+                              <h4>熱門城市</h4>
+                              <ul>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/886.png"></span>台北(TPE)</a></li>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/66.png"></span>曼谷(BKK)</a></li>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/886.png"></span>高雄(KHH)</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="error_text">請輸入地點</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <h3>行程日期</h3>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="far fa-calendar-alt"></i></div>
+                      <div class="control">
+                        <div class="calendar_input">
+                          <input class="datepickr" id="date3" type="text" placeholder="出發日"><i class="input_mark fas fa-sort-down"></i><span class="day_tip"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="error_text">請選擇日期</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <h3>票種資訊</h3>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="icon_ticket"></i></div>
+                      <div class="control">
+                        <div class="select_wrapper">
+                          <select class="ticketselect">
+                            <option value="1">外勞票</option>
+                            <option value="2">越南人票</option>
+                            <option value="3">印尼人票</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <!--↓ 外勞票 ↓-->
+                    <div class="remark rm remark1">*限持有外勞居留證</div>
+                    <!--↓ 越南人票 ↓-->
+                    <div class="remark rm remark2" style="display:none;"><abbr class="tooltip" data-tooltip="
+                越南人票:
+                <br />
+                適用印越南籍人士及其配偶、子女。
+              ">*出生地為越南 <i class="fas fa-info-circle"></i></abbr></div>
+                    <!--↓ 印尼人票 ↓-->
+                    <div class="remark rm remark3" style="display:none;"><abbr class="tooltip" data-tooltip="
+                印尼人票:
+                <br />
+                適用印尼籍人士及其配偶、子女。
+              ">*出生地為印尼 <i class="fas fa-info-circle"></i></abbr></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <h3>旅客資訊</h3>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="fas fa-user-tie"></i></div>
+                      <div class="control">
+                        <div class="count_input">
+                          <input type="text" value="1 成人" readonly>
+                          <div class="count_btns"><a class="minus" href="javascript:;"><i class="fas fa-minus"></i></a><a class="plus" href="javascript:;"><i class="fas fa-plus"></i></a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="controls_group childamount" style="display: none;">
+                    <div class="controls">
+                      <div class="icon"><i class="fas fa-baby"></i></div>
+                      <div class="control">
+                        <div class="count_input">
+                          <input type="text" value="0 小孩" readonly>
+                          <div class="count_btns"><a class="minus" href="javascript:;"><i class="fas fa-minus"></i></a><a class="plus" href="javascript:;"><i class="fas fa-plus"></i></a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="remark">*2歲-11歲</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <h3>促銷代碼</h3>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="fas fa-dollar-sign"></i></div>
+                      <div class="control">
+                        <input type="text" placeholder="促銷代碼">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="call_action">
+                  <button class="btn btn_primary" type="submit">搜尋</button>
+                </div>
+              </form>
+            </div>
+            <div class="tabber-content">
+              <form class="search_tickets_form" action="search_result_traditional.html">
+                <div class="row">
+                  <h3>去程地點</h3>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="fas fa-plane-departure"></i></div>
+                      <div class="control dropdown_input_wrapper">
+                        <div class="location_input dropdown_input">
+                          <input type="text" placeholder="出發地"><i class="input_mark fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="location_select dropdown_select">
+                          <div class="location_select_main">
+                            <ul>
+                              <li><a href="javascript:;">熱門城市</a></li>
+                              <li><a href="javascript:;">泰國</a></li>
+                              <li><a href="javascript:;">越南</a></li>
+                              <li><a href="javascript:;">印尼</a></li>
+                            </ul>
+                          </div>
+                          <div class="location_select_sub"><a class="btn_back" href="javascript:;"><i class="fas fa-arrow-left"></i></a>
+                            <div class="search_record">
+                              <h4>最近搜尋紀錄：</h4>
+                              <div class="record_block"><a class="record_option" href="javascript:;">
+                                  <!-- 來回與單程只顯示一個 .itinerary-->
+                                  <!-- ↓此為不同點進出顯示的歷史紀錄↓-->
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>雅加達(CGK) </div>
+                                  </div>
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>泗水(SUB) </div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div>
+                                  </div>
+                                  <!-- ↑此為不同點進出顯示的歷史紀錄↑--></a>
+                                <p class="record_date">2月1日 週四 - 2月5日 週一 , 4日</p>
+                              </div>
+                              <div class="record_block"><a class="record_option" href="javascript:;">
+                                  <!-- 來回與單程只顯示一個 .itinerary-->
+                                  <!-- ↓此為不同點進出顯示的歷史紀錄↓-->
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>雅加達(CGK) </div>
+                                  </div>
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>泗水(SUB) </div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div>
+                                  </div>
+                                  <!-- ↑此為不同點進出顯示的歷史紀錄↑--></a>
+                                <p class="record_date">2月1日 週四 - 2月5日 週一 , 4日</p>
+                              </div>
+                            </div>
+                            <div class="city_list">
+                              <h4>熱門城市</h4>
+                              <ul>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/886.png"></span>台北(TPE)</a></li>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/66.png"></span>曼谷(BKK)</a></li>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/886.png"></span>高雄(KHH)</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="error_text">請輸入地點</div>
+                  </div>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="fas fa-plane-arrival"></i></div>
+                      <div class="control dropdown_input_wrapper">
+                        <div class="location_input dropdown_input">
+                          <input type="text" placeholder="目的地"><i class="input_mark fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="location_select dropdown_select">
+                          <div class="location_select_main">
+                            <ul>
+                              <li><a href="javascript:;">熱門城市</a></li>
+                              <li><a href="javascript:;">泰國</a></li>
+                              <li><a href="javascript:;">越南</a></li>
+                              <li><a href="javascript:;">印尼</a></li>
+                            </ul>
+                          </div>
+                          <div class="location_select_sub"><a class="btn_back" href="javascript:;"><i class="fas fa-arrow-left"></i></a>
+                            <div class="search_record">
+                              <h4>最近搜尋紀錄：</h4>
+                              <div class="record_block"><a class="record_option" href="javascript:;">
+                                  <!-- 來回與單程只顯示一個 .itinerary-->
+                                  <!-- ↓此為不同點進出顯示的歷史紀錄↓-->
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>雅加達(CGK) </div>
+                                  </div>
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>泗水(SUB) </div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div>
+                                  </div>
+                                  <!-- ↑此為不同點進出顯示的歷史紀錄↑--></a>
+                                <p class="record_date">2月1日 週四 - 2月5日 週一 , 4日</p>
+                              </div>
+                              <div class="record_block"><a class="record_option" href="javascript:;">
+                                  <!-- 來回與單程只顯示一個 .itinerary-->
+                                  <!-- ↓此為不同點進出顯示的歷史紀錄↓-->
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>雅加達(CGK) </div>
+                                  </div>
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>泗水(SUB) </div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div>
+                                  </div>
+                                  <!-- ↑此為不同點進出顯示的歷史紀錄↑--></a>
+                                <p class="record_date">2月1日 週四 - 2月5日 週一 , 4日</p>
+                              </div>
+                            </div>
+                            <div class="city_list">
+                              <h4>熱門城市</h4>
+                              <ul>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/886.png"></span>台北(TPE)</a></li>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/66.png"></span>曼谷(BKK)</a></li>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/886.png"></span>高雄(KHH)</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="error_text">請輸入地點</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <h3>回程地點</h3>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="fas fa-plane-departure"></i></div>
+                      <div class="control dropdown_input_wrapper">
+                        <div class="location_input dropdown_input">
+                          <input type="text" placeholder="出發地"><i class="input_mark fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="location_select dropdown_select">
+                          <div class="location_select_main">
+                            <ul>
+                              <li><a href="javascript:;">熱門城市</a></li>
+                              <li><a href="javascript:;">泰國</a></li>
+                              <li><a href="javascript:;">越南</a></li>
+                              <li><a href="javascript:;">印尼</a></li>
+                            </ul>
+                          </div>
+                          <div class="location_select_sub"><a class="btn_back" href="javascript:;"><i class="fas fa-arrow-left"></i></a>
+                            <div class="search_record">
+                              <h4>最近搜尋紀錄：</h4>
+                              <div class="record_block"><a class="record_option" href="javascript:;">
+                                  <!-- 來回與單程只顯示一個 .itinerary-->
+                                  <!-- ↓此為不同點進出顯示的歷史紀錄↓-->
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>雅加達(CGK) </div>
+                                  </div>
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>泗水(SUB) </div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div>
+                                  </div>
+                                  <!-- ↑此為不同點進出顯示的歷史紀錄↑--></a>
+                                <p class="record_date">2月1日 週四 - 2月5日 週一 , 4日</p>
+                              </div>
+                              <div class="record_block"><a class="record_option" href="javascript:;">
+                                  <!-- 來回與單程只顯示一個 .itinerary-->
+                                  <!-- ↓此為不同點進出顯示的歷史紀錄↓-->
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>雅加達(CGK) </div>
+                                  </div>
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>泗水(SUB) </div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div>
+                                  </div>
+                                  <!-- ↑此為不同點進出顯示的歷史紀錄↑--></a>
+                                <p class="record_date">2月1日 週四 - 2月5日 週一 , 4日</p>
+                              </div>
+                            </div>
+                            <div class="city_list">
+                              <h4>熱門城市</h4>
+                              <ul>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/886.png"></span>台北(TPE)</a></li>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/66.png"></span>曼谷(BKK)</a></li>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/886.png"></span>高雄(KHH)</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="error_text">請輸入地點</div>
+                  </div>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="fas fa-plane-arrival"></i></div>
+                      <div class="control dropdown_input_wrapper">
+                        <div class="location_input dropdown_input">
+                          <input type="text" placeholder="目的地"><i class="input_mark fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="location_select dropdown_select">
+                          <div class="location_select_main">
+                            <ul>
+                              <li><a href="javascript:;">熱門城市</a></li>
+                              <li><a href="javascript:;">泰國</a></li>
+                              <li><a href="javascript:;">越南</a></li>
+                              <li><a href="javascript:;">印尼</a></li>
+                            </ul>
+                          </div>
+                          <div class="location_select_sub"><a class="btn_back" href="javascript:;"><i class="fas fa-arrow-left"></i></a>
+                            <div class="search_record">
+                              <h4>最近搜尋紀錄：</h4>
+                              <div class="record_block"><a class="record_option" href="javascript:;">
+                                  <!-- 來回與單程只顯示一個 .itinerary-->
+                                  <!-- ↓此為不同點進出顯示的歷史紀錄↓-->
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>雅加達(CGK) </div>
+                                  </div>
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>泗水(SUB) </div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div>
+                                  </div>
+                                  <!-- ↑此為不同點進出顯示的歷史紀錄↑--></a>
+                                <p class="record_date">2月1日 週四 - 2月5日 週一 , 4日</p>
+                              </div>
+                              <div class="record_block"><a class="record_option" href="javascript:;">
+                                  <!-- 來回與單程只顯示一個 .itinerary-->
+                                  <!-- ↓此為不同點進出顯示的歷史紀錄↓-->
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>雅加達(CGK) </div>
+                                  </div>
+                                  <div class="itinerary">
+                                    <div class="city"><span class="flag"><img src="images/flag/66.png"></span>泗水(SUB) </div><span class="dash">-</span>
+                                    <div class="city"><span class="flag"><img src="images/flag/886.png"></span>桃園(TPE)</div>
+                                  </div>
+                                  <!-- ↑此為不同點進出顯示的歷史紀錄↑--></a>
+                                <p class="record_date">2月1日 週四 - 2月5日 週一 , 4日</p>
+                              </div>
+                            </div>
+                            <div class="city_list">
+                              <h4>熱門城市</h4>
+                              <ul>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/886.png"></span>台北(TPE)</a></li>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/66.png"></span>曼谷(BKK)</a></li>
+                                <li><a href="javascript:;"><span class="flag"><img src="images/flag/886.png"></span>高雄(KHH)</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="error_text">請輸入地點</div>
+                  </div>
+                </div>
+                <div class="row dates_range">
+                  <h3>行程日期</h3>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="far fa-calendar-alt"></i></div>
+                      <div class="control">
+                        <div class="calendar_input">
+                          <input class="from_date" id="date1" data-input="fromDate" type="text" placeholder="出發日"><i class="input_mark fas fa-sort-down"></i><span class="day_tip"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="error_text">請選擇日期</div>
+                  </div>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="far fa-calendar-alt"></i></div>
+                      <div class="control">
+                        <div class="calendar_input">
+                          <input class="to_date" id="date2" data-input="toDate" type="text" placeholder="回程日"><i class="input_mark fas fa-sort-down"></i><span class="day_tip"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="error_text">請選擇日期</div>
+                    <div class="remark">共<span class="days">0</span>日</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <h3>票種資訊</h3>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="icon_ticket"></i></div>
+                      <div class="control">
+                        <div class="select_wrapper">
+                          <select class="ticketselect">
+                            <option value="1">外勞票</option>
+                            <option value="2">越南人票</option>
+                            <option value="3">印尼人票</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <!--↓ 外勞票 ↓-->
+                    <div class="remark rm remark1">*限持有外勞居留證</div>
+                    <!--↓ 越南人票 ↓-->
+                    <div class="remark rm remark2" style="display:none;"><abbr class="tooltip" data-tooltip="
+                越南人票:
+                <br />
+                適用印越南籍人士及其配偶、子女。
+              ">*出生地為越南 <i class="fas fa-info-circle"></i></abbr></div>
+                    <!--↓ 印尼人票 ↓-->
+                    <div class="remark rm remark3" style="display:none;"><abbr class="tooltip" data-tooltip="
+                印尼人票:
+                <br />
+                適用印尼籍人士及其配偶、子女。
+              ">*出生地為印尼 <i class="fas fa-info-circle"></i></abbr></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <h3>旅客資訊</h3>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="fas fa-user-tie"></i></div>
+                      <div class="control">
+                        <div class="count_input">
+                          <input type="text" value="1 成人" readonly>
+                          <div class="count_btns"><a class="minus" href="javascript:;"><i class="fas fa-minus"></i></a><a class="plus" href="javascript:;"><i class="fas fa-plus"></i></a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="controls_group childamount" style="display: none;">
+                    <div class="controls">
+                      <div class="icon"><i class="fas fa-child"></i></div>
+                      <div class="control">
+                        <div class="count_input">
+                          <input type="text" value="0 小孩" readonly>
+                          <div class="count_btns"><a class="minus" href="javascript:;"><i class="fas fa-minus"></i></a><a class="plus" href="javascript:;"><i class="fas fa-plus"></i></a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="remark">*2歲-11歲</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <h3>促銷代碼</h3>
+                  <div class="controls_group">
+                    <div class="controls">
+                      <div class="icon"><i class="fas fa-dollar-sign"></i></div>
+                      <div class="control">
+                        <input type="text" placeholder="促銷代碼">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="call_action">
+                  <button class="btn btn_primary" type="submit">搜尋</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <main id="main">
+        <section class="index_banner">
+          <div class="slider">
+            <div class="slide"><img src="images/banner01.jpg"></div>
+            <div class="slide"><img src="images/banner02.jpg"></div>
+          </div>
+        </section>
+        <section class="index_ads">
+          <div class="ad"><a href="javascript:;">
+              <div class="image"><img src="images/img_index_ad1.png"></div>
+              <div class="text">
+                <h2>貼心服務</h2>
+                <p>貼心接、送機<br>
+                  代辦出境<br>
+                  代申請搭機證明
+                </p>
+              </div></a></div>
+          <div class="ad"><a href="javascript:;">
+              <div class="image"><img src="images/img_index_ad2.png"></div>
+              <div class="text">
+                <h2>NT $100元</h2>
+                <p>
+                  紅利放送
+                  
+                </p>
+              </div></a></div>
+        </section>
+      </main>
+      <footer id="footer">
+        <div class="footer_content">
+          <div class="footer_content_inner">
+            <nav class="footer_nav">
+              <h2>聯達旅行社股份有限公司 Leader Express</h2>
+              <ul>
+                <li><a href="about.html" title="關於我們">關於我們</a></li>
+                <li><a href="privacy_policy.html" title="隱私權政策">隱私權政策</a></li>
+                <li><a href="faq.html" title="FAQ">FAQ</a></li>
+              </ul>
+            </nav>
+            <div class="footer_information">
+              <div class="line_qrcode"><img src="images/qrcode_line.png" alt="line QRcode"><a href="https://line.me/R/ti/p/MFgn6evqgo" target="_blank">Line @line12345</a></div>
+              <div class="contact_info">
+                <div class="item">
+                  <h3>台北服務中心</h3>
+                  <p>地址：<a href="https://goo.gl/maps/DN4MeWzB1uJ2" target="_blank">(104)台北市中山區長安東路2段81號7樓</a><br>
+                    電話：<a href="tel:0225070707">(02)25070707</a>　傳真：(02)25070101
+                  </p>
+                </div>
+                <div class="item">
+                  <h3>台中客服中心</h3>
+                  <p>地址：<a href="https://goo.gl/maps/A23J7TZrGcL2" target="_blank">(403)台中市西區梅川西路1段75號1樓</a><br>
+                    電話：<a href="tel:0423051087">(04)23051087</a>　傳真：(04)23050346
+                  </p>
+                </div>
+              </div>
+              <div class="service_info">
+                <p>每週一至週五　09：00 ~18：00<br>
+                  假日服務：合約企業/廠商　請撥打指定專線<br>
+                  代表人：劉芳蘭　網站服務：劉芳蘭
+                </p>
+                <ul>
+                  <li>交觀甲字0306號</li>
+                  <li>旅行品質保障協會北字第0222號</li>
+                  <li>國際航空運送協會(IATA)公認代理店</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">© 2017-2018  LEADEREX All rights reserved.<br>
+          Use of this website indicates your compliance with our Terms of Use and Privacy Policy.
+          
+        </div>
+      </footer>
+    </div><a id="backTop" href="javascript:;"><img class="desktop" src="images/btn_backTop_desktop.png" alt="Back Top"><img class="mobile" src="images/btn_backTop_mobile.png" alt="Back Top"></a>
+    <div class="sidebar" id="sidebar">
+      <div class="sb_mask"></div><a class="btn_close" href="javascript:;"><i class="fas fa-times"></i></a>
+      <div class="language_chose select_wrapper">
+        <select>
+          <option>繁體中文</option>
+          <option>English</option>
+        </select>
+      </div>
+      <!--↓ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↓-->
+      <nav>
+        <ul>
+          <li><a href="member_order_willLeave.html" title="訂單管理">訂單管理
+              <!--↓ 有資料才會出現 ↓-->
+              <span class="count">1</span>
+              <!--↑ 有資料才會出現 ↑--></a></li>
+          <li><a href="member_tracking_list.html" title="追蹤清單">追蹤清單
+              <!--↓ 有資料才會出現 ↓-->
+              <span class="count">1</span>
+              <!--↑ 有資料才會出現 ↑--></a></li>
+        </ul>
+      </nav>
+      <!--↑ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↑-->
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="scripts/vendor.js"></script>
+    <script src="scripts/plugins.js"></script>
+    <script src="scripts/main.js"></script>
+    <script>
+      // https://alertifyjs.com/
+      // 提醒登入
+      function pleassLogin() {
+        event.preventDefault();
+        alertify.alert("請先登入");
+      }
+      
+    </script>
+    <script src="scripts/dateInput_plugin.js"></script>
+    <script>
+      $(function() {
+        $('.ticketselect').change(function(){
+          var $obj = $(this);
+          var $parent = $obj.parents('.search_tickets_form');
+      
+          $parent.find('.rm').hide();
+          $parent.find('.remark' + $obj.val()).show();
+      
+          $parent.find('.childamount').hide();
+          if($obj.val() == 2 || $obj.val() == 3){
+            $parent.find('.childamount').show();
+          }
+        });
+      });
+      
+    </script>
+    <script>
+      var momentLang = 'zh-tw'; //如果要使用英文'en',中文'zh-tw'
+      var flatpickrLang = 'zh'; //如果要使用英文'default',中文'zh'
+      
+      var holidayDates = [{
+          'date': '2018/9/24',
+          'tip': '中秋節'
+        },
+        {
+          'date': '2018/10/10',
+          'tip': '國慶日'
+        },
+        {
+          'date': '2019/1/1',
+          'tip': '元旦'
+        },
+        {
+          'date': '2019/2/4',
+          'tip': '除夕'
+        },
+        {
+          'date': '2019/2/5',
+          'tip': '初一'
+        },
+        {
+          'date': '2019/2/6',
+          'tip': '初二'
+        },
+        {
+          'date': '2019/2/7',
+          'tip': '初三'
+        },
+        {
+          'date': '2019/2/8',
+          'tip': '初四'
+        }
+      ];
+      var workDates = [{
+          'date': '2019/1/19',
+          'tip': '補班'
+        },
+        {
+          'date': '2019/2/23',
+          'tip': '補班'
+        }
+      ];
+      var specialDates = [{
+          'date': '2018/12/31',
+          'tip': '元旦前一天'
+        },
+        {
+          'date': '2019/2/1',
+          'tip': '元旦前三天'
+        },
+        {
+          'date': '2019/2/2',
+          'tip': '元旦前兩天'
+        },
+        {
+          'date': '2019/2/3',
+          'tip': '除夕前一天'
+        }
+      ];
+      
+    </script>
+    <script src="scripts/dateInput.js"></script>
+  </body>
+</html>

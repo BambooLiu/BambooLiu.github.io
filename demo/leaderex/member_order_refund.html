@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LEADEREX</title>
+    <meta name="KeyWords" content="">
+    <meta name="Description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body><!--[if lt IE 10]>
+    <div class="old_browser">
+      <div class="old_browser_inner">
+        <div class="oops">OOPS!</div>
+        <div class="oops_title">您的瀏覽器版本太舊了！</div>
+        <p>請更新至 Internet Explorer 10 以上版本或選用更現代化的瀏覽器，<br><br>使用老舊版本的瀏覽器瀏覽本網站將可能有無法預測的錯誤，請儘快更新。<br><br>建議您使用 <a href="http://www.google.com/chrome/" target="_blank">Google Chrome 瀏覽器</a><br><br></p>
+        <p>© 2017-2018  LEADEREX All rights reserved. </p>
+      </div>
+    </div><![endif]-->
+    <div id="wrapper">
+      <header id="header">
+        <div class="header_inner"><a class="header_logo" href="index.html" title="首頁"><img class="retina" src="images/logo.png" alt="LeaderEX-Logo"></a>
+          <div class="header_nav">
+            <!--↓ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↓-->
+            <nav>
+              <ul>
+                <li><a href="member_order_willLeave.html" title="訂單管理">訂單管理
+                    <!--↓ 有資料才會出現 ↓-->
+                    <span class="count">1</span>
+                    <!--↑ 有資料才會出現 ↑--></a></li>
+                <li><a href="member_tracking_list.html" title="追蹤清單">追蹤清單
+                    <!--↓ 有資料才會出現 ↓-->
+                    <span class="count">1</span>
+                    <!--↑ 有資料才會出現 ↑--></a></li>
+              </ul>
+            </nav>
+            <!--↑ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↑-->
+            <div class="dropdown"><a class="dropdown_btn sub_open" href="javascript:;" title="會員相關"><i class="fas fa-th"></i></a>
+              <div class="dropdown_block">
+                <div class="dropdown_content">
+                  <div class="header_sub_items">
+                    <div class="item">
+                      <h4><a href="member_index.html" title="會員中心">
+                          <div class="icon"><i class="fas fa-user"></i></div><span>會員中心</span></a></h4>
+                      <ul>
+                        <li><a href="javascript:;" title="機票訂位">機票訂位</a></li>
+                        <li><a href="javascript:;" title="行程更改">行程更改</a></li>
+                        <li><a href="javascript:;" title="作廢申請">作廢申請</a></li>
+                      </ul>
+                    </div>
+                    <div class="item">
+                      <h4><a href="member_order_willLeave.html" title="訂單管理">
+                          <div class="icon"><i class="fas fa-file-alt"></i></div><span>訂單管理</span></a></h4>
+                      <ul>
+                        <li><a href="javascript:;" title="開票下單">開票下單</a></li>
+                        <li><a href="javascript:;" title="搭機證明">搭機證明</a></li>
+                        <li><a href="javascript:;" title="退票申請">退票申請</a></li>
+                      </ul>
+                    </div>
+                    <div class="item">
+                      <h4><a href="member_tracking_list.html" title="追蹤管理">
+                          <div class="icon"><i class="icon_ticket_plus"></i></div><span>追蹤管理</span></a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--↓ 登入後顯示 ↓-->
+            <a class="user_mark" href="member_index.html" title="會員中心">TC</a>
+            <a class="logout" href="javascript:;">登出</a>
+            <!--↑ 登入後顯示 ↑-->
+            <div class="language_chose select_wrapper">
+              <select>
+                <option>繁體中文</option>
+                <option>English</option>
+              </select>
+            </div><a id="btnMenu" href="javascript:;" title="Menu"><span></span></a>
+          </div>
+        </div>
+      </header>
+      <main id="main">
+        <div class="member_page">
+          <div class="member_container no_aside">
+            <div class="member_order_management">
+              <div class="management_title">
+                <h1>機票退票</h1>
+              </div>
+              <div class="management_block">
+                <section class="management_flight_info">
+                  <div class="info_block">
+                    <ul class="trip_info">
+                      <li>台北(TPE) — 雅加達(CGK)</li>
+                      <li>2017/03/04 (四) — 2017/03/11 (四)</li>
+                      <li>來回 共7日 2成人1小孩</li>
+                    </ul>
+                  </div>
+                  <div class="info_block">
+                    <h4>訂位代號</h4>
+                    <p>AAAAAAAA</p><br>
+                    <h4>機票號碼</h4>
+                    <table class="ticket_number_table">
+                      <tr>
+                        <td>1234893782  AAA BBB CCC</td>
+                      </tr>
+                    </table>
+                  </div>
+                </section>
+                <hr class="divide">
+                <section class="management_section">
+                  <div class="section_title">
+                    <h2>費用詳情</h2>
+                  </div>
+                  <div class="section_block">
+                    <table class="price_table">
+                      <tbody>
+                        <tr>
+                          <th>已付機票金額</th>
+                          <th>TWD</th>
+                          <th>7,000</th>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>機票可退款項</th>
+                          <th class="font_red">TWD</th>
+                          <th class="font_red">
+                            <big>5,147</big>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td class="font_red">已使用部分行程</td>
+                          <td class="font_red">TWD</td>
+                          <td class="font_red">2000</td>
+                        </tr>
+                        <tr>
+                          <td class="font_red">航空公司罰金</td>
+                          <td class="font_red">TWD</td>
+                          <td class="font_red">5,145</td>
+                        </tr>
+                        <tr>
+                          <td class="font_red">航空公司退票手續費</td>
+                          <td class="font_red">TWD</td>
+                          <td class="font_red">1,000</td>
+                        </tr>
+                        <tr>
+                          <td class="font_red">本公司服務手續費</td>
+                          <td class="font_red">TWD</td>
+                          <td class="font_red">300</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                    <!--
+                    <table class="common_table">
+                      <tr>
+                        <td>退票可退款項</td>
+                        <td class="font_red">已無退票價值</td>
+                      </tr>
+                    </table>
+                    -->
+                    <!--↑已無價值時顯示↑-->
+                  </div>
+                </section>
+                <hr class="divide">
+                <section class="management_section">
+                  <div class="section_title">
+                    <h2>退票說明</h2>
+                  </div>
+                  <div class="section_block">
+                    <p>*退票作業時間約2~6個月(外籍航空或中國民航所需時間較長，有時將長達6個月或更久)，需等航空公司將退票款退給本公司，本公司收到款項後再退予客戶。<br>
+                      <br>
+                      1.機票一經使用即無退票價值。<br>
+                      2.全程未用機票欲辦理退票，請於機票開票日起一年內辦理，逾時恕無法受理，請預留至少七個工作天。
+                    </p>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <div class="call_action">
+              <div class="btn_inline_block"><span>我在考慮一下</span><a class="btn btn_step" href="member_order_detail.html">先不要退票</a></div>
+              <div class="btn_inline_block"><span>我了解規則</span><a class="btn btn_basic" href="javascript:;" onClick="verification();">決定退票</a></div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer id="footer">
+        <div class="footer_content">
+          <div class="footer_content_inner">
+            <nav class="footer_nav">
+              <h2>聯達旅行社股份有限公司 Leader Express</h2>
+              <ul>
+                <li><a href="about.html" title="關於我們">關於我們</a></li>
+                <li><a href="privacy_policy.html" title="隱私權政策">隱私權政策</a></li>
+                <li><a href="faq.html" title="FAQ">FAQ</a></li>
+              </ul>
+            </nav>
+            <div class="footer_information">
+              <div class="line_qrcode"><img src="images/qrcode_line.png" alt="line QRcode"><a href="https://line.me/R/ti/p/MFgn6evqgo" target="_blank">Line @line12345</a></div>
+              <div class="contact_info">
+                <div class="item">
+                  <h3>台北服務中心</h3>
+                  <p>地址：<a href="https://goo.gl/maps/DN4MeWzB1uJ2" target="_blank">(104)台北市中山區長安東路2段81號7樓</a><br>
+                    電話：<a href="tel:0225070707">(02)25070707</a>　傳真：(02)25070101
+                  </p>
+                </div>
+                <div class="item">
+                  <h3>台中客服中心</h3>
+                  <p>地址：<a href="https://goo.gl/maps/A23J7TZrGcL2" target="_blank">(403)台中市西區梅川西路1段75號1樓</a><br>
+                    電話：<a href="tel:0423051087">(04)23051087</a>　傳真：(04)23050346
+                  </p>
+                </div>
+              </div>
+              <div class="service_info">
+                <p>每週一至週五　09：00 ~18：00<br>
+                  假日服務：合約企業/廠商　請撥打指定專線<br>
+                  代表人：劉芳蘭　網站服務：劉芳蘭
+                </p>
+                <ul>
+                  <li>交觀甲字0306號</li>
+                  <li>旅行品質保障協會北字第0222號</li>
+                  <li>國際航空運送協會(IATA)公認代理店</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">© 2017-2018  LEADEREX All rights reserved.<br>
+          Use of this website indicates your compliance with our Terms of Use and Privacy Policy.
+          
+        </div>
+      </footer>
+    </div><a id="backTop" href="javascript:;"><img class="desktop" src="images/btn_backTop_desktop.png" alt="Back Top"><img class="mobile" src="images/btn_backTop_mobile.png" alt="Back Top"></a>
+    <div class="sidebar" id="sidebar">
+      <div class="sb_mask"></div><a class="btn_close" href="javascript:;"><i class="fas fa-times"></i></a>
+      <div class="language_chose select_wrapper">
+        <select>
+          <option>繁體中文</option>
+          <option>English</option>
+        </select>
+      </div>
+      <!--↓ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↓-->
+      <nav>
+        <ul>
+          <li><a href="member_order_willLeave.html" title="訂單管理">訂單管理
+              <!--↓ 有資料才會出現 ↓-->
+              <span class="count">1</span>
+              <!--↑ 有資料才會出現 ↑--></a></li>
+          <li><a href="member_tracking_list.html" title="追蹤清單">追蹤清單
+              <!--↓ 有資料才會出現 ↓-->
+              <span class="count">1</span>
+              <!--↑ 有資料才會出現 ↑--></a></li>
+        </ul>
+      </nav>
+      <!--↑ 未登入的時候 a標籤 加入 onClick="pleassLogin();" 跳出 alert 提醒登入 ↑-->
+    </div>
+    <div class="inline_popup" id="enter_ver">
+      <button class="popup_close" data-izimodal-close><i class="fas fa-times"></i></button>
+      <div class="popup_block">
+        <h2 class="font_green">機票退票</h2>
+        <!--↓傳送至Email顯示↓-->
+        <p>我們已將驗證碼寄至您的Email: 123@123.com</p>
+        <!--↑傳送至Email顯示↑-->
+        <!--↓傳送至手機顯示↓-->
+        <!--<p>我們已將驗證碼寄至您的09xx-xxx-036</p>
+        -->
+        <!--↑傳送至手機顯示↑-->
+        <div class="controls_group">
+          <label>驗證碼</label>
+          <div class="controls">
+            <input type="text" placeholder="請輸入驗證碼">
+          </div>
+          <div class="error_text">請輸入驗證碼</div>
+          <!--↓傳送至Email顯示↓-->
+          <div class="remark"><a class="font_green" href="javascript:;">無收到驗證信件？</a></div>
+          <!--↑傳送至Email顯示↑-->
+        </div>
+        <div class="call_action"><a class="btn btn_primary" href="javascript:;" onClick="submitVer();">確認</a></div>
+      </div>
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="scripts/vendor.js"></script>
+    <script src="scripts/plugins.js"></script>
+    <script src="scripts/main.js"></script>
+    <script>
+      // https://alertifyjs.com/
+      // 提醒登入
+      function pleassLogin() {
+        event.preventDefault();
+        alertify.alert("請先登入");
+      }
+      
+    </script>
+    <script>
+      function verification() {
+        //↓開啟驗證碼 popup↓
+        $('#enter_ver').iziModal('open');
+      }
+      function submitVer() {
+        window.location.href = 'member_order_refundFinish.html';
+      }
+    </script>
+  </body>
+</html>
