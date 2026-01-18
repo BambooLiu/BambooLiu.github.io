@@ -1,0 +1,11 @@
+# 依賴和構建輸出
+node_modules
+public
+dist
+dist-ssr
+coverage
+.output
+.temp
+
+# 文檔和資源文件
+*.min.css

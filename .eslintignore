@@ -1,0 +1,33 @@
+# 系統文件和目錄
+.DS_Store
+
+# 依賴和構建輸出
+node_modules
+public
+dist
+dist-ssr
+coverage
+env
+.output
+.temp
+
+# 文檔和資源文件
+*.sh
+*.md
+*.woff
+*.ttf
+*.yaml
+*.min.js
+*.min.css
+
+# 日誌文件
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# 臨時文件
+*.sw?
